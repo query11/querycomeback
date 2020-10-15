@@ -3,12 +3,15 @@ const ayarlar = require("../ayarlar.json");
 
 exports.run = function(client, message, args) {
   let yetkili = message.author;
+  let botyok = args[1]
   let botisim = message.guild.members.get(args[1]);
+  
   let sahip = message.guild.members.get(args[0]);
   let sebep = args.slice(2).join(" ")
   let log = ayarlar.log;
 
   let yetkiliROL = ayarlar.yetkiliROL;
+  if(!botisim || `${botyok.name}`)
   if (!message.member.roles.has(yetkiliROL)) return;
   let embed2 = new Discord.RichEmbed()
     .setColor("#7f0000")
