@@ -129,3 +129,4 @@ client.on("message", (message, member) => {
     message.delete(1 * 500);
   }
 });
+
