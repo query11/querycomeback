@@ -32,7 +32,7 @@ exports.run = function(client, message, args) {
       .addField("<a:jke:754772326704218112> Bot ID", botID)
       .addField("<a:jke:754772326704218112> Bot Prefix", prefix);
     client.channels.get(basvuru).send(embed);
-    let embed2 = new Discord.RichEmbed().setDescription(`>  <a:load:758389302861889566>` + `<@${message.author.id}> adlı kullanıcı <@${botID}> adlı botu sıraya ekledi.En yakın zamanda test edilecektir. \n\n > 🔖 | **Prefix =** {  ${prefix}  }`);
+    let embed2 = new Discord.RichEmbed().setDescription(`  <a:load:758389302861889566>` + `<@${message.author.id}> adlı kullanıcı <@${botID}> adlı botu sıraya ekledi.En yakın zamanda test edilecektir. \n\n  🔖 | **Prefix =** {  ${prefix}  }`);
     client.channels.get(log).send(embed2);
 
     message.channel.send(`<a:tik4:756946179530424541>__**Bot ekleme isteğiniz alındı.**__`).then(msg => msg.delete(3000));
