@@ -1,11 +1,14 @@
 const Discord = require('discord.js');
 
 exports.run = function(client, message, args) {
-  let dena = message.guild.members.get(args[0]);
+  let abone = message.mentions.members.first()
   if(!message.member.hasPermission('ADMINISTRATOR')) return
   var role = message.guild.roles.find(role => role.id === "758382651907244034"); 
-  dena.addRole(role);
-  message.channel.send(`Abone rolü başarıyla verildi`);
+  abone.addRole(role);
+  let embed = new Discord.RichEmbed()
+  .setTitle(` <a:jke:751558669585612830> • __\` Abone Rolü Başarıyla Verildi \`__   `)
+  .setDescription(`<a:jke:751558669585612830> • __**\` Yetkili \`**__ ${message.author}`)
+  message.channel.send(embed);
 };
 
 exports.conf = {
@@ -20,4 +23,3 @@ exports.help = {
   description: 'JavaScript kanallarına erişim sağlar.',
   usage: 'abone'
 };
-//codare
