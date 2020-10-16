@@ -116,7 +116,6 @@ client.on("message", message => {
   let kanal2 = ayarlar.kanalengel2;
   if (message.channel.id == kanal2) {
     if (message.author.id == message.client.user.id) return;
-     if (message.author.hasPermissions('ADMINISTRATOR')) return;
     message.delete(1 * 500);
   }
 });
@@ -125,7 +124,7 @@ client.on("message", (message, member) => {
   let kanal1 = ayarlar.kanalengel;
   if (message.channel.id == kanal1) {
     if (message.author.id == message.client.user.id) return;
-    if (message.author.hasPermissions('ADMINISTRATOR')) return;
+
 
     message.delete(1 * 500);
   }
