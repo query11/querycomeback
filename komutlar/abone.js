@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 exports.run = function(client, message, args) {
   let abone = message.mentions.members.first()
   if(!message.member.hasPermission('ADMINISTRATOR')) return
-  var role = message.guild.roles.find(role => role.id === "758382651907244034"); 
+  var role = message.guild.roles.find(role => role.id === "761223163988017173"); 
   abone.addRole(role);
   let embed = new Discord.RichEmbed()
   .setTitle(` <a:jke:751558669585612830> • __\` Abone Rolü Başarıyla Verildi \`__   `)
