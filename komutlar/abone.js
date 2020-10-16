@@ -1,10 +1,11 @@
 const Discord = require('discord.js');
 
 exports.run = function(client, message, args) {
-  let dena = message.guild.members.get(args[0]);
   if(!message.member.hasPermission('ADMINISTRATOR')) return
-  var role = message.guild.roles.find(role => role.id === "761223163988017173"); 
-  dena.addRole(role);
+  const rol = '735955601074421770'
+  const kullanıcı = message.mentions.members.first(  )
+  const aboneROL = message.guild.roles.find(role => role.id === '735955601074421770'); 
+  kullanıcı.addRole(aboneROL)
   message.channel.send(`Abone rolü başarıyla verildi`);
 };
 
