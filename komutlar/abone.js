@@ -4,6 +4,7 @@ exports.run = function(client, message, args) {
   let kullanıcı = message.mentions.members.first()
   if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('Bu komutu sadece yetkililer kullanabilir').then(mesaj => mesaj.delete(3000))  
   var role = message.guild.roles.find(role => role.id === "761223163988017173"); 
+  if(!role) return message.channel.send('')
   kullanıcı.addRole(role);
   let embed = new Discord.RichEmbed()
   .setTitle(` <a:jke:751558669585612830> • __\` Abone Rolü Başarıyla Verildi \`__   `)
