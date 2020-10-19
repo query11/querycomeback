@@ -130,3 +130,29 @@ client.on("message", (message, member) => {
   }
 });
 
+
+client.on("userUpdate", async (oldUser, newUser) => {//splashen
+  if (oldUser.username !== newUser.username) {
+    let tag = ayarlar.tag
+  
+    let rol = '  '
+    
+    
+    let embed1 = new Discord.RichEmbed()
+    .setDescription(`${newUser} ${tag} tagını aldığı için <@&${rol}> rolünü kazandı!`)
+    .setImage('https://cdn.discordapp.com/attachments/620989964104237077/766391664163029012/RDF_Barrinha-1-2-1-1-1-1-1-1.gif')
+    
+    let embed2 = new Discord.RichEmbed()
+    .setDescription(`${newUser} ${tag} tagını çıkardığı için <@&${rol}> rolünü kaybetti!`)
+    .setImage('https://cdn.discordapp.com/attachments/620989964104237077/766391664163029012/RDF_Barrinha-1-2-1-1-1-1-1-1.gif')
+    
+    if (newUser.username.includes(tag) && !client.guilds.get(ayarlar.sunucuID).members.get(newUser.id).roles.has(rol)) {
+      client.channels.get(ayarlar.tagLOG).send(embed1)
+      client.guilds.get(ayarlar.sunucuID).members.get(newUser.id).addRole(rol)
+    } if (!newUser.username.includes(tag) && client.guilds.get(ayarlar.sunucuID).members.get(newUser.id).roles.has(rol)) {
+      client.guilds.get(ayarlar.sunucuID).members.get(newUser.id).removeRole(rol)
+      client.channels.get(ayarlar.tagLOG).send(embed2)
+    }
+
+  }
+})
