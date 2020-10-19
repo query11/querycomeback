@@ -139,19 +139,23 @@ client.on("userUpdate", async (oldUser, newUser) => {//splashen
     
     
     let embed1 = new Discord.RichEmbed()
-    .setDescription(`${newUser} ${tag} tagını aldığı için <@&${rol}> rolünü kazandı!`)
+    .setTitle('𝔯 𝔢 𝔰 𝔱 𝔦 𝔫 𝔭 𝔢 𝔞 𝔠 𝔢.')
+    .setDescription(`• ${newUser} ${tag} tagını aldığı için <@&${rol}> rolünü kazandı!`)
     .setImage('https://cdn.discordapp.com/attachments/620989964104237077/766391664163029012/RDF_Barrinha-1-2-1-1-1-1-1-1.gif')
+    .setThumbnail('https://cdn.discordapp.com/attachments/620989964104237077/767856614111182858/DXiNNc4UQAA0kQw.jpg')
     
     let embed2 = new Discord.RichEmbed()
-    .setDescription(`${newUser} ${tag} tagını çıkardığı için <@&${rol}> rolünü kaybetti!`)
+     .setTitle('• 𝔯 𝔢 𝔰 𝔱 𝔦 𝔫 𝔭 𝔢 𝔞 𝔠 𝔢 .')
+    .setDescription(`• ${newUser} ${tag} tagını çıkardığı için <@&${rol}> rolünü kaybetti!`)
     .setImage('https://cdn.discordapp.com/attachments/620989964104237077/766391664163029012/RDF_Barrinha-1-2-1-1-1-1-1-1.gif')
+     .setThumbnail('https://cdn.discordapp.com/attachments/620989964104237077/767856614111182858/DXiNNc4UQAA0kQw.jpg')
     
     if (newUser.username.includes(tag) && !client.guilds.get('734903775940182026').members.get(newUser.id).roles.has(rol)) {
-      client.channels.get(ayarlar.tagLOG).send(embed1)
+      client.channels.get('767853316881121280').send(embed1)
       client.guilds.get('734903775940182026').members.get(newUser.id).addRole(rol)
     } if (!newUser.username.includes(tag) && client.guilds.get('734903775940182026').members.get(newUser.id).roles.has(rol)) {
       client.guilds.get('734903775940182026').members.get(newUser.id).removeRole(rol)
-      client.channels.get('').send(embed2)
+      client.channels.get('767853316881121280').send(embed2)
     }
 
   }
