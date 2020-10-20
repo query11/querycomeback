@@ -7,7 +7,7 @@ exports.run = function(client, message, args) {
   if(!role) return message.channel.send('')
   kullanıcı.addRole(role);
   let embed = new Discord.RichEmbed()
-  .setTitle(` <a:jke:751558669585612830> • __\` Public Altyapı Rolü Başarıyla Verildi \`__   `)
+  .setTitle(` <a:jke:751558669585612830> • __\` Müzik Altyapı Rolü Başarıyla Verildi \`__   `)
   .setDescription(`
 <a:jke:751558669585612830> • __**\` Yetkili \`**__ ${message.author}
 
