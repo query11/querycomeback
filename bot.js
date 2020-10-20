@@ -102,7 +102,7 @@ client.login(ayarlar.token);
 
 client.on("ready", () => {
   client.user.setPresence({
-    game: { name: `j!botekle`, type: "WATCHING" },
+    game: { name: `+botekle`, type: "WATCHING" },
     status: "online"
   });
 });
