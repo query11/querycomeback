@@ -34,7 +34,7 @@ exports.run = function(client, message, args) {
     return message.reply("Reddedilecek botun sahibinin ID'sini belirtmelisin.");
   message.delete();
   client.channels.get(log).send(embed);
-  sahip.send(embed2);
+  client.users.get(sahip).send(embed2);
 };
 
 exports.conf = {
