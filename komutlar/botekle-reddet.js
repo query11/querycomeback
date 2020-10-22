@@ -3,8 +3,8 @@ const ayarlar = require("../ayarlar.json");
 
 exports.run = function(client, message, args) {
   let yetkili = message.author;
-  let botisim = message.guild.members.get(args[1]);
-  let sahip = message.guild.members.get(args[0]);
+  let botisim = args[1]
+  let sahip = args[0]
   let sebep = args.slice(2).join(" ")
   let log = ayarlar.log;
 
@@ -13,13 +13,13 @@ exports.run = function(client, message, args) {
   let embed2 = new Discord.RichEmbed()
     .setColor("#7f0000")
     .setDescription(
-      ` <a:no1:740278046921195612> |**Maalesef!** ${botisim} **adlı botun reddedildi.** \n  📕 | **Sebep =** ${sebep} \n  🔏 | **Reddeden yetkili =** ${yetkili} `
+      ` <a:no1:740278046921195612> |**Maalesef!** <@${botisim}> **adlı botun reddedildi.** \n  📕 | **Sebep =** ${sebep} \n  🔏 | **Reddeden yetkili =** ${yetkili} `
     );
 
   let embed = new Discord.RichEmbed()
     .setColor("#7f0000")
     .setDescription(
-      `  <a:no1:740278046921195612> | ${sahip} **adlı kişinin** ${botisim} **adlı botu reddedildi.** \n  📕 | **Sebep =** ${sebep} \n  🔏 | **Reddeden yetkili =** ${yetkili} `
+      `  <a:no1:740278046921195612> | <@${sahip}> **adlı kişinin** <@${botisim}> **adlı botu reddedildi.** \n  📕 | **Sebep =** ${sebep} \n  🔏 | **Reddeden yetkili =** ${yetkili} `
     );
 
   if (!botisim)
