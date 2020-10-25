@@ -7,6 +7,7 @@ require("./util/eventLoader")(client);
 const express = require("express");
 const app = express();
 const http = require("http");
+var Jimp = require('jimp');
 app.get("/", (request, response) => {
   response.sendStatus(200);
 });
@@ -160,3 +161,73 @@ client.on("userUpdate", async (oldUser, newUser) => {//splashen
 
   }
 })
+
+
+/////// resimli giriş çıkış
+client.on("guildMemberAdd", async(member) => {
+    let resimlihgbb = await db.fetch(`giriş_${member.guild.id}`);
+    if(resimlihgbb) {
+      const gözelkanal = member.guild.channels.get(db.fetch(`giriş_${member.guild.id}`))
+      if(gözelkanal) {
+      let username = member.user.username;
+        if(gözelkanal.type === "text") {
+          const bg = await Jimp.read("https://cdn.discordapp.com/attachments/756645089186545745/756650644990984282/geldim.png");
+          const userimg = await Jimp.read(member.user.avatarURL ? member.user.avatarURL : client.user.avatarURL);
+          var font;
+          if (member.user.tag.length < 15) font = await Jimp.loadFont(Jimp.FONT_SANS_128_WHITE);
+          else if (member.user.tag.length > 15) font = await Jimp.loadFont(Jimp.FONT_SANS_64_WHITE);
+          else font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
+          
+          await userimg.resize(362, 362);
+          await bg.composite(userimg, 30, 30).write("./img/"+ client.user.username + "Hosgeldin.png");
+          setTimeout(function () {
+            if(member.user.id === ayarlar.sahip){
+              gözelkanal.send(new Discord.Attachment("./img/" + client.user.username + "Hosgeldin.png"))
+              gözelkanal.send("İşte Bak! Kurucum sunucuya giriş yaptı.")
+            } else {    
+              gözelkanal.send(new Discord.Attachment("./img/" + client.user.username + "Hosgeldin.png"));
+              gözelkanal.send(`>  📥 <@${member.id}> \`sunucumuza katıldı\` \n > <a:jke:754772326704218112> \`Sunucumuz şuan \` _\`${member.guild.members.size}\`_ \`kişi\``)
+            }
+          }, 1000);
+          setTimeout(function () {
+            fs.unlinkSync("./img/" + client.user.username + "Hosgeldin.png");
+          }, 10000);
+        }
+      }
+    }
+})
+
+client.on("guildMemberRemove", async(member) => {
+    let resimlihgbb = await db.fetch(`giriş_${member.guild.id}`);
+    if(resimlihgbb) {
+        const gözelkanal = member.guild.channels.get(db.fetch(`giriş_${member.guild.id}`))
+    if (gözelkanal) {
+        let username = member.user.username;
+        if (gözelkanal.type === "text") {            
+            const bg = await Jimp.read("https://cdn.discordapp.com/attachments/756645089186545745/756945239264067715/ayrld2.png");
+            const userimg = await Jimp.read(member.user.avatarURL ? member.user.avatarURL : client.user.avatarURL);
+            var font;
+            if (member.user.tag.length < 15) font = await Jimp.loadFont(Jimp.FONT_SANS_64_WHITE);
+            else if (member.user.tag.length > 15) font = await Jimp.loadFont(Jimp.FONT_SANS_64_WHITE);
+            else font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
+          
+            await userimg.resize(362, 362);
+            await bg.composite(userimg, 30, 30).write("./img/"+ client.user.username + "Gorusuruz.png");
+              setTimeout(function () {
+                if(member.user.id === ayarlar.sahip){
+                  gözelkanal.send(new Discord.Attachment("./img/" + client.user.username + "Gorusuruz.png"))
+                  
+                } else {
+                  gözelkanal.send(new Discord.Attachment("./img/" + client.user.username + "Gorusuruz.png"));
+                  gözelkanal.send(`>  📤 <@${member.id}> \`sunucumuzdan ayrıldı\` \n <a:jke:754772326704218112> \`Sunucumuz şuan \` _\`${member.guild.members.size}\`_ \`kişi\``)
+                }
+              }, 1000);
+              setTimeout(function () {
+                fs.unlinkSync("./img/" + client.user.username + "Gorusuruz.png");
+              }, 10000);
+        }
+    }
+  }
+})
+
+////// resimli giriş çıkış son
