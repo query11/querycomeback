@@ -163,7 +163,9 @@ client.on("userUpdate", async (oldUser, newUser) => {//splashen
 })
 
 
+
 /////// resimli giriş çıkış
+const db = require('quick.db')
 client.on("guildMemberAdd", async(member) => {
     let resimlihgbb = await db.fetch(`giriş_${member.guild.id}`);
     if(resimlihgbb) {
