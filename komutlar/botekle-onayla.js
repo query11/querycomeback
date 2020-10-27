@@ -6,6 +6,7 @@ exports.run = function(client, message, args) {
   if (!message.member.roles.has(yetkiliROL)) return;
   let yetkili = message.author;
   let sahip = message.guild.members.get(args[0]);
+   let sahip2 = args[0];
   let botisim = message.guild.members.get(args[1]);
   let botisim2 = args[1];
   let prefix = args[2];

@@ -144,9 +144,9 @@ client.on("userUpdate", async (oldUser, newUser) => {//splashen
     .setDescription(`• ${newUser} ${tag} tagını aldığı için <@&${rol}> rolünü kazandı!`)
     .setImage('https://cdn.discordapp.com/attachments/620989964104237077/766391664163029012/RDF_Barrinha-1-2-1-1-1-1-1-1.gif')
     .setThumbnail('https://cdn.discordapp.com/attachments/620989964104237077/767856614111182858/DXiNNc4UQAA0kQw.jpg')
-    
+                        
     let embed2 = new Discord.RichEmbed()
-     .setTitle('• 𝔯 𝔢 𝔰 𝔱 𝔦 𝔫 𝔭 𝔢 𝔞 𝔠 𝔢 .')
+     .setTitle('• 𝔯 𝔢 𝔰 𝔱 𝔦 𝔫 𝔭 𝔢 𝔞 𝔠 𝔢 .')  
     .setDescription(`• ${newUser} ${tag} tagını çıkardığı için <@&${rol}> rolünü kaybetti!`)
     .setImage('https://cdn.discordapp.com/attachments/620989964104237077/766391664163029012/RDF_Barrinha-1-2-1-1-1-1-1-1.gif')
      .setThumbnail('https://cdn.discordapp.com/attachments/620989964104237077/767856614111182858/DXiNNc4UQAA0kQw.jpg')
