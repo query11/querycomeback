@@ -47,7 +47,7 @@ dbl.hasVoted(message.author.id).then(voted => {
 
 
      } else {
-        message.channel.send("Bu komutu kullanabilmek için 12 saatte bir https://discordbots.org/bot/BOTUNID/vote sitesinden bota oy vermeniz gerekmektedir. Onaylanması birkaç dakika sürebilir, lütfen bekleyin.")
+        message.channel.send("Bu komutu kullanabilmek için 12 saatte bir https://discordbots.org/bot/656531150897938453/vote sitesinden bota oy vermeniz gerekmektedir. Onaylanması birkaç dakika sürebilir, lütfen bekleyin.")
       }
   })
   
