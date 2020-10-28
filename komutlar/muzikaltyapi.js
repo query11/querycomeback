@@ -2,7 +2,9 @@ const Discord = require('discord.js');
 
 exports.run = function(client, message, args) {
   let kullanıcı = message.mentions.members.first()
-  if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('Bu komutu sadece yetkililer kullanabilir').then(mesaj => mesaj.delete(3000))  
+    let yetkililer = ['298684780034392066']
+    let yetkili = message.guild.roles.find(role => role.id === "768058118482427904")
+    if(!message.author.roles.has == yetkili.id) return
   var role = message.guild.roles.find(role => role.id === "768058118482427904"); 
   if(!role) return message.channel.send('')
   kullanıcı.addRole(role);
