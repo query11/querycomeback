@@ -2,10 +2,16 @@ const Discord = require('discord.js');
 
 exports.run = function(client, message, args) {
   let kullanıcı = message.mentions.members.first()
-  if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('Bu komutu sadece yetkililer kullanabilir').then(mesaj => mesaj.delete(3000))  
+ if (!message.member.roles.has('734904074272506028')) return message.channel.send('Bu Komutu Kullanamazsın')
   var role = message.guild.roles.find(role => role.id === "768058118390808606"); 
   if(!role) return message.channel.send('')
   kullanıcı.addRole(role);
+  let embed2 = new Discord.RichEmbed()
+  .setTitle(` <a:jke:751558669585612830> • __\` Youtuber Altyapı Rolü Verildi \`__   `)
+  .setDescription(`
+<a:jke:751558669585612830> • __**\` Yetkili \`**__ ${message.author}
+
+<a:jke:751558669585612830> • __**\` Kullanıcı \`**__ ${kullanıcı}`)
   let embed = new Discord.RichEmbed()
   .setTitle(` <a:jke:751558669585612830> • __\` Public Altyapı Rolü Başarıyla Verildi \`__   `)
   .setDescription(`
@@ -14,6 +20,7 @@ exports.run = function(client, message, args) {
 <a:jke:751558669585612830> • __**\` Kullanıcı \`**__ ${kullanıcı}`)
   
   message.channel.send(embed);
+    client.channels.get('770985262415085568').send(embed2);
 };
 
 exports.conf = {

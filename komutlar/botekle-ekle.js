@@ -37,7 +37,7 @@ dbl.hasVoted(message.author.id).then(voted => {
         "<a:jke:754772326704218112> Bot Sahibi",`<@${message.author.id}>`)
       .addField("<a:jke:754772326704218112> Bot ID", botID)
       .addField("<a:jke:754772326704218112> Bot Prefix", prefix);
-    client.channels.get(basvuru).send(embed);
+        client.channels.get(basvuru).send(embed);
     let embed2 = new Discord.RichEmbed().setDescription(`  <a:load:758389302861889566>` + `<@${message.author.id}> adlı kullanıcı <@${botID}> adlı botu sıraya ekledi.En yakın zamanda test edilecektir. \n\n  🔖 | **Prefix =** {  ${prefix}  }`);
     client.channels.get(log).send(embed2);
 
