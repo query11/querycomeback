@@ -16,7 +16,8 @@
     "fs": "^0.0.2",
     "moment": "^2.27.0",
     "quick.db": "^7.1.2",
-    "jimp": "^0.16.1"
+    "jimp": "^0.16.1",
+    "dblapi.js": "^2.4.1"
   },
   "engines": {
     "node": "8.x"
@@ -30,4 +31,4 @@
     "glitch",
     "express"
   ]
-}
+}    

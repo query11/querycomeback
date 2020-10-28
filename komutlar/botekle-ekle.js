@@ -2,7 +2,13 @@ const Discord = require("discord.js");
 const ayarlar = require("../ayarlar.json");
 
 exports.run = function(client, message, args) {
-  let botID = args[0];
+  const DBL = require('dblapi.js')
+    const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NjUzMTE1MDg5NzkzODQ1MyIsImJvdCI6dHJ1ZSwiaWF0IjoxNjAzODc4MTMzfQ.AOswwrGSLXPGnSJrKCjIAKgbzyT6k4pmynS3LIvh04s', client) 
+
+
+dbl.hasVoted(message.author.id).then(voted => {
+      if(voted) {
+      let botID = args[0];
   let prefix = args[1];
   let basvuru = ayarlar.basvurulog;
   let eklekanal = ayarlar.eklekanal;
@@ -37,6 +43,14 @@ exports.run = function(client, message, args) {
 
     message.channel.send(`<a:tik4:756946179530424541>__**Bot ekleme isteğiniz alındı.**__`).then(msg => msg.delete(3000));
 }
+ 
+
+
+     } else {
+        message.channel.send("Bu komutu kullanabilmek için 12 saatte bir https://discordbots.org/bot/BOTUNID/vote sitesinden bota oy vermeniz gerekmektedir. Onaylanması birkaç dakika sürebilir, lütfen bekleyin.")
+      }
+  })
+  
 };
 
 exports.conf = {
