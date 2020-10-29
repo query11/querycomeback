@@ -238,6 +238,14 @@ client.on("guildMemberRemove", async(member) => {
 client.on("guildMemberAdd", (member) => {
   let embed = new Discord.RichEmbed()
   .setTitle("__Jau Land'a hoşgeldin!__")
-  .setDescription('**<#768421922622406676> kanalından altyapılar hakkında bilgi edinebilirsiniz.** ')
-  .setThumbnail('https://i.pinimg.com/originals/df/ea/dd/dfeaddf703acf71277dbb1d6d81479b0.gif')
+  .setDescription(`
+  __**İşine yarayabilecek bazı bilgiler**__
+  
+» **Öncelikle altyapıları alıp sunucudan çıkan ve bunu tekrarlayan üyeler 2. uyarıdan sonra sunucudan sınırsız yasaklanır.**
+
+»**Paylaştığım herhangi bir altyapıyı kendi adınıza paylaşamazsınız.
+
+» **Sunucudaki altyapılara erişmek istiyorsanız öncelikle <#736328324548264077> kanalına hangi altyapıyı istiyorsanız aşağıdaki gibi bir ekran görüntüsü atmalısınız.En yakın zamanda rolleriniz verilir.**
+  `)
+  .setImage('https://cdn.discordapp.com/attachments/761600168797405265/771413671653015552/unknown.png')
 member.send(embed)})
