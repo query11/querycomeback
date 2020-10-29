@@ -237,15 +237,14 @@ client.on("guildMemberRemove", async(member) => {
 
 client.on("guildMemberAdd", (member) => {
   let embed = new Discord.RichEmbed()
-  .setTitle("__Jau Land'a hoşgeldin!__")
+  .setTitle("<a:pembeh:751553654561046619> __Jau Land'a hoşgeldin!__")
   .setDescription(`
-  __**İşine yarayabilecek bazı bilgiler**__
   
-» **Öncelikle altyapıları alıp sunucudan çıkan ve bunu tekrarlayan üyeler 2. uyarıdan sonra sunucudan sınırsız yasaklanır.**
+» <a:pembeh:751553654561046619> **Öncelikle altyapıları alıp sunucudan çıkan ve bunu tekrarlayan üyeler 2. uyarıdan sonra sunucudan sınırsız yasaklanır.**
 
-»**Paylaştığım herhangi bir altyapıyı kendi adınıza paylaşamazsınız.
+» <a:pembeh:751553654561046619> **Paylaştığım herhangi bir altyapıyı kendi adınıza paylaşamazsınız.Bunun için lütfen izin dahi istemeyiniz.**
 
-» **Sunucudaki altyapılara erişmek istiyorsanız öncelikle <#736328324548264077> kanalına hangi altyapıyı istiyorsanız aşağıdaki gibi bir ekran görüntüsü atmalısınız.En yakın zamanda rolleriniz verilir.**
+» <a:pembeh:751553654561046619> **Altyapılara erişmek için <#736328324548264077> kanalına hangi altyapıyı istiyorsanız aşağıdaki gibi bir ekran görüntüsü atmalısınız.En yakın zamanda rolleriniz verilir.**
   `)
   .setImage('https://cdn.discordapp.com/attachments/761600168797405265/771413671653015552/unknown.png')
 member.send(embed)})
