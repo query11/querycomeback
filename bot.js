@@ -232,4 +232,12 @@ client.on("guildMemberRemove", async(member) => {
   }
 })
 
-////// resimli giriş çıkış son
+////// resimli giriş çıkış sonds
+
+
+client.on("guildMemberAdd", (member) => {
+  let embed = new Discord.RichEmbed()
+  .setTitle("__Jau Land'a hoşgeldin!__")
+  .setDescription('**<#768421922622406676> kanalından altyapılar hakkında bilgi edinebilirsiniz.** ')
+  .setThumbnail('https://i.pinimg.com/originals/df/ea/dd/dfeaddf703acf71277dbb1d6d81479b0.gif')
+member.send(embed)})
