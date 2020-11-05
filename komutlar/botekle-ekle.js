@@ -3,11 +3,7 @@ const ayarlar = require("../ayarlar.json");
 
 exports.run = function(client, message, args) {
   const DBL = require('dblapi.js')
-    const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NjUzMTE1MDg5NzkzODQ1MyIsImJvdCI6dHJ1ZSwiaWF0IjoxNjAzODc4MTMzfQ.AOswwrGSLXPGnSJrKCjIAKgbzyT6k4pmynS3LIvh04s', client) 
-
-
-dbl.hasVoted(message.author.id).then(voted => {
-      if(voted) {
+ 
       let botID = args[0];
   let prefix = args[1];
   let basvuru = ayarlar.basvurulog;
@@ -46,8 +42,8 @@ dbl.hasVoted(message.author.id).then(voted => {
  
 
 
-     }
-  })
+     
+
   
 };
 

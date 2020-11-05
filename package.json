@@ -11,16 +11,15 @@
   },
   "dependencies": {
     "chalk": "^4.1.0",
-    "discord.js": "^11.4.2",
+    "discord.js": "^11.6.4",
     "express": "^4.16.4",
     "fs": "^0.0.2",
     "moment": "^2.27.0",
     "quick.db": "^7.1.2",
-    "jimp": "^0.16.1",
-    "dblapi.js": "^2.4.1"
+    "jimp": "^0.16.1"
   },
   "engines": {
-    "node": "8.x"
+    "node": "12.x"
   },
   "repository": {
     "url": "https://glitch.com/edit/#!/hello-express"
