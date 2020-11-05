@@ -2,7 +2,6 @@ const Discord = require("discord.js");
 const ayarlar = require("../ayarlar.json");
 
 exports.run = function(client, message, args) {
-  const DBL = require('dblapi.js')
  
       let botID = args[0];
   let prefix = args[1];
