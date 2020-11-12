@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
-
+const client = new Discord.Client()
+let emoji = client.emojis.get('751558669585612830')
 exports.run = function(client, message, args) {
   let kullanıcı = message.mentions.members.first()
     let yetkililer = ['298684780034392066']
@@ -8,17 +9,17 @@ exports.run = function(client, message, args) {
   if(!role) return message.channel.send('')
   kullanıcı.addRole(role);
   let embed2 = new Discord.RichEmbed()
-  .setTitle(` <a:jke:751558669585612830> • __\` Müzik Altyapı Rolü Verildi \`__   `)
+  .setTitle(` ${emoji} • __\`Müzik Altyapı Rolü Verildi\`__   `)
   .setDescription(`
-<a:jke:751558669585612830> • __**\` Yetkili \`**__ ${message.author}
+${emoji} • __**\` Yetkili \`**__ ${message.author}
 
-<a:jke:751558669585612830> • __**\` Kullanıcı \`**__ ${kullanıcı}`)  
+${emoji} • __**\` Kullanıcı \`**__ ${kullanıcı}`)  
   let embed = new Discord.RichEmbed()
-  .setTitle(` <a:jke:751558669585612830> • __\` Müzik Altyapı Rolü Başarıyla Verildi \`__   `)
+  .setTitle(` ${emoji} • __\`Müzik Altyapı Rolü Başarıyla Verildi\`__   `)
   .setDescription(`
-<a:jke:751558669585612830> • __**\` Yetkili \`**__ ${message.author}
+${emoji} • __**\` Yetkili \`**__ ${message.author}
 
-<a:jke:751558669585612830> • __**\` Kullanıcı \`**__ ${kullanıcı}`)
+${emoji} • __**\` Kullanıcı \`**__ ${kullanıcı}`)
   
   message.channel.send(embed);
     client.channels.get('770985262415085568').send(embed2);
