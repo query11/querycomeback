@@ -6,6 +6,14 @@ exports.run = function(client, message, args) {
   var role = message.guild.roles.find(role => role.id === "767619251808763914"); 
   if(!role) return message.channel.send('')
   kullanıcı.addRole(role);
+  let emb = new Discord.RichEmbed()
+  .setTitle('●▬▬▬▬▬▬▬▬▬  ۵  Jau Land  ۵  ▬▬▬▬▬▬▬▬▬●')
+  .setDescription(`
+  <a:jke:751558669585612830> \`Botlist Botu Altyapısının Rollerini Aldın\`
+  <a:jke:751558669585612830> \`Altyapıyı Alacağın Kanal\` <#776469823991054356>
+ [<a:jke:751558669585612830> \`Video Linki\`](https://youtube.com)`)
+  .setImage('https://compote.slate.com/images/697b023b-64a5-49a0-8059-27b963453fb1.gif')
+  kullanıcı.send(emb)
   let embed = new Discord.RichEmbed()
   .setTitle(` <a:jke:751558669585612830> • __\` Bot List Altyapı Rolü Başarıyla Verildi \`__   `)
   .setDescription(`

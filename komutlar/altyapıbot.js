@@ -7,14 +7,12 @@ exports.run = function(client, message, args) {
   if(!role) return message.channel.send('')
   kullanıcı.addRole(role);
   let emb = new Discord.RichEmbed()
+  .setTitle('●▬▬▬▬▬▬▬▬▬  ۵  Jau Land  ۵  ▬▬▬▬▬▬▬▬▬●')
   .setDescription(`
-  **Altyapı Verme Botu Altyapısının Rollerini Aldın**
-
-
-
-[Video Linki](https://youtube.com)
-
- `)
+  <a:jke:751558669585612830> \`Altyapı Verme Botu Altyapısının Rollerini Aldın\`
+  <a:jke:751558669585612830> \`Altyapıyı Alacağın Kanal\` <#776469823991054356>
+ [<a:jke:751558669585612830> \`Video Linki\`](https://youtube.com)`)
+  .setImage('https://compote.slate.com/images/697b023b-64a5-49a0-8059-27b963453fb1.gif')
   kullanıcı.send(emb)
   let embed = new Discord.RichEmbed()
   .setTitle(` <a:jke:751558669585612830> • __\` Altyapı Botu Rolü Başarıyla Verildi \`__   `)
@@ -30,7 +28,7 @@ exports.run = function(client, message, args) {
 
 <a:jke:751558669585612830> • __**\` Kullanıcı \`**__ ${kullanıcı}`)
   message.channel.send(embed);
- //  client.channels.get('770985262415085568').send(embed2);
+   client.channels.get('770985262415085568').send(embed2);
 };
 
 exports.conf = {
