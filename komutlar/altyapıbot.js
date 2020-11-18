@@ -6,6 +6,16 @@ exports.run = function(client, message, args) {
   var role = message.guild.roles.find(role => role.id === "776469743334981673"); 
   if(!role) return message.channel.send('')
   kullanıcı.addRole(role);
+  let emb = new Discord.RichEmbed()
+  .setDescription(`
+  **Altyapı Verme Botu Altyapısının Rollerini Aldın**
+
+
+
+[Video Linki](https://youtube.com)
+
+ `)
+  kullanıcı.send(emb)
   let embed = new Discord.RichEmbed()
   .setTitle(` <a:jke:751558669585612830> • __\` Altyapı Botu Rolü Başarıyla Verildi \`__   `)
   .setDescription(`
@@ -20,7 +30,7 @@ exports.run = function(client, message, args) {
 
 <a:jke:751558669585612830> • __**\` Kullanıcı \`**__ ${kullanıcı}`)
   message.channel.send(embed);
-   client.channels.get('770985262415085568').send(embed2);
+ //  client.channels.get('770985262415085568').send(embed2);
 };
 
 exports.conf = {
