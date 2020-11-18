@@ -11,8 +11,8 @@ exports.run = function(client, message, args) {
   .setDescription(`
   <a:jke:751558669585612830> \`Altyapı Verme Botu Altyapısının Rollerini Aldın\`
   <a:jke:751558669585612830> \`Altyapıyı Alacağın Kanal\` <#776469823991054356>
- [<a:jke:751558669585612830> \`Video Linki\`](https://youtube.com)`)
-  .setImage('https://compote.slate.com/images/697b023b-64a5-49a0-8059-27b963453fb1.gif')
+ [<a:jke:751558669585612830> \`Video Linki\`](https://www.youtube.com/watch?v=s95f7CbG-bE&t=13s)`)
+  .setImage('https://i.pinimg.com/originals/0a/6d/56/0a6d56bdc0bc7b17a08ede9280ceee04.gif')
   kullanıcı.send(emb)
   let embed = new Discord.RichEmbed()
   .setTitle(` <a:jke:751558669585612830> • __\` Altyapı Botu Rolü Başarıyla Verildi \`__   `)
