@@ -258,9 +258,10 @@ client.on('guildMemberAdd',async member => {
   require('moment-duration-format')
   const avatar =member.user.displayAvatarURL
 const kuruluş = user.createdAt.getTime();
-  moment(tarih).format('MMMM Do YYYY, HH:mm:ss a')
+  
   const tarih = new Date().getTime() - user.createdAt.getTime();
-  const gün = moment.duration(tarih).format("D"); 
+ var tarihi = moment.duration(tarih).format(" D [gün] H [saat] m [dakika] s [saniye]")
+                                                                    
   
    var inceleme;
     if (tarih > 2629800000) inceleme = 'GÜVENLİ'
@@ -271,7 +272,7 @@ const kuruluş = user.createdAt.getTime();
 __**HESAP BİLGİLERİ**__
 
 **- İSİM = ${user.username} **
-**- HESAP KURULUŞ TARİHİ = ${tarih}**
+**- HESAP KURULUŞ TARİHİ = ${tarihi}**
 **- YAPILAN EYLEM = \`KULLANICI YASAKLANDI\`**`)
   kanal.send(emb)
  
