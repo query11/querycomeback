@@ -109,7 +109,7 @@ client.on("ready", () => {
 });
 
 client.on("guildMemberAdd", member => {
-  let tag = ayarlar.tag;
+  let tag = '・'
   member.setNickname(`${tag} | ${member.user.username}`);
 });
 
