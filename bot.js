@@ -262,18 +262,19 @@ const kuruluş = user.createdAt.getTime();
   const tarih = new Date().getTime() - user.createdAt.getTime();
  var tarihi = moment.duration(tarih).format(" D [gün] H [saat] m [dakika] s [saniye]")
                                                                     
-  
+  if (tarih < 262980000) return
    var inceleme;
     if (tarih > 2629800000) inceleme = 'GÜVENLİ'
     if (tarih < 2629800000) inceleme = 'ŞÜPHELİ'
   let emb = new Discord.RichEmbed()
+  .setThumbnail(avatar)
   .setDescription(`
  __**BİR KULLANICININ HESABI GÜMRÜK KAPISINA TAKILDI**__
-__**HESAP BİLGİLERİ**__
 
-**- İSİM = ${user.username} **
-**- HESAP KURULUŞ TARİHİ = ${tarihi}**
-**- YAPILAN EYLEM = \`KULLANICI YASAKLANDI\`**`)
+__**\`KULLANICININ HESAP BİLGİLERİ\`**__
+» <a:pembeh:751553654561046619>** İSİM = \`${user.username}\` **
+» <a:pembeh:751553654561046619>** HESAP KURULUŞ TARİHİ = ${tarihi}**
+» <a:pembeh:751553654561046619>** YAPILAN EYLEM = \`KULLANICI YASAKLANDI\`**`)
   kanal.send(emb)
  
 });
