@@ -15,7 +15,7 @@ exports.run = async (client, message, member) => {
   if(flags == ""){
     uflags = "Rozet bulunamadı"
   }
-let miafRozet = new Discord.MessageEmbed()
+let miafRozet = new Discord.RichEmbed()
 .setTitle(`${member} Kişinin Rozetleri`)
 .setDescription(`Rozetleri : ${uflags}`)
 message.channel.send(miafRozet)
