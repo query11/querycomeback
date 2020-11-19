@@ -20,4 +20,3 @@ exports.help = {
     description: 'Herkeze Rol verir',
     usage: 'herkese-rol-ver @rol'
 }
-ss
