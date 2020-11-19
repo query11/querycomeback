@@ -325,7 +325,7 @@ client.on("message", async message => {
     if(message.content.toLowerCase().includes('a','b','c','d','e','f','g','ğ','h','ı','i','j','k','m','n','o','ö','p','r','s','ş','t','u','ü','v','y','z')) return
 //  if(message.author.id = client.user.id) return
   let EMBO = new Discord.RichEmbed().setTimestamp().setAuthor('» Bir Kullanıcı Altyapı İsteğinde Bulundu', message.author.avatarURL).setDescription(`» **Kullanıcı** ${message.author}`);
- // if(message.author.id = '714141828340777043') return
+  if (message.author.id === client.user.id && message.channel.type === "dm") return;
   if (message.attachments.first()) EMBO.setImage(message.attachments.first().url);
   if (message.channel.type === "dm" || !message.guild) client.channels.get('779066931998883851').send(EMBO);
 });
