@@ -3,7 +3,8 @@ const client = new Discord.Client()
 exports.run = (client, message, args) => {
   let emoji = client.emojis.get('740278075261976628')
 let ayarlar = require('../ayarlar.json')
-
+const db = require('quick.db')
+ let cezalar = db.fetch(`ceza_${message.guild.id}`)
   let uye = args[0] || message.mentions.members.first()
   let sebep = args[1] || 'Belirtilmemiş' 
   let log = ayarlar.penalties
@@ -15,8 +16,8 @@ let ayarlar = require('../ayarlar.json')
   let embed = new Discord.RichEmbed()
   .setTitle(` ${emoji} Bir Üye Sunucudan Atıldı ${emoji} `)
   .setDescription(`
-  • Atılan Üye ${uye} \`{ ${uye.id} }\`
-  • Atan Yetkili ${message.author} \`{ ${message.author.id} }\`
+  • Atılan Üye ${uye} 
+  • Atan Yetkili ${message.author}
   • Atılm Sebebi \`${sebep}\`
   `)
   .setTimestamp()

@@ -246,7 +246,7 @@ client.on("guildMemberAdd", (member) => {
 
 » <a:pembeh:751553654561046619> **Altyapılara erişmek için <@714141828340777043>'in DM kutusuna aşağıdaki gibi bir ekran görüntüsü atmalısınız.En yakın zamanda rolleriniz verilir.**
   `)
-  .setImage('https://cdn.discordapp.com/attachments/761600168797405265/771413671653015552/unknown.png')
+  .setImage('https://cdn.discordapp.com/attachments/768421922622406676/779066552816762901/unknown.png')
 member.send(embed)})
 
 
