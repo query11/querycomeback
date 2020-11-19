@@ -110,7 +110,7 @@ client.on("ready", () => {
 
 client.on("guildMemberAdd", member => {
   let tag = '・'
-  member.setNickname(`${tag} | ${member.user.username}`);
+  member.setNickname(`${tag} ${member.user.username}`);
 });
 
 client.on("message", message => {

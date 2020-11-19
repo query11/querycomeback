@@ -3,6 +3,7 @@ exports.run = async (client, message, member) => {
     
    if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(':x: | Bu komutu kullanabilmek için `Yönetici` yetkisine sahip olmalısın!')
   message.guild.members.forEach(m => {
+    if(m.user.bot) return
   m.setNickname('・' + `${m.user.username}`)
 })
   message.channel.send("Herkese Ototag verilmiştir.")
