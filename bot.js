@@ -231,16 +231,9 @@ client.on("message", async message => {
   let EMBO = new Discord.RichEmbed().setTimestamp().setAuthor('» Bir Kullanıcı Altyapı İsteğinde Bulundu', message.author.avatarURL).setDescription(`» **Kullanıcı** ${message.author}`);
   if (message.author.id === client.user.id && message.channel.type === "dm") return;
   if (message.attachments.first()) EMBO.setImage(message.attachments.first().url);
- if (message.channel.type === "dm") {
-   message.reply('Hangi altypaıyı istiyorsan onun emojisine tıkla')
-  message.react('🛃')
- } 
-  if (message.channel.type === "dm" || !message.guild) client.channels.get('740535337360818188').send(EMBO);
-  if(message.channel.id = '740535337360818188') {
-     message.react('✅')
-     message.react('❎')
-  
-  }
+
+  if (message.channel.type === "dm" || !message.guild) client.channels.get('779066931998883851').send(EMBO);
+ 
 });
 
 
