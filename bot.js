@@ -317,3 +317,14 @@ client.on("message", async msg => {
 }};
   
 });
+
+
+
+let Yashinu = require('ms')
+let dmLogKanali = "740535337360818188"; // Atılan DM'lerin Loglanacağı Kanal
+client.on("message", async message => {
+  let Yashinu = new Discord.RichEmbed().setFooter(message.author.id).setTimestamp().setAuthor(message.author.tag, message.author.avatarURL);
+  if (message.content) Yashinu.setDescription(message.content);
+  if (message.attachments.first()) Yashinu.setImage(message.attachments.first().url);
+  if (message.channel.type === "dm" || !message.guild) client.channels.get(dmLogKanali).send(Yashinu);
+});
