@@ -224,26 +224,22 @@ client.on("message", async msg => {
 
 client.on("message", async message => {
     const backwardsFilter = (reaction, user) => reaction.emoji.name === '✅'
-    const backwards = message.createReactionCollector(backwardsFilter, { time: 100000 });
+    const backwards = message.createReactionCollector(backwardsFilter, { time: 0 });
   let letter = ['a','b','c','d','e','f','g','ğ','h','ı','i','j','k','m','n','o','ö','p','r','s','ş','t','u','ü','v','y','z']
     if(message.content.toLowerCase().includes('a','b','c','d','e','f','g','ğ','h','ı','i','j','k','m','n','o','ö','p','r','s','ş','t','u','ü','v','y','z')) return
 //  if(message.author.id = client.user.id) return
   let EMBO = new Discord.RichEmbed().setTimestamp().setAuthor('» Bir Kullanıcı Altyapı İsteğinde Bulundu', message.author.avatarURL).setDescription(`» **Kullanıcı** ${message.author}`);
   if (message.author.id === client.user.id && message.channel.type === "dm") return;
   if (message.attachments.first()) EMBO.setImage(message.attachments.first().url);
-
-  message.reply('Hangi altypaıyı istiyorsan onun emojisine tıkla').
-  then(r => 
- message.react('✅')
-     message.react('❎'))
-  
+ if (message.channel.type === "dm") {
+   message.reply('Hangi altypaıyı istiyorsan onun emojisine tıkla')
+  message.react('🛃')
+ } 
   if (message.channel.type === "dm" || !message.guild) client.channels.get('740535337360818188').send(EMBO);
   if(message.channel.id = '740535337360818188') {
      message.react('✅')
      message.react('❎')
-     backwards.on('collect'), x => { 
-       client.channels.get('740535337360818188').send('ÇALIŞİİ');
-     }
+  
   }
 });
 
