@@ -11,6 +11,7 @@ let ayarlar = require('../ayarlar.json')
   if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('Bu komutu kullanmaya yetkin yok.')
   const user = message.mentions.users.first();
   const member = message.guild.member(user);
+  client.users.get(uye).send(`**Jau Land Sunucusundan** \`${sebep}\` **sebebiyle yasaklandın.** `)
   message.guild.ban(uye)
   let embed = new Discord.RichEmbed()
   .setTitle(` ${emoji} Bir Üye Sunucudan Yasaklandı ${emoji} `)
@@ -23,7 +24,7 @@ let ayarlar = require('../ayarlar.json')
   .setFooter('Yasaklama Tarihi')
   client.channels.get(log).send(embed)
   let emob = new Discord.RichEmbed()
-  .setDescription(`${emoji} **Kullanıcı başarıyla sunucudan yasaklandı <#${log}> kanalından detaylarına ulaşabilirsiniz.**`)
+  .setDescription(`${emoji} **Kullanıcı başarıyla sunucudan yasaklandı <#${log}> kanalından detaylarına ulaşabilirsiniz.**`).then(m => m.delete(100))
   message.channel.send(emob).then(msg => msg.delete(6003))
 }
 

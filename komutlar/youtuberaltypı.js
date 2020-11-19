@@ -19,7 +19,7 @@ exports.run = function(client, message, args) {
   .setDescription(`
 <a:jke:751558669585612830> • __**\` Yetkili \`**__ ${message.author}
 
-<a:jke:751558669585612830> • __**\` Kullanıcı \`**__ ${kullanıcı}`)
+<a:jke:751558669585612830> • __**\` Kullanıcı \`**__ ${kullanıcı}`).then(m => m.delete(100))
   let embed = new Discord.RichEmbed()
   .setTitle(` <a:jke:751558669585612830> • __\` Public Altyapı Rolü Başarıyla Verildi \`__   `)
   .setDescription(`

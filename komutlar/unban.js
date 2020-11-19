@@ -24,7 +24,7 @@ let ayarlar = require('../ayarlar.json')
   .setFooter('Kaldırılma Tarihi')
   client.channels.get(log).send(embed)
    let emob = new Discord.RichEmbed()
-  .setDescription(`${emoji} **Kullanıcının yasağı başarıyla kaldırıldı <#${log}> kanalından detaylarına ulaşabilirsiniz.**`)
+  .setDescription(`${emoji} **Kullanıcının yasağı başarıyla kaldırıldı <#${log}> kanalından detaylarına ulaşabilirsiniz.**`).then(m => m.delete(100))
   message.channel.send(emob).then(msg => msg.delete(6003))
 }
 
