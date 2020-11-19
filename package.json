@@ -18,7 +18,9 @@
     "quick.db": "^7.1.2",
     "jimp": "^0.16.1",
     "node-superfetch": "^0.1.10",
-    "moment-duration-format": "^2.3.2"
+    "moment-duration-format": "^2.3.2",
+    "common-tags": "^1.8.0",
+    "canvas": "^2.6.1"
   },
   "engines": {
     "node": "12.x"
