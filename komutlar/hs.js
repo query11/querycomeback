@@ -2,16 +2,23 @@ const Discord = require('discord.js')
 exports.run = async (client, message, member) => {
     
    if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(':x: | Bu komutu kullanabilmek için `Yönetici` yetkisine sahip olmalısın!')
-  message.guild.members.forEach(m => {
-    //if(!m.user.bot) return
-   // if(m.user.username.includes('・')) return
- // m.setNickname('・' + `${m.user.username}`)
-    let de = message.guild.roles.find(x => x.id = '734530135881154590')
-    m.setRoles(de)
-    
-   client.channels.get('740535352342610028').send(`${m} Adlı Üyenin İsmi Değişti`)
-})
-  message.channel.send("Herkese Ototag verilmiştir.")
+
+ let flags = message.author.flags.toArray()
+  let uflags = flags.map(x => x.toString()).join(",");
+   uflags = uflags.replace("HOUSE_BRAVERY", ":rozet_bravery: HypeSquad Bravery")
+   uflags = uflags.replace("HOUSE_BALANCE",":rozet_balance:  HypeSquad Balance")
+   uflags = uflags.replace("DISCORD_PARTNER",":rozet_partner: Partner")
+   uflags = uflags.replace("HYPESQUAD_EVENTS",":rozet_hypesquad: Hypesquad Event")
+   uflags = uflags.replace("EARLY_SUPPORTER",":rozet_early: Early Supporter")
+   uflags = uflags.replace("VERIFIED_DEVELOPER",":rozet_developer: Verified Bot Developer")
+  uflags = uflags.replace("HOUSE_BRILLIANCE",":rozet_brillance: HypeSquad Brilliance")
+  if(flags == ""){
+    uflags = "Rozet bulunamadı"
+  }
+let miafRozet = new Discord.MessageEmbed()
+.setTitle(`${member} Kişinin Rozetleri`)
+.setDescription(`Rozetleri : ${uflags}`)
+message.channel.send(miafRozet)
   
 
 }
