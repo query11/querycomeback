@@ -253,12 +253,12 @@ member.send(embed)})
 client.on('guildMemberAdd',async member => {
  let user = client.users.get(member.id);
   let kanal = member.guild.channels.find('id', '778958120407269388')
-
  const { get } = require('node-superfetch');
   let moment = require('moment')
   require('moment-duration-format')
   const avatar =member.user.displayAvatarURL
 const kuruluş = user.createdAt.getTime();
+  moment(tarih).format('MMMM Do YYYY, HH:mm:ss a')
   const tarih = new Date().getTime() - user.createdAt.getTime();
   const gün = moment.duration(tarih).format("D"); 
   
