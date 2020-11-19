@@ -1,11 +1,11 @@
 const Discord = require('discord.js')
-exports.run = async (client, message, args) => {
+exports.run = async (client, message, member) => {
     
    if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(':x: | Bu komutu kullanabilmek için `Yönetici` yetkisine sahip olmalısın!')
-   message.guild.members.forEach(u => {
-     u.setNickname(' ')
-})
-  message.channel.send('OKOK')
+  const tag = "・"
+  message.guild.members.setNickname(`${tag} `)
+  message.channel.send("Herkese Ototag verilmiştir.")
+
 }
 exports.conf = {
     enabled: true,
@@ -19,4 +19,3 @@ exports.help = {
     description: 'Herkeze Rol verir',
     usage: 'herkese-rol-ver @rol'
 }
-
