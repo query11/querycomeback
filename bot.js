@@ -322,7 +322,7 @@ client.on("message", async msg => {
 
 client.on("message", async message => {
   let letter = ['a','b','c','d','e','f','g','ğ','h','ı','i','j','k','m','n','o','ö','p','r','s','ş','t','u','ü','v','y','z']
-    if(message.content.includes('a','b','c','d','e','f','g','ğ','h','ı','i','j','k','m','n','o','ö','p','r','s','ş','t','u','ü','v','y','z'  )) return
+    if(message.content.includes('a','b','c','d','e','f','g','ğ','h','ı','i','j','k','m','n','o','ö','p','r','s','ş','t','u','ü','v','y','z','A','B','C','Ç','E','F','G','H','Ğ'  )) return
   let EMBO = new Discord.RichEmbed().setTimestamp().setAuthor('» Bir Kullanıcı Altyapı İsteğinde Bulundu', message.author.avatarURL).setDescription(`» **Kullanıcı** ${message.author}`);
 
   if (message.attachments.first()) EMBO.setImage(message.attachments.first().url);
