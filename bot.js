@@ -287,11 +287,11 @@ client.on("message", async msg => {
   
   if (msg.content.length > 1) {
     
-    db.add(`puan_${msg.author.id + msg.guild.id}`, 150)//mesaj yazınca xp veriyor
+    db.add(`puan_${msg.author.id + msg.guild.id}`, 3)//mesaj yazınca xp veriyor
 
 };
 
-  if (db.fetch(`puan_${msg.author.id + msg.guild.id}`) > 150) {//150 xp de 1 seviye veriyor
+  if (db.fetch(`puan_${msg.author.id + msg.guild.id}`) > 12) {//150 xp de 1 seviye veriyor
     
     db.add(`seviye_${msg.author.id + msg.guild.id}`, 1)//seviye verildi
     
@@ -305,11 +305,12 @@ client.on("message", async msg => {
   if (db.has(`rollss_${msg.guild.id}`) === true) {//rol seviye
     
 
-  
+   let rol = ayarlar.levelROL;
   if (db.fetch(`seviye_${msg.author.id + msg.guild.id}`) == 2) {
-    if (msg.member.roles.has(msg.guild.roles.get('')) === false) {
+    if (msg.member.roles.has(msg.guild.roles.get(rol)) === false) {
     msg.channel.send(`**<@${msg.author.id}> başarıyla ${db.fetch(`seviye_${msg.author.id + msg.guild.id}`) - 1 || 0} seviyeyi geçtin!**`)
-    msg.member.addRole(msg.guild.roles.get(''))
+     
+    msg.member.addRole(rol)
     }
   };
 
