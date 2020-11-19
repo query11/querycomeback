@@ -287,31 +287,29 @@ client.on("message", async msg => {
   
   if (msg.content.length > 1) {
     
-    db.add(`puancik_${msg.author.id + msg.guild.id}`, 2)//mesaj yazınca xp veriyor
-    db.add(`xpsira_${msg.author.id + msg.guild.id}`, 2)//doğru bir sıralama sistemi için var
+    db.add(`puan_${msg.author.id + msg.guild.id}`, 150)//mesaj yazınca xp veriyor
 
 };
 
-  if (db.fetch(`puancik_${msg.author.id + msg.guild.id}`) > 150) {//150 xp de 1 seviye veriyor
+  if (db.fetch(`puan_${msg.author.id + msg.guild.id}`) > 150) {//150 xp de 1 seviye veriyor
     
     db.add(`seviye_${msg.author.id + msg.guild.id}`, 1)//seviye verildi
     
 
     
-    db.delete(`puancik_${msg.author.id + msg.guild.id}`)//xp silindi
+    db.delete(`puan_${msg.author.id + msg.guild.id}`)//xp silindi
     
   };
  
   if (db.has(`roll_${msg.guild.id}`) === true) {//rol 
   if (db.has(`rollss_${msg.guild.id}`) === true) {//rol seviye
     
- var r = db.fetch(`roll_${msg.guild.id}`)//rolü bul
- var s = db.fetch(`rollss_${msg.guild.id}`)//seviyeyi bul
+
   
-  if (db.fetch(`seviye_${msg.author.id + msg.guild.id}`) == s) {
-    if (msg.member.roles.has(msg.guild.roles.get(r).id) === false) {
+  if (db.fetch(`seviye_${msg.author.id + msg.guild.id}`) == 2) {
+    if (msg.member.roles.has(msg.guild.roles.get('')) === false) {
     msg.channel.send(`**<@${msg.author.id}> başarıyla ${db.fetch(`seviye_${msg.author.id + msg.guild.id}`) - 1 || 0} seviyeyi geçtin!**`)
-    msg.member.addRole(msg.guild.roles.get(r).id)
+    msg.member.addRole(msg.guild.roles.get(''))
     }
   };
 
