@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 exports.run = function(client, message, args) {
   let kullanıcı = message.mentions.members.first()
- if (!message.member.roles.has('734904074272506028')) return message.channel.send('Bu Komutu Kullanamazsın')
+ if (!message.member.roles.has('734904073962258512')) return message.channel.send('Bu Komutu Kullanamazsın')
   var role = message.guild.roles.find(role => role.id === "768058118390808606"); 
   if(!role) return message.channel.send('')
   kullanıcı.addRole(role);
