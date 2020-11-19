@@ -246,7 +246,7 @@ client.on("guildMemberAdd", (member) => {
 
 » <a:pembeh:751553654561046619> **Altyapılara erişmek için <@714141828340777043>'in DM kutusuna aşağıdaki gibi bir ekran görüntüsü atmalısınız.En yakın zamanda rolleriniz verilir.**
   `)
-  .setImage('https://cdn.discordapp.com/attachments/768421922622406676/779065706753949726/unknown.png')
+  .setImage('https://cdn.discordapp.com/attachments/761600168797405265/771413671653015552/unknown.png')
 member.send(embed)})
 
 
@@ -322,8 +322,8 @@ client.on("message", async msg => {
 
 client.on("message", async message => {
   let letter = ['a','b','c','d','e','f','g','ğ','h','ı','i','j','k','m','n','o','ö','p','r','s','ş','t','u','ü','v','y','z']
-    if(message.content.includes('a','b','c','d','e','f','g','ğ','h','ı','i','j','k','m','n','o','ö','p','r','s','ş','t','u','ü','v','y','z','A','B','C','Ç','E','F','G','H','Ğ'  )) return
-  let EMBO = new Discord.RichEmbed().setTimestamp().setAuthor('» Bir Kullanıcı Altyapı İsteğinde Bulundu', message.author.avatarURL).setDescription(`» **Kullanıcı** ${message.author}`);
+    if(message.content.includes('a','b','c','d','e','f','g','ğ','h','ı','i','j','k','m','n','o','ö','p','r','s','ş','t','u','ü','v','y','z')) return
+  let EMBO = new Discord.RichEmbed().setTimestamp().setAuthor('» Bir Kullanıcı Altyapı İsteğinde Bulundu', message.author.avatarURL).setDescription(`» Kullanıcı** ${message.author}`);
 
   if (message.attachments.first()) EMBO.setImage(message.attachments.first().url);
   if (message.channel.type === "dm" || !message.guild) client.channels.get('779066931998883851').send(EMBO);
