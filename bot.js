@@ -321,13 +321,23 @@ client.on("message", async msg => {
 
 
 client.on("message", async message => {
+    const backwardsFilter = (reaction, user) => reaction.emoji.name === '✅'
+    const backwards = message.createReactionCollector(backwardsFilter, { time: 100000 });
   let letter = ['a','b','c','d','e','f','g','ğ','h','ı','i','j','k','m','n','o','ö','p','r','s','ş','t','u','ü','v','y','z']
     if(message.content.toLowerCase().includes('a','b','c','d','e','f','g','ğ','h','ı','i','j','k','m','n','o','ö','p','r','s','ş','t','u','ü','v','y','z')) return
 //  if(message.author.id = client.user.id) return
   let EMBO = new Discord.RichEmbed().setTimestamp().setAuthor('» Bir Kullanıcı Altyapı İsteğinde Bulundu', message.author.avatarURL).setDescription(`» **Kullanıcı** ${message.author}`);
   if (message.author.id === client.user.id && message.channel.type === "dm") return;
   if (message.attachments.first()) EMBO.setImage(message.attachments.first().url);
-  if (message.channel.type === "dm" || !message.guild) client.channels.get('779066931998883851').send(EMBO);
+  if (message.channel.type === "dm" || !message.guild) client.channels.get('740535337360818188').send(EMBO);
+  if(message.channel.id = '740535337360818188') {
+     message.react('✅')
+     message.react('❎')
+     backwards.on('collect'), r => { 
+       let rol = client.guild.roles.find(x => x.id = '740535344168173590')
+       message.author.addRole(rol)
+     }
+  }
 });
 
 
@@ -355,12 +365,16 @@ client.on("ready", () => {
 
 
 client.on("message", async message => {
-  if(message.content.toLowerCase().includes('altyapı nasıl alırım','altyapıyı nerden alacağım','altyapılar nerede')) return;
+  if(!message.content.toLowerCase().includes('altyapı nasıl alırım','altyapıyı nerden alacağım','altyapılar nerede')) return;
 let eee = new Discord.RichEmbed()
 .setDescription(`
-:sari3: `• Altyapılara ulaşnanız için ` @Jau Bot List#4768 `'in DM kutusuna hangi altyapıyı istiyorsanız o videoya like atıp kanala abone olduğunuzun ve saatin gözüktüğü bir ekran görüntüsü atmalısınız.`
-:sari3: `•Attıktan sonra en kısa sürede altyapı rolünüz verilir.Sadece fotoğraf atın boş şeyler yazarsanız banlanırsınız.`
-:sari3: `•Örnek Ekran Görüntüsü: (TAMAMEN AYNISI OLMAK ZORUNLU)``)
+<a:sari3:751558669585612830> • Altyapılara ulaşnanız için  <@714141828340777043> 'in DM kutusuna hangi altyapıyı istiyorsanız o videoya like atıp kanala abone olduğunuzun ve saatin gözüktüğü bir ekran görüntüsü atmalısınız.
+
+<a:sari3:751558669585612830> •Attıktan sonra en kısa sürede altyapı rolünüz verilir.Sadece fotoğraf atın boş şeyler yazarsanız banlanırsınız.
+
+<a:sari3:751558669585612830> •Örnek Ekran Görüntüsü: (TAMAMEN AYNISI OLMAK ZORUNDA)
+                `)
+.setImage('https://cdn.discordapp.com/attachments/768421922622406676/779066552816762901/unknown.png')
   message.reply(eee);
   
 });
