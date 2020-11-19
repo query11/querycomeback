@@ -248,3 +248,24 @@ client.on("guildMemberAdd", (member) => {
   `)
   .setImage('https://cdn.discordapp.com/attachments/761600168797405265/771413671653015552/unknown.png')
 member.send(embed)})
+
+
+client.on('guildMemberAdd',async member => {
+ let user = client.users.get(member.id);
+ let isim = member.displayName.length > 30 ? member.displayName.substring(0, 17) + '...' : member.displayName;
+ 
+
+ const { get } = require('node-superfetch');
+  const moment = require('moment')
+  const avatar =member.user.displayAvatarURL
+
+  const tarih = new Date().getTime() - user.createdAt.getTime();
+  const gün = moment.duration(tarih).format("D"); 
+  
+   var inceleme;
+    if (tarih > 2629800000) inceleme = 'GÜVENLİ'
+    if (tarih < 2629800000) inceleme = 'ŞÜPHELİ'
+  
+  kanalım.send
+ 
+});
