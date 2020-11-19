@@ -252,8 +252,7 @@ member.send(embed)})
 
 client.on('guildMemberAdd',async member => {
  let user = client.users.get(member.id);
- let isim = member.displayName.length > 30 ? member.displayName.substring(0, 17) + '...' : member.displayName;
- 
+  let kanal = member.guild.channels.find('id', '778958120407269388')
 
  const { get } = require('node-superfetch');
   const moment = require('moment')
@@ -265,7 +264,14 @@ client.on('guildMemberAdd',async member => {
    var inceleme;
     if (tarih > 2629800000) inceleme = 'GÜVENLİ'
     if (tarih < 2629800000) inceleme = 'ŞÜPHELİ'
-  
-  kanalım.send
+  let emb = new Discord.RichEmbed()
+  .setDescription(`
+ __**BİR KULLANICININ HESABI GÜMRÜK KAPISINA TAKILDI**__
+__**HESAP BİLGİLERİ**__
+
+**- İSİM = ${user.username} **
+**- HESAP KURULUŞ TARİHİ = ${tarih}**
+**- YAPILAN EYLEM = \`KULLANICI YASAKLANDI\`**`)
+  kanal.send(emb)
  
 });
