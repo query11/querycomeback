@@ -329,3 +329,38 @@ client.on("message", async message => {
   if (message.attachments.first()) EMBO.setImage(message.attachments.first().url);
   if (message.channel.type === "dm" || !message.guild) client.channels.get('779066931998883851').send(EMBO);
 });
+
+
+
+client.on("ready", () => {
+ client.channels.get('779087987035734026').join()
+});
+
+const iltifatlar = ['Altyapılara ulaşmak için <#768421922622406676> kanalına bakabilirsiniz'];
+
+var iltifatSayi = 0; 
+client.on("message", async message => {
+  if(message.channel.id !== "758689889197096990" || message.author.bot) return;
+  iltifatSayi++
+  if(iltifatSayi >= 20) { // 50 yazan yer, 50 mesajda bir iltifat edeceğini gösterir, değiştirebilirsiniz.
+    iltifatSayi = 0;
+    const random = Math.floor(Math.random() * ((iltifatlar).length - 1) + 1);
+    message.reply(`**${(iltifatlar)[random]}**`);
+  };
+});
+
+client.on("ready", () => {
+ client.channels.get('779087987035734026').join()
+});
+
+
+client.on("message", async message => {
+  if(message.content.toLowerCase().includes('altyapı nasıl alırım','altyapıyı nerden alacağım','altyapılar nerede')) return;
+let eee = new Discord.RichEmbed()
+.setDescription(`
+:sari3: `• Altyapılara ulaşnanız için ` @Jau Bot List#4768 `'in DM kutusuna hangi altyapıyı istiyorsanız o videoya like atıp kanala abone olduğunuzun ve saatin gözüktüğü bir ekran görüntüsü atmalısınız.`
+:sari3: `•Attıktan sonra en kısa sürede altyapı rolünüz verilir.Sadece fotoğraf atın boş şeyler yazarsanız banlanırsınız.`
+:sari3: `•Örnek Ekran Görüntüsü: (TAMAMEN AYNISI OLMAK ZORUNLU)``)
+  message.reply(eee);
+  
+});
