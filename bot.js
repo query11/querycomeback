@@ -1,4 +1,6 @@
 const Discord = require("discord.js");
+require("events").EventEmitter.defaultMaxListeners = 30000;
+  require("events").defaultMaxListeners = 30000;
 const client = new Discord.Client();
 const ayarlar = require("./ayarlar.json");
 const kanal = ayarlar.kanal;
@@ -132,107 +134,7 @@ client.on("message", (message, member) => {
 });
 
 
-client.on("userUpdate", async (oldUser, newUser) => {//splashen
-  if (oldUser.username !== newUser.username) {
-    let tag = 'lil'
-  
-    let rol = '767852261690441738'
-    
-    
-    let embed1 = new Discord.RichEmbed()
-    .setTitle('𝔯 𝔢 𝔰 𝔱 𝔦 𝔫 𝔭 𝔢 𝔞 𝔠 𝔢.')
-    .setDescription(`• ${newUser} ${tag} tagını aldığı için <@&${rol}> rolünü kazandı!`)
-    .setImage('https://cdn.discordapp.com/attachments/620989964104237077/766391664163029012/RDF_Barrinha-1-2-1-1-1-1-1-1.gif')
-    .setThumbnail('https://cdn.discordapp.com/attachments/620989964104237077/767856614111182858/DXiNNc4UQAA0kQw.jpg')
-                        
-    let embed2 = new Discord.RichEmbed()
-     .setTitle('• 𝔯 𝔢 𝔰 𝔱 𝔦 𝔫 𝔭 𝔢 𝔞 𝔠 𝔢 .')  
-    .setDescription(`• ${newUser} ${tag} tagını çıkardığı için <@&${rol}> rolünü kaybetti!`)
-    .setImage('https://cdn.discordapp.com/attachments/620989964104237077/766391664163029012/RDF_Barrinha-1-2-1-1-1-1-1-1.gif')
-     .setThumbnail('https://cdn.discordapp.com/attachments/620989964104237077/767856614111182858/DXiNNc4UQAA0kQw.jpg')
-    
-    if (newUser.username.includes(tag) && !client.guilds.get('734903775940182026').members.get(newUser.id).roles.has(rol)) {
-      client.channels.get('767853316881121280').send(embed1)
-      client.guilds.get('734903775940182026').members.get(newUser.id).addRole(rol)
-    } if (!newUser.username.includes(tag) && client.guilds.get('734903775940182026').members.get(newUser.id).roles.has(rol)) {
-      client.guilds.get('734903775940182026').members.get(newUser.id).removeRole(rol)
-      client.channels.get('767853316881121280').send(embed2)
-    }
 
-  }
-})
-
-
-
-/////// resimli giriş çıkış
-const db = require('quick.db')
-client.on("guildMemberAdd", async(member) => {
-    let resimlihgbb = await db.fetch(`giriş_${member.guild.id}`);
-    if(resimlihgbb) {
-      const gözelkanal = member.guild.channels.get(db.fetch(`giriş_${member.guild.id}`))
-      if(gözelkanal) {
-      let username = member.user.username;
-        if(gözelkanal.type === "text") {
-          const bg = await Jimp.read("https://cdn.discordapp.com/attachments/756645089186545745/756650644990984282/geldim.png");
-          const userimg = await Jimp.read(member.user.avatarURL ? member.user.avatarURL : client.user.avatarURL);
-          var font;
-          if (member.user.tag.length < 15) font = await Jimp.loadFont(Jimp.FONT_SANS_128_WHITE);
-          else if (member.user.tag.length > 15) font = await Jimp.loadFont(Jimp.FONT_SANS_64_WHITE);
-          else font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
-          
-          await userimg.resize(362, 362);
-          await bg.composite(userimg, 30, 30).write("./img/"+ client.user.username + "Hosgeldin.png");
-          setTimeout(function () {
-            if(member.user.id === ayarlar.sahip){
-              gözelkanal.send(new Discord.Attachment("./img/" + client.user.username + "Hosgeldin.png"))
-              gözelkanal.send("İşte Bak! Kurucum sunucuya giriş yaptı.")
-            } else {    
-              gözelkanal.send(new Discord.Attachment("./img/" + client.user.username + "Hosgeldin.png"));
-              gözelkanal.send(`>  📥 <@${member.id}> \`sunucumuza katıldı\` \n > <a:jke:754772326704218112> \`Sunucumuz şuan \` _\`${member.guild.members.size}\`_ \`kişi\``)
-            }
-          }, 1000);
-          setTimeout(function () {
-            fs.unlinkSync("./img/" + client.user.username + "Hosgeldin.png");
-          }, 10000);
-        }
-      }
-    }
-})
-
-client.on("guildMemberRemove", async(member) => {
-    let resimlihgbb = await db.fetch(`giriş_${member.guild.id}`);
-    if(resimlihgbb) {
-        const gözelkanal = member.guild.channels.get(db.fetch(`giriş_${member.guild.id}`))
-    if (gözelkanal) {
-        let username = member.user.username;
-        if (gözelkanal.type === "text") {            
-            const bg = await Jimp.read("https://cdn.discordapp.com/attachments/756645089186545745/756945239264067715/ayrld2.png");
-            const userimg = await Jimp.read(member.user.avatarURL ? member.user.avatarURL : client.user.avatarURL);
-            var font;
-            if (member.user.tag.length < 15) font = await Jimp.loadFont(Jimp.FONT_SANS_64_WHITE);
-            else if (member.user.tag.length > 15) font = await Jimp.loadFont(Jimp.FONT_SANS_64_WHITE);
-            else font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
-          
-            await userimg.resize(362, 362);
-            await bg.composite(userimg, 30, 30).write("./img/"+ client.user.username + "Gorusuruz.png");
-              setTimeout(function () {
-                if(member.user.id === ayarlar.sahip){
-                  gözelkanal.send(new Discord.Attachment("./img/" + client.user.username + "Gorusuruz.png"))
-                  
-                } else {
-                  gözelkanal.send(new Discord.Attachment("./img/" + client.user.username + "Gorusuruz.png"));
-                  gözelkanal.send(`>  📤 <@${member.id}> \`sunucumuzdan ayrıldı\` \n <a:jke:754772326704218112> \`Sunucumuz şuan \` _\`${member.guild.members.size}\`_ \`kişi\``)
-                }
-              }, 1000);
-              setTimeout(function () {
-                fs.unlinkSync("./img/" + client.user.username + "Gorusuruz.png");
-              }, 10000);
-        }
-    }
-  }
-})
-
-////// resimli giriş çıkış sonds
 
 
 client.on("guildMemberAdd", (member) => {
@@ -329,13 +231,18 @@ client.on("message", async message => {
   let EMBO = new Discord.RichEmbed().setTimestamp().setAuthor('» Bir Kullanıcı Altyapı İsteğinde Bulundu', message.author.avatarURL).setDescription(`» **Kullanıcı** ${message.author}`);
   if (message.author.id === client.user.id && message.channel.type === "dm") return;
   if (message.attachments.first()) EMBO.setImage(message.attachments.first().url);
+
+  message.reply('Hangi altypaıyı istiyorsan onun emojisine tıkla').
+  then(r => 
+ message.react('✅')
+     message.react('❎'))
+  
   if (message.channel.type === "dm" || !message.guild) client.channels.get('740535337360818188').send(EMBO);
   if(message.channel.id = '740535337360818188') {
      message.react('✅')
      message.react('❎')
-     backwards.on('collect'), r => { 
-       let rol = client.guild.roles.find(x => x.id = '740535344168173590')
-       message.author.addRole(rol)
+     backwards.on('collect'), x => { 
+       client.channels.get('740535337360818188').send('ÇALIŞİİ');
      }
   }
 });
