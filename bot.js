@@ -248,10 +248,10 @@ var iltifatSayi = 0;
 client.on("message", async message => {
   if(message.channel.id !== "758689889197096990" || message.author.bot) return;
   iltifatSayi++
-  if(iltifatSayi >= 20) { // 50 yazan yer, 50 mesajda bir iltifat edeceğini gösterir, değiştirebilirsiniz.
+  if(iltifatSayi >= 40) { // 50 yazan yer, 50 mesajda bir iltifat edeceğini gösterir, değiştirebilirsiniz.
     iltifatSayi = 0;
     const random = Math.floor(Math.random() * ((iltifatlar).length - 1) + 1);
-    message.reply(`**${(iltifatlar)[random]}**`);
+    client.channels.get('758689889197096990').send(`**Altyapılara ulaşmak için <#768421922622406676> kanalına bakabilirsiniz**`);
   };
 });
 
