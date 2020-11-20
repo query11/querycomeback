@@ -274,3 +274,4 @@ let eee = new Discord.RichEmbed()
   message.reply(eee);
   
 });
+
