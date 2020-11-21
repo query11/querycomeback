@@ -285,4 +285,23 @@ client.on("message", async message => {
 })
 
  
+ client.on('guildMemberAdd',async member => {
+ let user = client.users.get(member.id);
+  let kanal = member.guild.channels.find('id', '770641495832133644')
+ const { get } = require('node-superfetch');
+  let moment = require('moment')
+  require('moment-duration-format')
+  const avatar =member.user.displayAvatarURL
+ const kuruluş = user.createdAt.getTime();
+  const tarih = new Date().getTime() - user.createdAt.getTime();
+ var tarihi = moment.duration(tarih).format(" D [gün] H [saat] m [dakika] s [saniye]")
+  let emb = new Discord.RichEmbed()
+  .setThumbnail(avatar)
+  .setDescription(`
+ __**JAU LAND SUNUCUSUNDA HOŞGELDİN!!**__
+__**\`KULLANICININ HESAP BİLGİLERİ\`**__
+» <a:pembeh:751553654561046619>** İSİM = \`${user.username}\` **
+» <a:pembeh:751553654561046619>** HESAP KURULUŞ TARİHİ = \`${tarihi}\`**`)
+  kanal.send(emb)
  
+});
