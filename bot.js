@@ -168,7 +168,7 @@ const kuruluş = user.createdAt.getTime();
    var inceleme;
     if (tarih > 2629800000) inceleme = 'GÜVENLİ'
     if (tarih < 2629800000) inceleme = 'ŞÜPHELİ'
-   if (tarih < 262980000) return
+   if (kuruluş < 1) return
   let emb = new Discord.RichEmbed()
   .setThumbnail(avatar)
   .setDescription(`
