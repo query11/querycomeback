@@ -277,3 +277,11 @@ let eee = new Discord.RichEmbed()
 
 
 
+client.on("message", async message => {
+
+    if(message.content.toLowerCase().includes('+public','+altyapı','+botlist'))
+      message.delete()
+})
+
+ 
+ 
