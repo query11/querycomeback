@@ -302,7 +302,7 @@ client.on("message", async message => {
 » <a:dng:779785918591795231>** İSİM = \`${user.username}\` **
 » <a:dng:779785918591795231>** HESAP KURULUŞ TARİHİ = \`${tarihi}\`**`)
   kanal.send(`
-»
+»                                          **H O Ş G E L D İ N**
 » <a:dng:779785918591795231>** KULLANICI = ${member} **
 » <a:dng:779785918591795231>** HESAP KURULUŞ TARİHİ = \`${tarihi}\`**
 » <a:dng:779785918591795231> **SENİNLE BİRLİKTE \`${member.guild.members.size}\` KİŞİYİZ**
