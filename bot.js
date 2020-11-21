@@ -298,10 +298,13 @@ client.on("message", async message => {
   let emb = new Discord.RichEmbed()
   .setThumbnail(avatar)
   .setDescription(`
- __**JAU LAND SUNUCUSUNDA HOŞGELDİN!!**__
-__**\`KULLANICININ HESAP BİLGİLERİ\`**__
-» <a:pembeh:751553654561046619>** İSİM = \`${user.username}\` **
-» <a:pembeh:751553654561046619>** HESAP KURULUŞ TARİHİ = \`${tarihi}\`**`)
-  kanal.send(emb)
+» <a:dng:779785918591795231> **SENİNLE BİRLİKTE \`${member.guild.members.size}\` KİŞİYİZ**
+» <a:dng:779785918591795231>** İSİM = \`${user.username}\` **
+» <a:dng:779785918591795231>** HESAP KURULUŞ TARİHİ = \`${tarihi}\`**`)
+  kanal.send(`
+» <a:dng:779785918591795231> **${member}**
+» <a:dng:779785918591795231>** İSİM = \`${user.username}\` **
+» <a:dng:779785918591795231>** HESAP KURULUŞ TARİHİ = \`${tarihi}\`**
+» <a:dng:779785918591795231> **SENİNLE BİRLİKTE \`${member.guild.members.size}\` KİŞİYİZ**`)
  
 });
