@@ -164,10 +164,11 @@ const kuruluş = user.createdAt.getTime();
   const tarih = new Date().getTime() - user.createdAt.getTime();
  var tarihi = moment.duration(tarih).format(" D [gün] H [saat] m [dakika] s [saniye]")
                                                                     
-  if (tarih < 262980000) return
+ 
    var inceleme;
     if (tarih > 2629800000) inceleme = 'GÜVENLİ'
     if (tarih < 2629800000) inceleme = 'ŞÜPHELİ'
+   if (tarih < 262980000) return
   let emb = new Discord.RichEmbed()
   .setThumbnail(avatar)
   .setDescription(`
