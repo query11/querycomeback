@@ -35,13 +35,15 @@ exports.run = function(client, message, args) {
      //   client.channels.get(basvuru).send(embed);
     let bott = client.users.get(botID)
     let embed2 = new Discord.RichEmbed()
-    .setTitle('Bir Bot Başvurusu Gönderildi')
-    .setDescription(`
-    
-    » Bot Bilgileri : [ <@!${botID}> ] \`[ ${botID} ]\` 
 
-    » PREFIX :  \`[${prefix}]\` 
-   ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
+    .setDescription(`
+   <a:onayred:780481839147384912> **__Bir Bot Başvurusu Gönderildi__** | **__There is an application__** <a:onayred:780481839147384912> 
+
+    **» Sahip Bilgileri | Owner Information :** [ ${message.author} ] \`[ ${message.author.id} ]\`
+   ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
+    **» Bot Bilgileri | Bot's Information :** [ <@!${botID}> ] \`[ ${botID} ]\`
+    **» Bot Prefix :**  \`[ ${prefix} ]\`
+
                                                       `);
     client.channels.get('780476233040396308').send(embed2);
 
