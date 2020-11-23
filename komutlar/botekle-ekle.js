@@ -8,7 +8,7 @@ exports.run = function(client, message, args) {
   let basvuru = ayarlar.basvurulog;
   let eklekanal = ayarlar.eklekanal;
   let log = ayarlar.log;
-  let sıra = db.fetch(`sıra_${message.id}`)
+  let sıra = db.fetch(`sıra_${message.guild.id}`)
 
   if (message.channel.id !== eklekanal)
     return message.channel
@@ -46,16 +46,16 @@ exports.run = function(client, message, args) {
      
     » <:tr:780484679227932704> **Sahip Bilgisi |** <:en:780485586535448616> **Owner Information  [${message.author}] \`[ ${message.author.id} ]\`**
    ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
-    » <:tr:780484679227932704> Bot Bilgisi | <:en:780485586535448616> Bot's Information [<@!${botID}>] \`[ ${botID} ]\`
-    » <:tr:780484679227932704> Bot Prefix | <:en:780485586535448616> Bot's Prefix \`[ ${prefix} ]\`
-
-           » Sıra ${sıra}                                           `)
-    .setFooter('[SA](https://www.youtube.com)')
+   ** » <:tr:780484679227932704> Bot Bilgisi | <:en:780485586535448616> Bot's Information [<@!${botID}>] \`[ ${botID} ]\`**
+   ** » <:tr:780484679227932704> Bot Prefix | <:en:780485586535448616> Bot's Prefix \`[ ${prefix} ]\`**
+    
+           »  ${sıra}                                           `)
     
     client.channels.get('780476233040396308').send(embed2);
 
     message.channel.send(`<a:tik4:756946179530424541>__**Bot ekleme isteğiniz alındı.**__`).then(msg => msg.delete(3000));
     db.set(`sahip_${message.author.id}`, botID)
+    db.add(`sıra_${message.guild.id}`,1)
 }
  
 
