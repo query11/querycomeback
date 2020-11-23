@@ -17,7 +17,7 @@ dbl.hasVoted(message.author.id).then(voted => {
   let eklekanal = ayarlar.eklekanal;
   let log = ayarlar.log;
   let sıra = db.fetch(`sıra_${message.guild.id}`)
-//if(db.has(`botsayi_${message.author.id}`)) return message.author.send('Daha önce bir bot ekledin.')
+if(db.has(`botsayi_${message.author.id}`)) return message.author.send('Daha önce bir bot ekledin.')
   if (message.channel.id !== eklekanal)
     return message.channel
       .send(`Bu komutu sadece <#${eklekanal}> kanalında kullanabilirsin.`)

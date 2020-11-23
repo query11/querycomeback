@@ -53,7 +53,7 @@ exports.run = function(client, message, args) {
 
     `)
   
-  client.channels.get('780571384538857524').send(embed2)
+  client.channels.get('780580329102377010').send(embed2)
   db.add(`sıra_${message.guild.id}`,-1)
 };
 
