@@ -52,19 +52,8 @@ exports.run = function(client, message, args) {
       **  <:tr:780484679227932704> » Bot Prefix | <:en:780485586535448616> Bot's Prefix \`[ ${prefix} ]\`**
 
     `)
-  client.channels.get(log).send(embed2).then(m => m.react('✅'))
-  embed2.edit
-    .setDescription(`
   
-       <:tr:780484679227932704> **Bir bot onaylandı** | <:en:780485586535448616>**A bot approved**
-      
-       <:tr:780484679227932704> **» Sahip Bilgisi |** <:en:780485586535448616> **Owner Info  [${message.author}] \`[ ${message.author.id} ]\`**
-        ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
-      **  <:tr:780484679227932704> » Bot Bilgisi | <:en:780485586535448616> Bot's Info [${botisim}] \`[ ${botisim2} ]\`**
-      **  <:tr:780484679227932704> » Bot Prefix | <:en:780485586535448616> Bot's Prefix \`[ ${prefix} ]\`**
-      » \`Bu bot kontrol edildi.\`
-      
-      `)
+  client.channels.get('780571384538857524').send(embed2).then(m => m.react('💪'))
   db.add(`sıra_${message.guild.id}`,-1)
 };
 
