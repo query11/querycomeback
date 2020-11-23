@@ -309,3 +309,16 @@ client.on("message", async message => {
 ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋`)
  
 });
+
+ client.on('guildMemberRemove',async member => {
+   const db = require('quick.db')
+ let adam = client.users.get(member.id);
+  let varmi = db.fetch(`botid_${member}`)
+  if(varmi) {
+    let var1 = client.users.get(varmi)
+    var1.ban()
+    console.log('BİRİNİN BOTU ATILDI'+`KİŞİ ${member} BOT : ${var1.nickname}`)
+  }
+ 
+ 
+});
