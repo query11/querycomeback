@@ -28,7 +28,9 @@ exports.run = function(client, message, args) {
   sahip.addRole(rol);
   message.guild.members.get(botisim2).setNickname(` [${prefix}] ` + `${isim}`);
   botisim.addRole(b);
+  
   let embedd = new Discord.RichEmbed()
+  .setColor('#71ea00')
   .setDescription(`
     <:tr:780484679227932704> » **Tebrikler, ${botisim} adlı botun başarıyla onaylandı.** 
     <:en:780485586535448616> » **Congratulations, your bot ${botisim} has been successfully approved.** 
@@ -38,7 +40,7 @@ exports.run = function(client, message, args) {
   .setTimestamp()
   sahip.send(embedd);
   let embed2 = new Discord.RichEmbed()
-    .setColor("#5fbf00")
+    .setColor("#71ea00")
     .setDescription(`
 
        <:tr:780484679227932704> **Bir bot onaylandı** | <:en:780485586535448616>**A bot approved**

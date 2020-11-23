@@ -11,7 +11,7 @@ exports.run = function(client, message, args) {
   let yetkiliROL = ayarlar.yetkiliROL;
   if (!message.member.roles.has(yetkiliROL)) return;
   let embed2 = new Discord.RichEmbed()
-    .setColor("#7f0000")
+    .setColor("#ff0000")
     .setDescription(
       `
     <:tr:780484679227932704> » **Maalesef, <@!${botisim}> adlı botun reddedildi.** 
@@ -24,7 +24,7 @@ exports.run = function(client, message, args) {
 `);
 
   let embed = new Discord.RichEmbed()
-    .setColor("#7f0000")
+    .setColor("#ff0000")
     .setDescription(
       `  
       <:tr:780484679227932704> **Bir bot reddedildi** | <:en:780485586535448616>**A bot declined**

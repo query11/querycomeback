@@ -17,7 +17,7 @@ dbl.hasVoted(message.author.id).then(voted => {
   let eklekanal = ayarlar.eklekanal;
   let log = ayarlar.log;
   let sıra = db.fetch(`sıra_${message.guild.id}`)
-
+//if(db.has(`botsayi_${message.author.id}`)) return message.author.send('Daha önce bir bot ekledin.')
   if (message.channel.id !== eklekanal)
     return message.channel
       .send(`Bu komutu sadece <#${eklekanal}> kanalında kullanabilirsin.`)
@@ -40,14 +40,13 @@ dbl.hasVoted(message.author.id).then(voted => {
      //   client.channels.get(basvuru).send(embed);
     let bott = client.users.get(botID)
     let embed2 = new Discord.RichEmbed()
+    .setColor('#fff76b')
     .setDescription(`
     <:tr:780484679227932704>**Bir bot başvurusu gönderildi** | <:en:780485586535448616>**A bot application has been submitted** 
 
     <:en:780485586535448616>  » [ ${message.author} ] 's bot [ <@!${botID}> ] has been added to queue.
-
     <:tr:780484679227932704>  » [ ${message.author} ] adlı kullanıcının botu [ <@!${botID}> ] sıraya eklendi.
     
-     
     » <:tr:780484679227932704> **Sahip Bilgisi |** <:en:780485586535448616> **Owner Info  [${message.author}] \`[ ${message.author.id} ]\`**
    ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
    ** » <:tr:780484679227932704> Bot Bilgi | <:en:780485586535448616> Bot Info [<@!${botID}>] \`[ ${botID} ]\`**
@@ -55,10 +54,11 @@ dbl.hasVoted(message.author.id).then(voted => {
     
    **» <:tr:780484679227932704> Sıra | <:en:780485586535448616> Queue  [⤙ ${sıra} ⤚](https://www.youtube.com/channel/UCDf5rQLAZOfi6NV7on2S_AA/featured)**
 
-  **₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋[0 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botID}&scope=bot&permissions=0) | ` + ` [8 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botID}&scope=bot&permissions=8)₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋**`)
+  **₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋ [0 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botID}&scope=bot&permissions=0) | ` + ` [8 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botID}&scope=bot&permissions=8) ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋**`)
     
     client.channels.get('758379780751491143').send(embed2);
     let emba = new Discord.RichEmbed()
+     .setColor('#fff76b')
     .setDescription(`
     <:tr:780484679227932704>**Botunuz başarıyla sıraya eklendi,en yakın zamanda test edilecektir** 
     <:en:780485586535448616>**Your bot has been successfully queued,will be checked as soon as possible** 
@@ -67,6 +67,7 @@ dbl.hasVoted(message.author.id).then(voted => {
     message.author.send(emba)
     db.set(`sahip_${message.author.id}`, botID)
     db.add(`sıra_${message.guild.id}`,1)
+    db.add(`botsayi_${message.author.id}`,1)
 }
  
  

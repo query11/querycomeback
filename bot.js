@@ -117,16 +117,15 @@ client.on("guildMemberAdd", member => {
 
 client.on("message", message => {
   let kanal2 = ayarlar.kanalengel2;
-  if (message.channel.id == kanal2) {
-    if (message.author.id == message.client.user.id) return;
-    message.delete(1 * 500);
+  if (message.channel.id == '780513133369622568') {
+
+    message.delete();
   }
 });
 
 client.on("message", (message, member) => {
   let kanal1 = ayarlar.kanalengel;
   if (message.channel.id == kanal1) {
-    if (message.author.id == message.client.user.id) return;
 
 
     message.delete(1 * 500);
@@ -256,9 +255,7 @@ client.on("message", async message => {
 
  
  client.on('guildMemberAdd',async member => {
-   if(member.nickname > 2) {
-     member.setNickname('İsim Değiştir')
-   }
+ 
  let user = client.users.get(member.id);
   let kanal = member.guild.channels.find(x => x.id === '770641495832133644')
  const { get } = require('node-superfetch');
