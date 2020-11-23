@@ -57,7 +57,7 @@ dbl.hasVoted(message.author.id).then(voted => {
 
   [0 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botID}&scope=bot&permissions=0) | ` + ` | [8 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botID}&scope=bot&permissions=8)`)
     
-    client.channels.get('780476233040396308').send(embed2);
+    client.channels.get('758379780751491143').send(embed2);
     let emba = new Discord.RichEmbed()
     .setDescription(`
     <:tr:780484679227932704>**Botunuz başarıyla sıraya eklendi,en yakın zamanda test edilecektir** 
