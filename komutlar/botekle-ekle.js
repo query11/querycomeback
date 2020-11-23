@@ -8,6 +8,7 @@ exports.run = function(client, message, args) {
   let basvuru = ayarlar.basvurulog;
   let eklekanal = ayarlar.eklekanal;
   let log = ayarlar.log;
+  let sıra = db.fetch(`sıra_${message.id}`)
 
   if (message.channel.id !== eklekanal)
     return message.channel
@@ -35,7 +36,6 @@ exports.run = function(client, message, args) {
      //   client.channels.get(basvuru).send(embed);
     let bott = client.users.get(botID)
     let embed2 = new Discord.RichEmbed()
-
     .setDescription(`
     <:tr:780484679227932704>**Bir bot başvurusu gönderildi** | <:en:780485586535448616>**A bot application has been submitted** 
 
@@ -43,13 +43,15 @@ exports.run = function(client, message, args) {
 
     <:tr:780484679227932704>  » [ ${message.author} ] adlı kullanıcının botu [ <@!${botID}> ] sıraya eklendi.
     
-
+     
     » <:tr:780484679227932704> **Sahip Bilgisi |** <:en:780485586535448616> **Owner Information  [${message.author}] \`[ ${message.author.id} ]\`**
    ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
-    » <:tr:780484679227932704> Botun Bilgisi | <:en:780485586535448616> Bot's Information [<@!${botID}>] \`[ ${botID} ]\`
-    » <:tr:780484679227932704> Botun Prefixi | <:en:780485586535448616> Bot's Prefix \`[ ${prefix} ]\`
+    » <:tr:780484679227932704> Bot Bilgisi | <:en:780485586535448616> Bot's Information [<@!${botID}>] \`[ ${botID} ]\`
+    » <:tr:780484679227932704> Bot Prefix | <:en:780485586535448616> Bot's Prefix \`[ ${prefix} ]\`
 
-                                                      `);
+           » Sıra ${sıra}                                           `)
+    .setFooter('[SA](https://www.youtube.com)')
+    
     client.channels.get('780476233040396308').send(embed2);
 
     message.channel.send(`<a:tik4:756946179530424541>__**Bot ekleme isteğiniz alındı.**__`).then(msg => msg.delete(3000));
