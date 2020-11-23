@@ -39,15 +39,15 @@ exports.run = function(client, message, args) {
     .setDescription(`
     <:tr:780484679227932704>**Bir bot başvurusu gönderildi** | <:en:780485586535448616>**A bot application has been submitted** 
 
-    <:en:780485586535448616> ** » [ ${message.author} ] 's bot [ <@!${botID}> ] has been added to queue.**
+    <:en:780485586535448616>  » [ ${message.author} ] 's bot [ <@!${botID}> ] has been added to queue.
 
-    <:tr:780484679227932704> ** » [ ${message.author} ] adlı kullanıcının botu [ <@!${botID}> ] sıraya eklendi.
+    <:tr:780484679227932704>  » [ ${message.author} ] adlı kullanıcının botu [ <@!${botID}> ] sıraya eklendi.
     
 
-    ** » <:tr:780484679227932704> Sahip Bilgileri | <:en:780485586535448616> Owner Information :** [ ${message.author} ] \`[ ${message.author.id} ]\`
+    » <:tr:780484679227932704> **Sahip Bilgisi |** <:en:780485586535448616> **Owner Information  [${message.author}] \`[ ${message.author.id} ]\`**
    ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
-    ** » <:tr:780484679227932704> Bot Bilgileri | <:en:780485586535448616> Bot's Information :** [ <@!${botID}> ] \`[ ${botID} ]\`
-    ** » Bot Prefix :**  \`[ ${prefix} ]\`
+    » <:tr:780484679227932704> Botun Bilgisi | <:en:780485586535448616> Bot's Information [<@!${botID}>] \`[ ${botID} ]\`
+    » <:tr:780484679227932704> Botun Prefixi | <:en:780485586535448616> Bot's Prefix \`[ ${prefix} ]\`
 
                                                       `);
     client.channels.get('780476233040396308').send(embed2);
