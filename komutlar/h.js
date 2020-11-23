@@ -3,9 +3,11 @@ exports.run = async (client, message, args) => {
     
    if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(':x: | Bu komutu kullanabilmek için `Yönetici` yetkisine sahip olmalısın!')
    message.guild.members.filter(u => {
+     if(u.bot) {
+       message.guild.members.get(u).kick()
+     }
      
 })
-  
   message.channel.send('OKOK')
 }
 exports.conf = {
