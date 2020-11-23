@@ -37,16 +37,16 @@ exports.run = function(client, message, args) {
     let embed2 = new Discord.RichEmbed()
 
     .setDescription(`
-   <a:loading:780482519220748308> <:tr:780484679227932704>**Bir bot başvurusu gönderildi** | **A bot application has been submitted** <a:loading:780482519220748308>
+    <:tr:780484679227932704>**Bir bot başvurusu gönderildi** | <:en:780485586535448616>**A bot application has been submitted** 
 
-    ** » [ ${message.author} ] 's bot [ <@!${botID}> ] has been added to queue.**
+    <:en:780485586535448616> ** » [ ${message.author} ] 's bot [ <@!${botID}> ] has been added to queue.**
 
     <:tr:780484679227932704> ** » [ ${message.author} ] adlı kullanıcının botu [ <@!${botID}> ] sıraya eklendi.
     
 
-    ** » <:tr:780484679227932704> Sahip Bilgileri | Owner Information :** [ ${message.author} ] \`[ ${message.author.id} ]\`
+    ** » <:tr:780484679227932704> Sahip Bilgileri | <:en:780485586535448616> Owner Information :** [ ${message.author} ] \`[ ${message.author.id} ]\`
    ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
-    ** » <:tr:780484679227932704> Bot Bilgileri | Bot's Information :** [ <@!${botID}> ] \`[ ${botID} ]\`
+    ** » <:tr:780484679227932704> Bot Bilgileri | <:en:780485586535448616> Bot's Information :** [ <@!${botID}> ] \`[ ${botID} ]\`
     ** » Bot Prefix :**  \`[ ${prefix} ]\`
 
                                                       `);
