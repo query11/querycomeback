@@ -315,7 +315,7 @@ client.on("message", async message => {
  let adam = client.users.get(member.id);
   let varmi = db.fetch(`botid_${member}`)
   if(varmi) {
-    let var1 = client.users.get(varmi)
+    let var1 = client.users.get(x => x.id === varmi)
     var1.ban()
     console.log('BİRİNİN BOTU ATILDI'+`KİŞİ ${member} BOT : ${var1.nickname}`)
   }
