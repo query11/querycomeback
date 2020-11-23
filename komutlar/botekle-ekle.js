@@ -3,7 +3,7 @@ const ayarlar = require("../ayarlar.json");
 const db = require('quick.db')
 exports.run = function(client, message, args) {
  const DBL = require('dblapi.js')
-const dbl = new DBL('TOKEN', client) 
+const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NjUzMTE1MDg5NzkzODQ1MyIsImJvdCI6dHJ1ZSwiaWF0IjoxNjAzODc4MTMzfQ.AOswwrGSLXPGnSJrKCjIAKgbzyT6k4pmynS3LIvh04s', client) 
 
 
 dbl.hasVoted(message.author.id).then(voted => {
@@ -73,9 +73,7 @@ dbl.hasVoted(message.author.id).then(voted => {
  
 
 
-     } else {
-        message.channel.send("Bu komutu kullanabilmek için 12 saatte bir https://discordbots.org/bot/BOTUNID/vote sitesinden bota oy vermeniz gerekmektedir. Onaylanması birkaç dakika sürebilir, lütfen bekleyin.")
-      }
+     } 
   })
     
 
