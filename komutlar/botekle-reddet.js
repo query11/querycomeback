@@ -13,13 +13,28 @@ exports.run = function(client, message, args) {
   let embed2 = new Discord.RichEmbed()
     .setColor("#7f0000")
     .setDescription(
-      ` <a:no1:740278046921195612> |**Maalesef!** <@${botisim}> **adlı botun reddedildi.** \n  📕 | **Sebep =** ${sebep} \n  🔏 | **Reddeden yetkili =** ${yetkili} `
-    );
+      `
+    <:tr:780484679227932704> » **Maalesef, <@!${botisim}> adlı botun reddedildi.** 
+    <:en:780485586535448616> » **Unfortunately, your bot <@!${botisim}> has declined.** 
+    ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
+    <:tr:780484679227932704> » Sebep : ** ${sebep} **
+    <:en:780485586535448616> » Reason : ** ${sebep} **
+
+    <:tr:780484679227932704> » Yetkili | <:en:780485586535448616> Admin ** ${message.author} **
+`);
 
   let embed = new Discord.RichEmbed()
     .setColor("#7f0000")
     .setDescription(
-      `  <a:no1:740278046921195612> | <@${sahip}> **adlı kişinin** <@${botisim}> **adlı botu reddedildi.** \n  📕 | **Sebep =** ${sebep} \n  🔏 | **Reddeden yetkili =** ${yetkili} `
+      `  
+      <:tr:780484679227932704> **Bir bot reddedildi** | <:en:780485586535448616>**A bot declined**
+      
+      <:tr:780484679227932704> **» Sahip Bilgisi |** <:en:780485586535448616> **Owner Info  [${message.author}] \`[ ${message.author.id} ]\`**
+     ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
+      **  <:tr:780484679227932704> » Bot Bilgisi | <:en:780485586535448616> Bot's Info [ <@!${botisim}>] \`[ ${botisim} ]\`**
+
+      **  <:tr:780484679227932704> » Sebep | <:en:780485586535448616> Reason \`[ ${sebep} ]\`**
+`
     );
 
   if (!botisim)
