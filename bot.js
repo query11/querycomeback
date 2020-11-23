@@ -256,6 +256,9 @@ client.on("message", async message => {
 
  
  client.on('guildMemberAdd',async member => {
+   if(member.nickname > 2) {
+     member.setNickname('İsim Değiştir')
+   }
  let user = client.users.get(member.id);
   let kanal = member.guild.channels.find(x => x.id === '770641495832133644')
  const { get } = require('node-superfetch');

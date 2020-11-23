@@ -55,7 +55,7 @@ dbl.hasVoted(message.author.id).then(voted => {
     
    **» <:tr:780484679227932704> Sıra | <:en:780485586535448616> Queue  [⤙ ${sıra} ⤚](https://www.youtube.com/channel/UCDf5rQLAZOfi6NV7on2S_AA/featured)**
 
-  [0 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botID}&scope=bot&permissions=0) | ` + ` | [8 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botID}&scope=bot&permissions=8)`)
+  **₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋[0 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botID}&scope=bot&permissions=0) | ` + ` [8 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botID}&scope=bot&permissions=8)₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋**`)
     
     client.channels.get('758379780751491143').send(embed2);
     let emba = new Discord.RichEmbed()
