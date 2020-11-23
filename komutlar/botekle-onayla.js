@@ -53,14 +53,14 @@ exports.run = function(client, message, args) {
 
     `)
   
-  client.channels.get('780571384538857524').send(embed2).then(m => m.react('💪'))
+  client.channels.get('780571384538857524').send(embed2)
   db.add(`sıra_${message.guild.id}`,-1)
 };
 
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ["bot-onayla", "onayla"],
+  aliases: ["onay", "onayla"],
   permLevel: 0
 };
 

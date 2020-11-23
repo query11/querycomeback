@@ -44,17 +44,17 @@ dbl.hasVoted(message.author.id).then(voted => {
     .setDescription(`
     <:tr:780484679227932704>**Bir bot başvurusu gönderildi** | <:en:780485586535448616>**A bot application has been submitted** 
 
-    <:en:780485586535448616>  » [${message.author}] 's bot [<@!${botID}>] has been added to queue.
-    <:tr:780484679227932704>  » [${message.author}] adlı kullanıcının botu [<@!${botID}>] sıraya eklendi.
+    <:en:780485586535448616>  » ${message.author} 's bot [<@!${botID}>] has been added to queue.
+    <:tr:780484679227932704>  » ${message.author} adlı kullanıcının botu [<@!${botID}>] sıraya eklendi.
     
-    » <:tr:780484679227932704> **Sahip Bilgisi |** <:en:780485586535448616> **Owner Info  [${message.author}] \`[ ${message.author.id} ]\`**
+    » <:tr:780484679227932704> **Sahip Bilgi |** <:en:780485586535448616> **Owner Info  ${message.author} \`[ ${message.author.id} ]\`**
    ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
-   ** » <:tr:780484679227932704> Bot Bilgi | <:en:780485586535448616> Bot Info [<@!${botID}>] \`[${botID}]\`**
+   ** » <:tr:780484679227932704> Bot Bilgi | <:en:780485586535448616> Bot Info <@!${botID}> \`[${botID}]\`**
    ** » <:tr:780484679227932704> Bot Öneki | <:en:780485586535448616> Bot Prefix \`[ ${prefix} ]\`**
     
    **» <:tr:780484679227932704> Sıra | <:en:780485586535448616> Queue  [⤙ ${sıra} ⤚](https://www.youtube.com/channel/UCDf5rQLAZOfi6NV7on2S_AA/featured)**
 
-  **₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋ [0 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botID}&scope=bot&permissions=0) | ` + ` [8 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botID}&scope=bot&permissions=8) ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋**`)
+  **₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋ [0 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botID}&scope=bot&permissions=0) | ` + ` [8 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botID}&scope=bot&permissions=8) ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋**`)
     
     client.channels.get('758379780751491143').send(embed2);
     let emba = new Discord.RichEmbed()

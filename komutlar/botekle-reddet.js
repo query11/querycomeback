@@ -32,8 +32,7 @@ exports.run = function(client, message, args) {
       <:tr:780484679227932704> **» Sahip Bilgisi |** <:en:780485586535448616> **Owner Info  [${message.author}] \`[ ${message.author.id} ]\`**
      ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
       **  <:tr:780484679227932704> » Bot Bilgisi | <:en:780485586535448616> Bot's Info [ <@!${botisim}>] \`[ ${botisim} ]\`**
-
-      **  <:tr:780484679227932704> » Sebep | <:en:780485586535448616> Reason \`[ ${sebep} ]\`**
+      **  <:tr:780484679227932704> » Red Sebebi | <:en:780485586535448616> Reason \`[ ${sebep} ]\`**
 `
     );
 
@@ -56,7 +55,7 @@ exports.run = function(client, message, args) {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ["bot-reddet", "reddet"],
+  aliases: ["red", "reddet"],
   permLevel: 0
 };
 
