@@ -319,12 +319,31 @@ if(members = bot1) {
 let sebeb = `${member.user.tag} Adlı Sahip Kullanıcı Sunucudan Ayrıldı İçin.`
 const embed = new Discord.RichEmbed()
 .setColor("RANDOM")
-.setTitle("<a:atess:740956265269952562> Bilgi! / Information!")
-.setDescription(`> ${member} Sunucudan Ayrıldı Sistemde Kayıt Bot'u Vardı ve Atıldı!\n> ${member} Left the Server, had a bot registered in the system, and he got Kicked! `)
-.addField("Bot:",`> ${bot}\n> ${bot.user.tag}\n> ${bot1}`)
-.addField("Sahip / Owner:",`> ${member}\n> ${member.user.tag}\n> ${member.id}`)
-.addField("Sebeb/Reason:", sebeb)
+.setDescription(`
+<:tr:780484679227932704> » ${member} Sunucudan Ayrıldı Sistemde Kayıt Bot'u Vardı ve Atıldı!
+<:en:780485586535448616> » ${member} Left the Server, had a bot registered in the system,bot was kicked.
+₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
+${bot} » 
+» 
+`)
 kanal.send(embed)
 bot.kick(sebeb)  
 db.delete(`sahip_${member.user.id}`)
 }})
+
+
+
+client.on("message", async message => {
+const embbb = new Discord.RichEmbed()
+.setColor("RANDOM")
+.setDescription(`
+<:tr:780484679227932704> » $ Sunucudan Ayrıldı Sistemde Kayıt Bot'u Vardı ve Atıldı!
+<:en:780485586535448616> » $ Left the Server, had a bot registered in the system,bot was kicked.
+₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
+<:tr:780484679227932704> » Bot Bilgisi | <:en:780485586535448616> » Bot Infotmation 
+
+» <@478466612803141645> \`478466612803141645
+`)
+    if(message.content.toLowerCase().includes('+d'))
+      message.channel.send(embbb)
+})
