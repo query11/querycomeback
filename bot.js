@@ -302,7 +302,7 @@ client.on("message", async message => {
 » <a:dng:779785918591795231>** İSİM = \`${user.username}\` **
 » <a:dng:779785918591795231>** HESAP KURULUŞ TARİHİ = \`${tarihi}\`**`)
   kanal.send(`
-»                                          **H O Ş G E L D İ N**
+»                                          __**H O Ş G E L D İ N**__
 » <a:dng:779785918591795231>** KULLANICI = ${member} **
 » <a:dng:779785918591795231>** HESAP KURULUŞ TARİHİ = \`${tarihi}\`**
 » <a:dng:779785918591795231> **SENİNLE BİRLİKTE \`${member.guild.members.size}\` KİŞİYİZ**
@@ -312,7 +312,7 @@ client.on("message", async message => {
 const db = require('quick.db')
 client.on("guildMemberRemove", async member => {
 let bot1 = db.fetch(`sahip_${member.user.id}`)
-const kanal = member.guild.channels.get("734904092056616990")
+const kanal = member.guild.channels.get(x => x.id === "734904092056616990")
 let bot = member.guild.members.get(bot1) 
 let members = member;
 if(members = bot1) {
