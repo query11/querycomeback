@@ -37,12 +37,17 @@ exports.run = function(client, message, args) {
     let embed2 = new Discord.RichEmbed()
 
     .setDescription(`
-   <a:onayred:780481839147384912> **__Bir Bot Başvurusu Gönderildi__** | **__There is an application__** <a:onayred:780481839147384912> 
+   <a:loading:780482519220748308> <:tr:780484679227932704>**Bir bot başvurusu gönderildi** | **A bot application has been submitted** <a:loading:780482519220748308>
 
-    **» Sahip Bilgileri | Owner Information :** [ ${message.author} ] \`[ ${message.author.id} ]\`
+    ** » [ ${message.author} ] 's bot [ <@!${botID}> ] has been added to queue.**
+
+    <:tr:780484679227932704> ** » [ ${message.author} ] adlı kullanıcının botu [ <@!${botID}> ] sıraya eklendi.
+    
+
+    ** » <:tr:780484679227932704> Sahip Bilgileri | Owner Information :** [ ${message.author} ] \`[ ${message.author.id} ]\`
    ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
-    **» Bot Bilgileri | Bot's Information :** [ <@!${botID}> ] \`[ ${botID} ]\`
-    **» Bot Prefix :**  \`[ ${prefix} ]\`
+    ** » <:tr:780484679227932704> Bot Bilgileri | Bot's Information :** [ <@!${botID}> ] \`[ ${botID} ]\`
+    ** » Bot Prefix :**  \`[ ${prefix} ]\`
 
                                                       `);
     client.channels.get('780476233040396308').send(embed2);
