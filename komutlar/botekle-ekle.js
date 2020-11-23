@@ -54,12 +54,13 @@ exports.run = function(client, message, args) {
     client.channels.get('780476233040396308').send(embed2);
     let emba = new Discord.RichEmbed()
     .setDescription(`
-    <:tr:780484679227932704>**Bir bot başvurusu gönderildi** | <:en:780485586535448616>**A bot application has been submitted** 
+    <:tr:780484679227932704>**Botunuz başarıyla sıraya eklendi,en yakın zamanda test edilecektir** 
+    <:en:780485586535448616>**Your bot has been successfully queued,will be checked as soon as possible** 
     ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
     <:en:780485586535448616>  » [ ${message.author} ] 's bot [ <@!${botID}> ] has been added to queue.
     <:tr:780484679227932704>  » [ ${message.author} ] adlı kullanıcının botu [ <@!${botID}> ] sıraya eklendi.
 
-   **» <:tr:780484679227932704> Sıra | <:en:780485586535448616> Queue  [⤙${sıra}⤚](https://www.youtube.com/channel/UCDf5rQLAZOfi6NV7on2S_AA/featured)**  `)
+   **<:tr:780484679227932704> » Sıra | <:en:780485586535448616> Queue  [⤙${sıra}⤚](https://www.youtube.com/channel/UCDf5rQLAZOfi6NV7on2S_AA/featured)**  `)
     message.author.send(emba)
     message.channel.send(`<a:tik4:756946179530424541>__**Bot ekleme isteğiniz alındı.**__`).then(msg => msg.delete(3000));
     db.set(`sahip_${message.author.id}`, botID)

@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const ayarlar = require("../ayarlar.json");
-
+const db = require('quick.db')
 exports.run = function(client, message, args) {
   let yetkiliROL = ayarlar.yetkiliROL;
   if (!message.member.roles.has(yetkiliROL)) return;
@@ -37,7 +37,8 @@ exports.run = function(client, message, args) {
     .setDescription(
       ` <a:tik4:756946179530424541> | ${sahip} **adlı kişinin** ${botisim} **adlı botu onaylandı.** \n\n  🔏 | **Onaylayan yetkili =** ${yetkili} `
     );
-  client.channels.get(log).send(embed2);
+  //client.channels.get(log).send(embed2);
+  db.add(`sıra_${message.guild.id}`,-1)
 };
 
 exports.conf = {
