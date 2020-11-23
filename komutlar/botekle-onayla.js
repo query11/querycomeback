@@ -28,9 +28,13 @@ exports.run = function(client, message, args) {
   sahip.addRole(rol);
   message.guild.members.get(botisim2).setNickname(` [${prefix}] ` + `${isim}`);
   botisim.addRole(b);
-  let embedd = new Discord.RichEmbed().setDescription(
-    ` <a:tik4:756946179530424541> | **Tebrikler!** ${botisim} **adlı botun onaylandı.Developer permin verildi** \n\n  🔏 | **Onaylayan yetkili =** ${yetkili} `
-  );
+  let embedd = new Discord.RichEmbed().setDescription(`
+    <:tr:780484679227932704> » **Tebrikler, ${botisim} adlı botun başarıyla onaylandı.** 
+    <:en:780485586535448616> » **Congratulations, your bot ${botisim} has been successfully approved.** 
+    ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
+    <:en:780485586535448616>  » [ ${message.author} ] 's bot [ ${botisim} ] has been added to queue.
+    <:tr:780484679227932704>  » [ ${message.author} ] adlı kullanıcının botu [ ${botisim} ] sıraya eklendi. `)
+  
   sahip.send(embedd);
   let embed2 = new Discord.RichEmbed()
     .setColor("#5fbf00")
