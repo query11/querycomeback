@@ -152,36 +152,6 @@ client.on("guildMemberAdd", (member) => {
 member.send(embed)})
 
 
-client.on('guildMemberAdd',async member => {
- let user = client.users.get(member.id);
-  let kanal = member.guild.channels.find('id', '778958120407269388')
- const { get } = require('node-superfetch');
-  let moment = require('moment')
-  require('moment-duration-format')
-  const avatar =member.user.displayAvatarURL
-const kuruluş = user.createdAt.getTime();
-  
-  const tarih = new Date().getTime() - user.createdAt.getTime();
- var tarihi = moment.duration(tarih).format(" D [gün] H [saat] m [dakika] s [saniye]")
-                                                                    
- 
-   var inceleme;
-    if (tarih > 2629800000) inceleme = 'GÜVENLİ'
-    if (tarih < 2629800000) inceleme = 'ŞÜPHELİ'
-   if (kuruluş < 1) return
-  let emb = new Discord.RichEmbed()
-  .setThumbnail(avatar)
-  .setDescription(`
- __**BİR KULLANICININ HESABI GÜMRÜK KAPISINA TAKILDI**__
-
-__**\`KULLANICININ HESAP BİLGİLERİ\`**__
-» <a:pembeh:751553654561046619>** İSİM = \`${user.username}\` **
-» <a:pembeh:751553654561046619>** HESAP KURULUŞ TARİHİ = ${tarihi}**
-» <a:pembeh:751553654561046619>** YAPILAN EYLEM = \`KULLANICI YASAKLANDI\`**`)
-  kanal.send(emb)
- 
-});
-
 client.on("message", async msg => {
   const db = require('quick.db');
   
@@ -320,30 +290,15 @@ let sebeb = `${member.user.tag} Adlı Sahip Kullanıcı Sunucudan Ayrıldı İç
 const embed = new Discord.RichEmbed()
 .setColor("RANDOM")
 .setDescription(`
-<:tr:780484679227932704> » ${member} Sunucudan Ayrıldı Sistemde Kayıt Bot'u Vardı ve Atıldı!
-<:en:780485586535448616> » ${member} Left the Server, had a bot registered in the system,bot was kicked.
+**<:tr:780484679227932704> »** ${member} Sunucudan Ayrıldı Sistemde Kayıt Bot'u Vardı ve Atıldı!
+**<:en:780485586535448616> »** ${member} Left the Server, had a bot registered in the system,bot was kicked.
 ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
-${bot} » 
-» 
+**<:tr:780484679227932704> » Bot Bilgisi | <:en:780485586535448616> » Bot Information ↓ ↓ ↓**
+
+**<:tr:780484679227932704> » Sahip | <:en:780485586535448616> Owner ${member} \`[ ${member.id} ]\`**
+**<:tr:780484679227932704> »  Bot  | <:en:780485586535448616> Bot ${bot} \`[ ${bot.id} ]\`**
 `)
 kanal.send(embed)
 bot.kick(sebeb)  
 db.delete(`sahip_${member.user.id}`)
 }})
-
-
-
-client.on("message", async message => {
-const embbb = new Discord.RichEmbed()
-.setColor("RANDOM")
-.setDescription(`
-<:tr:780484679227932704> » $ Sunucudan Ayrıldı Sistemde Kayıt Bot'u Vardı ve Atıldı!
-<:en:780485586535448616> » $ Left the Server, had a bot registered in the system,bot was kicked.
-₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
-<:tr:780484679227932704> » Bot Bilgisi | <:en:780485586535448616> » Bot Infotmation 
-
-» <@478466612803141645> \`478466612803141645
-`)
-    if(message.content.toLowerCase().includes('+d'))
-      message.channel.send(embbb)
-})
