@@ -312,7 +312,7 @@ client.on("message", async message => {
 const db = require('quick.db')
 client.on("guildMemberRemove", async member => {
 let bot1 = db.fetch(`sahip_${member.user.id}`)
-const kanal = member.guild.channels.get("763152703143804939")
+const kanal = member.guild.channels.get("734904092056616990")
 let bot = member.guild.members.get(bot1) 
 let members = member;
 if(members = bot1) {
@@ -324,7 +324,7 @@ const embed = new Discord.RichEmbed()
 .addField("Bot:",`> ${bot}\n> ${bot.user.tag}\n> ${bot1}`)
 .addField("Sahip / Owner:",`> ${member}\n> ${member.user.tag}\n> ${member.id}`)
 .addField("Sebeb/Reason:", sebeb)
-kanal.send(member, embed)
+kanal.send(embed)
 bot.kick(sebeb)  
 db.delete(`sahip_${member.user.id}`)
 }})
