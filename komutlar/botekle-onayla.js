@@ -28,20 +28,30 @@ exports.run = function(client, message, args) {
   sahip.addRole(rol);
   message.guild.members.get(botisim2).setNickname(` [${prefix}] ` + `${isim}`);
   botisim.addRole(b);
-  let embedd = new Discord.RichEmbed().setDescription(`
+  let embedd = new Discord.RichEmbed()
+  .setDescription(`
     <:tr:780484679227932704> » **Tebrikler, ${botisim} adlı botun başarıyla onaylandı.** 
     <:en:780485586535448616> » **Congratulations, your bot ${botisim} has been successfully approved.** 
-    ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
-    <:en:780485586535448616>  » [ ${message.author} ] 's bot [ ${botisim} ] has been added to queue.
-    <:tr:780484679227932704>  » [ ${message.author} ] adlı kullanıcının botu [ ${botisim} ] sıraya eklendi. `)
-  
+    ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
+  `)
+  .setFooter('» Onaylandığı Zaman ')
+  .setTimestamp()
   sahip.send(embedd);
   let embed2 = new Discord.RichEmbed()
     .setColor("#5fbf00")
-    .setDescription(
-      ` <a:tik4:756946179530424541> | ${sahip} **adlı kişinin** ${botisim} **adlı botu onaylandı.** \n\n  🔏 | **Onaylayan yetkili =** ${yetkili} `
-    );
-  //client.channels.get(log).send(embed2);
+    .setDescription(`
+
+      <:tr:780484679227932704> **Bir bot onaylandı** | <:en:780485586535448616>**A bot approved** 
+
+     <:tr:780484679227932704> **» Sahip Bilgisi |** <:en:780485586535448616> **Owner Info  [${message.author}] \`[ ${message.author.id} ]\`**
+   ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
+   **  <:tr:780484679227932704> » Bot Bilgisi | <:en:780485586535448616> Bot's Info [${botisim}] \`[ ${botisim2} ]\`**
+   **  <:tr:780484679227932704> » Bot Prefix | <:en:780485586535448616> Bot's Prefix \`[ ${prefix} ]\`**
+
+    `)
+  .setFooter('Saat')
+  .setTimestamp()
+  client.channels.get(log).send(embed2);
   db.add(`sıra_${message.guild.id}`,-1)
 };
 
