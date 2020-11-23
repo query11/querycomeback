@@ -2,8 +2,16 @@ const Discord = require("discord.js");
 const ayarlar = require("../ayarlar.json");
 const db = require('quick.db')
 exports.run = function(client, message, args) {
- 
-      let botID = args[0];
+ const DBL = require('dblapi.js')
+const dbl = new DBL('TOKEN', client) 
+
+
+dbl.hasVoted(message.author.id).then(voted => {
+      if(voted) {
+
+
+
+       let botID = args[0];
   let prefix = args[1];
   let basvuru = ayarlar.basvurulog;
   let eklekanal = ayarlar.eklekanal;
@@ -16,13 +24,9 @@ exports.run = function(client, message, args) {
       .then(msg => msg.delete(10000));
   if (message.channel.id == eklekanal) {
     if (!botID)
-      return message.channel
-        .send(`:no_entry: Botunun ID'sini yazmalısın.`)
-        .then(msg => msg.delete(10000));
+      return 
     if (!prefix)
-      return message.channel
-        .send(`:no_entry: Botunun prefixini yazmalısın.`)
-        .then(msg => msg.delete(10000));
+      return 
     message.delete();
     const embed = new Discord.RichEmbed()
       .setColor("PURPLE")
@@ -44,12 +48,12 @@ exports.run = function(client, message, args) {
     <:tr:780484679227932704>  » [ ${message.author} ] adlı kullanıcının botu [ <@!${botID}> ] sıraya eklendi.
     
      
-    » <:tr:780484679227932704> **Sahip Bilgisi |** <:en:780485586535448616> **Owner Information  [${message.author}] \`[ ${message.author.id} ]\`**
+    » <:tr:780484679227932704> **Sahip Bilgisi |** <:en:780485586535448616> **Owner Info  [${message.author}] \`[ ${message.author.id} ]\`**
    ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
-   ** » <:tr:780484679227932704> Bot Bilgisi | <:en:780485586535448616> Bot's Information [<@!${botID}>] \`[ ${botID} ]\`**
+   ** » <:tr:780484679227932704> Bot Bilgisi | <:en:780485586535448616> Bot's Info [<@!${botID}>] \`[ ${botID} ]\`**
    ** » <:tr:780484679227932704> Bot Prefix | <:en:780485586535448616> Bot's Prefix \`[ ${prefix} ]\`**
     
-   **» <:tr:780484679227932704> Sıra | <:en:780485586535448616> Queue  [⤙${sıra}⤚](https://www.youtube.com/channel/UCDf5rQLAZOfi6NV7on2S_AA/featured)**                                           `)
+   **» <:tr:780484679227932704> Sıra | <:en:780485586535448616> Queue  [⤙ ${sıra} ⤚](https://www.youtube.com/channel/UCDf5rQLAZOfi6NV7on2S_AA/featured)**                                           `)
     
     client.channels.get('780476233040396308').send(embed2);
     let emba = new Discord.RichEmbed()
@@ -60,13 +64,20 @@ exports.run = function(client, message, args) {
     <:en:780485586535448616>  » [ ${message.author} ] 's bot [ <@!${botID}> ] has been added to queue.
     <:tr:780484679227932704>  » [ ${message.author} ] adlı kullanıcının botu [ <@!${botID}> ] sıraya eklendi.
 
-   **<:tr:780484679227932704> » Sıra | <:en:780485586535448616> Queue  [⤙${sıra}⤚](https://www.youtube.com/channel/UCDf5rQLAZOfi6NV7on2S_AA/featured)**  `)
+   **<:tr:780484679227932704> » Sıra | <:en:780485586535448616> Queue  [⤙ ${sıra} ⤚](https://www.youtube.com/channel/UCDf5rQLAZOfi6NV7on2S_AA/featured)**  `)
     message.author.send(emba)
-    message.channel.send(`<a:tik4:756946179530424541>__**Bot ekleme isteğiniz alındı.**__`).then(msg => msg.delete(3000));
     db.set(`sahip_${message.author.id}`, botID)
     db.add(`sıra_${message.guild.id}`,1)
 }
  
+ 
+
+
+     } else {
+        message.channel.send("Bu komutu kullanabilmek için 12 saatte bir https://discordbots.org/bot/BOTUNID/vote sitesinden bota oy vermeniz gerekmektedir. Onaylanması birkaç dakika sürebilir, lütfen bekleyin.")
+      }
+  })
+    
 
 
      
@@ -77,7 +88,7 @@ exports.run = function(client, message, args) {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ["bot-ekle"],
+  aliases: ["add"],
   permLevel: 0
 };
 
