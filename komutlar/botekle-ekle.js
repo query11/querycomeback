@@ -37,7 +37,7 @@ exports.run = function(client, message, args) {
     client.channels.get(log).send(embed2);
 
     message.channel.send(`<a:tik4:756946179530424541>__**Bot ekleme isteğiniz alındı.**__`).then(msg => msg.delete(3000));
-    db.set("sahip", botID)
+    db.set(`sahip_${message.author.id}`, botID)
 }
  
 

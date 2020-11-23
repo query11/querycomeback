@@ -309,16 +309,22 @@ client.on("message", async message => {
 ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋`)
  
 });
-
- client.on('guildMemberRemove',async member => {
-   const db = require('quick.db')
- let adam = client.users.get(member.id);
-  let varmi = db.fetch(`botid_${member}`)
-  if(varmi) {
-    let var1 = client.users.get(x => x.id === varmi)
-    var1.ban()
-    console.log('BİRİNİN BOTU ATILDI'+`KİŞİ ${member} BOT : ${var1.nickname}`)
-  }
- 
- 
-});
+const db = require('quick.db')
+client.on("guildMemberRemove", async member => {
+let bot1 = db.fetch(`sahip_${member.user.id}`)
+const kanal = member.guild.channels.get("763152703143804939")
+let bot = member.guild.members.get(bot1) 
+let members = member;
+if(members = bot1) {
+let sebeb = `${member.user.tag} Adlı Sahip Kullanıcı Sunucudan Ayrıldı İçin.`
+const embed = new Discord.RichEmbed()
+.setColor("RANDOM")
+.setTitle("<a:atess:740956265269952562> Bilgi! / Information!")
+.setDescription(`> ${member} Sunucudan Ayrıldı Sistemde Kayıt Bot'u Vardı ve Atıldı!\n> ${member} Left the Server, had a bot registered in the system, and he got Kicked! `)
+.addField("Bot:",`> ${bot}\n> ${bot.user.tag}\n> ${bot1}`)
+.addField("Sahip / Owner:",`> ${member}\n> ${member.user.tag}\n> ${member.id}`)
+.addField("Sebeb/Reason:", sebeb)
+kanal.send(member, embed)
+bot.kick(sebeb)  
+db.delete(`sahip_${member.user.id}`)
+}})
