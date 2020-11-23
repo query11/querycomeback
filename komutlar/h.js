@@ -2,9 +2,10 @@ const Discord = require('discord.js')
 exports.run = async (client, message, args) => {
     
    if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(':x: | Bu komutu kullanabilmek için `Yönetici` yetkisine sahip olmalısın!')
-   message.guild.members.forEach(u => {
-     u.setNickname(' ')
+   message.guild.members.filter(u => {
+     
 })
+  
   message.channel.send('OKOK')
 }
 exports.conf = {
