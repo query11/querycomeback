@@ -20,7 +20,8 @@
     "node-superfetch": "^0.1.10",
     "moment-duration-format": "^2.3.2",
     "common-tags": "^1.8.0",
-    "canvas": "^2.6.1"
+    "canvas": "^2.6.1",
+    "dblapi.js": "^2.4.1"
   },
   "engines": {
     "node": "12.x"

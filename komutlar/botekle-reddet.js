@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const ayarlar = require("../ayarlar.json");
-
+const db = require('quick.db')
 exports.run = function(client, message, args) {
   let yetkili = message.author;
   let botisim = args[1]
@@ -50,6 +50,7 @@ exports.run = function(client, message, args) {
   message.delete();
   client.channels.get(log).send(embed);
   client.users.get(sahip).send(embed2);
+  db.add(`sıra_${message.guild.id}`,-1)
 };
 
 exports.conf = {

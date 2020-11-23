@@ -2,6 +2,7 @@ dependencies:
   canvas: 2.6.1
   chalk: 4.1.0
   common-tags: 1.8.0
+  dblapi.js: 2.4.1
   discord.js: 11.6.4
   express: 4.17.1
   fs: 0.0.2
@@ -650,6 +651,11 @@ packages:
     dev: false
     resolution:
       integrity: sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
+  /dblapi.js/2.4.1:
+    deprecated: Module is no longer maintained
+    dev: false
+    resolution:
+      integrity: sha512-g+u1inF/qOLit5qPK4hBGk5pKL1vy09uBLV+nukkRMvw2S9D1PyiyO70n4fboUXOgbExPp6Sho/Y782OqQOUiQ==
   /debug/2.6.9:
     dependencies:
       ms: 2.0.0
@@ -1805,6 +1811,7 @@ specifiers:
   canvas: ^2.6.1
   chalk: ^4.1.0
   common-tags: ^1.8.0
+  dblapi.js: ^2.4.1
   discord.js: ^11.6.4
   express: ^4.16.4
   fs: ^0.0.2

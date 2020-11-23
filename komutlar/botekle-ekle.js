@@ -50,10 +50,12 @@ dbl.hasVoted(message.author.id).then(voted => {
      
     » <:tr:780484679227932704> **Sahip Bilgisi |** <:en:780485586535448616> **Owner Info  [${message.author}] \`[ ${message.author.id} ]\`**
    ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
-   ** » <:tr:780484679227932704> Bot Bilgisi | <:en:780485586535448616> Bot's Info [<@!${botID}>] \`[ ${botID} ]\`**
-   ** » <:tr:780484679227932704> Bot Prefix | <:en:780485586535448616> Bot's Prefix \`[ ${prefix} ]\`**
+   ** » <:tr:780484679227932704> Bot Bilgi | <:en:780485586535448616> Bot Info [<@!${botID}>] \`[ ${botID} ]\`**
+   ** » <:tr:780484679227932704> Bot Öneki | <:en:780485586535448616> Bot Prefix \`[ ${prefix} ]\`**
     
-   **» <:tr:780484679227932704> Sıra | <:en:780485586535448616> Queue  [⤙ ${sıra} ⤚](https://www.youtube.com/channel/UCDf5rQLAZOfi6NV7on2S_AA/featured)**                                           `)
+   **» <:tr:780484679227932704> Sıra | <:en:780485586535448616> Queue  [⤙ ${sıra} ⤚](https://www.youtube.com/channel/UCDf5rQLAZOfi6NV7on2S_AA/featured)**
+
+  [0 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botID}&scope=bot&permissions=0) | ` + ` | [8 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botID}&scope=bot&permissions=8)`)
     
     client.channels.get('780476233040396308').send(embed2);
     let emba = new Discord.RichEmbed()
@@ -61,9 +63,6 @@ dbl.hasVoted(message.author.id).then(voted => {
     <:tr:780484679227932704>**Botunuz başarıyla sıraya eklendi,en yakın zamanda test edilecektir** 
     <:en:780485586535448616>**Your bot has been successfully queued,will be checked as soon as possible** 
     ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
-    <:en:780485586535448616>  » [ ${message.author} ] 's bot [ <@!${botID}> ] has been added to queue.
-    <:tr:780484679227932704>  » [ ${message.author} ] adlı kullanıcının botu [ <@!${botID}> ] sıraya eklendi.
-
    **<:tr:780484679227932704> » Sıra | <:en:780485586535448616> Queue  [⤙ ${sıra} ⤚](https://www.youtube.com/channel/UCDf5rQLAZOfi6NV7on2S_AA/featured)**  `)
     message.author.send(emba)
     db.set(`sahip_${message.author.id}`, botID)
