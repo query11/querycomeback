@@ -26,7 +26,7 @@ exports.run = function(client, message, args) {
   if (!prefix) return message.reply("Onaylanacak botun prefixini yazmalısın.");
   message.delete();
   sahip.addRole(rol);
-  message.guild.members.get(botisim2).setNickname(` [${prefix}] ` + `${isim}`);
+  //message.guild.members.get(botisim2).setNickname(` [${prefix}] ` + `${isim}`);
   botisim.addRole(b);
  
   
