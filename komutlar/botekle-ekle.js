@@ -21,14 +21,14 @@ if(db.has(`botsayi_${message.author.id}`)) return message.author.send('Daha önc
   if (message.channel.id !== eklekanal)
     return message.channel
       .send(`Bu komutu sadece <#${eklekanal}> kanalında kullanabilirsin.`)
-      .then(msg => msg.delete(10000));
+      .then(msg => msg.delete({timeout : '3000'}));
   if (message.channel.id == eklekanal) {
     if (!botID)
       return 
     if (!prefix)
       return 
     message.delete();
-    const embed = new Discord.RichEmbed()
+    const embed = new Discord.MessageEmbed()
       .setColor("PURPLE")
       .setDescription(
         `[0 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botID}&scope=bot&permissions=0) | ` + ` | [8 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botID}&scope=bot&permissions=8)`,true)
@@ -37,9 +37,9 @@ if(db.has(`botsayi_${message.author.id}`)) return message.author.send('Daha önc
         "<a:jke:754772326704218112> Bot Sahibi",`<@${message.author.id}>`)
       .addField("<a:jke:754772326704218112> Bot ID", botID)
       .addField("<a:jke:754772326704218112> Bot Prefix", prefix);
-     //   client.channels.get(basvuru).send(embed);
-    let bott = client.users.get(botID)
-    let embed2 = new Discord.RichEmbed()
+     //   client.channels.cache.get(basvuru).send(embed);
+    let bott = client.users.cache.get(botID)
+    let embed2 = new Discord.MessageEmbed()
     .setColor('#fff76b')
     .setDescription(`
     <:tr:780484679227932704>**Bir bot başvurusu gönderildi** | <:en:780485586535448616>**A bot application has been submitted** 
@@ -56,8 +56,8 @@ if(db.has(`botsayi_${message.author.id}`)) return message.author.send('Daha önc
 
   **₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋ [0 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botID}&scope=bot&permissions=0) | ` + ` [8 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botID}&scope=bot&permissions=8) ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋**`)
     
-    client.channels.get('758379780751491143').send(embed2);
-    let emba = new Discord.RichEmbed()
+    client.channels.cache.get('758379780751491143').send(embed2);
+    let emba = new Discord.MessageEmbed()
      .setColor('#fff76b')
     .setDescription(`
     <:tr:780484679227932704>**Botunuz başarıyla sıraya eklendi,en yakın zamanda test edilecektir** 

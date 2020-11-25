@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "chalk": "^4.1.0",
-    "discord.js": "^11.6.4",
+    "discord.js": "^12.5.0",
     "express": "^4.16.4",
     "fs": "^0.0.2",
     "moment": "^2.27.0",
@@ -35,4 +35,4 @@
     "glitch",
     "express"
   ]
-}
+}  

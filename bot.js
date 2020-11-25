@@ -137,7 +137,7 @@ client.on("message", (message, member) => {
 
 
 client.on("guildMemberAdd", (member) => {
-  let embed = new Discord.RichEmbed()
+  let embed = new Discord.MessageEmbed()
   .setTitle("<a:pembeh:751553654561046619> __Jau Land'a hoşgeldin!__")
   .setDescription(`
   
@@ -179,10 +179,10 @@ client.on("message", async msg => {
 
    let rol = ayarlar.levelROL;
   if (db.fetch(`seviye_${msg.author.id + msg.guild.id}`) == 2) {
-    if (msg.member.roles.has(msg.guild.roles.get(rol)) === false) {
+    if (msg.member.roles.cache.has(msg.guild.roles.cache.get(rol)) === false) {
     msg.channel.send(`**<@${msg.author.id}> başarıyla ${db.fetch(`seviye_${msg.author.id + msg.guild.id}`) - 1 || 0} seviyeyi geçtin!**`)
      
-    msg.member.addRole(rol)
+    msg.member.roles.add(rol)
     }
   };
 
@@ -198,19 +198,16 @@ client.on("message", async message => {
   let letter = ['a','b','c','d','e','f','g','ğ','h','ı','i','j','k','m','n','o','ö','p','r','s','ş','t','u','ü','v','y','z']
     if(message.content.toLowerCase().includes('a','b','c','d','e','f','g','ğ','h','ı','i','j','k','m','n','o','ö','p','r','s','ş','t','u','ü','v','y','z')) return
 //  if(message.author.id = client.user.id) return
-  let EMBO = new Discord.RichEmbed().setTimestamp().setAuthor('» Bir Kullanıcı Altyapı İsteğinde Bulundu', message.author.avatarURL).setDescription(`» **Kullanıcı** ${message.author}`);
+  let EMBO = new Discord.MessageEmbed().setTimestamp().setAuthor('» Bir Kullanıcı Altyapı İsteğinde Bulundu', message.author.avatarURL()).setDescription(`» **Kullanıcı** ${message.author}`);
   if (message.author.id === client.user.id && message.channel.type === "dm") return;
   if (message.attachments.first()) EMBO.setImage(message.attachments.first().url);
 
-  if (message.channel.type === "dm" || !message.guild) client.channels.get('779066931998883851').send(EMBO);
+  if (message.channel.type === "dm" || !message.guild) client.channels.cache.get('779066931998883851').send(EMBO);
  
 });
 
 
 
-client.on("ready", () => {
- client.channels.get('779087987035734026').join()
-});
 
 const iltifatlar = ['Altyapılara ulaşmak için <#768421922622406676> kanalına bakabilirsiniz'];
 
@@ -221,18 +218,18 @@ client.on("message", async message => {
   if(iltifatSayi >= 40) { // 50 yazan yer, 50 mesajda bir iltifat edeceğini gösterir, değiştirebilirsiniz.
     iltifatSayi = 0;
     const random = Math.floor(Math.random() * ((iltifatlar).length - 1) + 1);
-    client.channels.get('758689889197096990').send(`**Altyapılara ulaşmak için <#768421922622406676> kanalına bakabilirsiniz**`);
+    client.channels.cache.get('758689889197096990').send(`**Altyapılara ulaşmak için <#768421922622406676> kanalına bakabilirsiniz**`);
   };
 });
 
 client.on("ready", () => {
- client.channels.get('779087987035734026').join()
+ client.channels.cache.get('781242727303741462').join()
 });
 
 
 client.on("message", async message => {
   if(!message.content.toLowerCase().includes('altyapı nasıl alırım','altyapıyı nerden alacağım','altyapılar nerede')) return;
-let eee = new Discord.RichEmbed()
+let eee = new Discord.MessageEmbed()
 .setDescription(`
 <a:sari3:751558669585612830> • Altyapılara ulaşnanız için  <@714141828340777043> 'in DM kutusuna hangi altyapıyı istiyorsanız o videoya like atıp kanala abone olduğunuzun ve saatin gözüktüğü bir ekran görüntüsü atmalısınız.
 
@@ -256,38 +253,38 @@ client.on("message", async message => {
  
  client.on('guildMemberAdd',async member => {
  
- let user = client.users.get(member.id);
-  let kanal = member.guild.channels.find(x => x.id === '770641495832133644')
+ let user = client.users.cache.get(member.id);
+  let kanal = member.guild.channels.cache.cache.find(x => x.id === '770641495832133644')
  const { get } = require('node-superfetch');
   let moment = require('moment')
   require('moment-duration-format')
-  const avatar =member.user.displayAvatarURL
+  const avatar =member.user.displayAvatarURL()
  const kuruluş = user.createdAt.getTime();
   const tarih = new Date().getTime() - user.createdAt.getTime();
  var tarihi = moment.duration(tarih).format(" D [gün] H [saat] m [dakika] s [saniye]")
-  let emb = new Discord.RichEmbed()
+  let emb = new Discord.MessageEmbed()
   .setThumbnail(avatar)
   .setDescription(`
-» <a:dng:779785918591795231> **SENİNLE BİRLİKTE \`${member.guild.members.size}\` KİŞİYİZ**
+» <a:dng:779785918591795231> **SENİNLE BİRLİKTE \`${member.guild.members.cache.size}\` KİŞİYİZ**
 » <a:dng:779785918591795231>** İSİM = \`${user.username}\` **
 » <a:dng:779785918591795231>** HESAP KURULUŞ TARİHİ = \`${tarihi}\`**`)
   kanal.send(`
 »                                          __**H O Ş G E L D İ N**__
 » <a:dng:779785918591795231>** KULLANICI = ${member} **
 » <a:dng:779785918591795231>** HESAP KURULUŞ TARİHİ = \`${tarihi}\`**
-» <a:dng:779785918591795231> **SENİNLE BİRLİKTE \`${member.guild.members.size}\` KİŞİYİZ**
+» <a:dng:779785918591795231> **SENİNLE BİRLİKTE \`${member.guild.members.cache.size}\` KİŞİYİZ**
 ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋`)
  
 });
 const db = require('quick.db')
 client.on("guildMemberRemove", async member => {
 let bot1 = db.fetch(`sahip_${member.user.id}`)
-const kanal = member.guild.channels.get(x => x.id === "780581274825654292")
-let bot = member.guild.members.get(bot1) 
+const kanal = member.guild.channels.cache.get(x => x.id === "780581274825654292")
+let bot = member.guild.members.cache.get(bot1) 
 let members = member;
 if(members = bot1) {
 let sebeb = `${member.user.tag} Adlı Sahip Kullanıcı Sunucudan Ayrıldı İçin.`
-const embed = new Discord.RichEmbed()
+const embed = new Discord.MessageEmbed()
 .setColor("RANDOM")
 .setDescription(`
 **<:tr:780484679227932704> »** ${member} Sunucudan Ayrıldı Sistemde Kayıt Bot'u Vardı ve Atıldı!
