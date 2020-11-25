@@ -10,24 +10,20 @@ exports.run = function(client, message, args) {
   let botisim = message.guild.members.cache.get(args[1]);
   let botisim2 = args[1];
   let prefix = args[2];
-  let isim = client.users.cache.get(args[1]).username;
+//  let isim = client.users.cache.get(args[1]).username;
   let log = ayarlar.log;
   let rol = ayarlar.developerROL;
   let b = ayarlar.botROL;
-
-  if (!botisim)
-    return message.channel
-      .send(`Onaylanacak botun ID'sini girmen gerekiyor.`)
-      .then(msg => msg.delete(5000));
   if (!sahip)
     return message.reply(
       "Onaylanacak botun sahibinin ID'sini girmen gerekiyor."
     );
   if (!prefix) return message.reply("Onaylanacak botun prefixini yazmalısın.");
   message.delete();
-  sahip.roles.add(rol);
+  sahip.roles.add(rol)
   //message.guild.members.cache.get(botisim2).setNickname(` [${prefix}] ` + `${isim}`);
-  botisim.roles.add(b);
+  
+    botisim.roles.add(b)
  
   
   let embedd = new Discord.MessageEmbed()
@@ -53,7 +49,7 @@ exports.run = function(client, message, args) {
 
     `)
   
-  client.channels.cache.get('780580329102377010').send(embed2)
+  client.channels.cache.get('781244109235027989').send(embed2)
   db.add(`sıra_${message.guild.id}`,-1)
 };
 

@@ -6,8 +6,7 @@ exports.run = function(client, message, args) {
 const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NjUzMTE1MDg5NzkzODQ1MyIsImJvdCI6dHJ1ZSwiaWF0IjoxNjAzODc4MTMzfQ.AOswwrGSLXPGnSJrKCjIAKgbzyT6k4pmynS3LIvh04s', client) 
 
 
-dbl.hasVoted(message.author.id).then(voted => {
-      if(voted) {
+
 
 
 
@@ -17,7 +16,7 @@ dbl.hasVoted(message.author.id).then(voted => {
   let eklekanal = ayarlar.eklekanal;
   let log = ayarlar.log;
   let sıra = db.fetch(`sıra_${message.guild.id}`)
-if(db.has(`botsayi_${message.author.id}`)) return message.author.send('Daha önce bir bot ekledin.')
+//if(db.has(`botsayi_${message.author.id}`)) return message.author.send('Daha önce bir bot ekledin.')
   if (message.channel.id !== eklekanal)
     return message.channel
       .send(`Bu komutu sadece <#${eklekanal}> kanalında kullanabilirsin.`)
@@ -56,7 +55,7 @@ if(db.has(`botsayi_${message.author.id}`)) return message.author.send('Daha önc
 
   **₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋ [0 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botID}&scope=bot&permissions=0) | ` + ` [8 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botID}&scope=bot&permissions=8) ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋**`)
     
-    client.channels.cache.get('758379780751491143').send(embed2);
+    client.channels.cache.get('781244773822496788').send(embed2);
     let emba = new Discord.MessageEmbed()
      .setColor('#fff76b')
     .setDescription(`
@@ -68,13 +67,8 @@ if(db.has(`botsayi_${message.author.id}`)) return message.author.send('Daha önc
     db.set(`sahip_${message.author.id}`, botID)
     db.add(`sıra_${message.guild.id}`,1)
     db.add(`botsayi_${message.author.id}`,1)
-}
- 
- 
 
-
-     } 
-  })
+  }
     
 
 

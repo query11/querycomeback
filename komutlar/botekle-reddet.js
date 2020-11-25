@@ -47,7 +47,7 @@ exports.run = function(client, message, args) {
   if (!sahip)
     return message.reply("Reddedilecek botun sahibinin ID'sini belirtmelisin.");
   message.delete();
-  client.channels.get('780571429275697173').send(embed)
+  client.channels.get('781244120780898334').send(embed)
   client.users.get(sahip).send(embed2);
   db.add(`sıra_${message.guild.id}`,-1)
 };
