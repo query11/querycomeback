@@ -148,15 +148,29 @@ let sebeb = `${member.user.tag} Adlı Sahip Kullanıcı Sunucudan Ayrıldı İç
 const embed = new Discord.MessageEmbed()
 .setColor("RANDOM")
 .setDescription(`
-**<:tr:780484679227932704> »** ${member} Sunucudan Ayrıldı Sistemde Kayıt Bot'u Vardı ve Atıldı!
-**<:en:780485586535448616> »** ${member} Left the Server, had a bot registered in the system,bot was kicked.
+**<:tr:780484679227932704> »** ${member} Sunucudan Ayrıldığı İçin Botu Atıldı!
+**<:en:780485586535448616> »** ${member} Left the Server, And Member's Bot Banned.
 ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
 **<:tr:780484679227932704> » Bot Bilgisi | <:en:780485586535448616> » Bot Information ↓ ↓ ↓**
 
 **<:tr:780484679227932704> » Sahip | <:en:780485586535448616> Owner ${member} \`[ ${member.id} ]\`**
 **<:tr:780484679227932704> »  Bot  | <:en:780485586535448616> Bot ${bot} \`[ ${bot} ]\`**
 `)
+const embed2 = new Discord.MessageEmbed()
+.setColor("RANDOM")
+.setDescription(`
+**<:tr:780484679227932704> »** ${member} Sunucudan Ayrıldığın İçin Botun Atıldı!
+**<:en:780485586535448616> »** ${member} Your bot was kicked for leaving the server.
+₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
+**<:tr:780484679227932704> » Bot Bilgisi | <:en:780485586535448616> » Bot Information ↓ ↓ ↓**
+
+**<:tr:780484679227932704> » Sahip | <:en:780485586535448616> Owner ${member} \`[ ${member.id} ]\`**
+**<:tr:780484679227932704> »  Bot  | <:en:780485586535448616> Bot ${bot} \`[ ${bot} ]\`**
+`)
+member.send(embed2)
 kanal.send(embed)
-bot.kick()  
+if(bot.user.bot) {
+   bot.kick()
+}  
 db.delete(`sahip_${member.user.id}`)
 }})
