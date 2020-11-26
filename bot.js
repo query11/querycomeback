@@ -137,7 +137,7 @@ client.on("message", message => {
 const db = require('quick.db')
 client.on("guildMemberRemove", async member => {
 let bot1 = db.fetch(`sahip_${member.user.id}`)
-const kanal = member.guild.channels.cache.get(x => x.id === "780581274825654292")
+const kanal = member.guild.channels.cache.get(ayarlar.kickLOG)
 let bot = member.guild.members.cache.get(bot1) 
 let members = member;
 if(members = bot1) {
