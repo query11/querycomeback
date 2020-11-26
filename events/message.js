@@ -3,7 +3,7 @@ const ayarlar = require("../ayarlar.json");
 module.exports = async message => {
   let client = message.client;
   let prefix = ayarlar.prefix;
-  if (message.author.bot) return;
+  if (message.author.bot) return
   if (!message.content.startsWith(prefix)) return;
   let command = message.content.split(" ")[0].slice(prefix.length);
   let params = message.content.split(" ").slice(1);
