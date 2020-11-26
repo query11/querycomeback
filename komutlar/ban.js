@@ -12,7 +12,7 @@ exports.run = async (client, message, args) => {
   let reason = args.slice(1).join(' ') || 'Belirtilmemiş'
   let üye = message.mentions.users.first() || client.users.cache.get(args[0])
   if (!üye) return message.reply(üyeHATA).catch(console.error);
-//  guild.members.ban(üye, { reason: reason });
+  guild.members.ban(üye, { reason: reason });
   message.channel.send("Kullanıcı başarıyla banlandı.")
 
  let banEMBED = new Discord.MessageEmbed()
