@@ -23,26 +23,16 @@ let botID = args[0];
     if (!prefix)
       return 
     message.delete();
-    const embed = new Discord.MessageEmbed()
-      .setColor("PURPLE")
-      .setDescription(
-        `[0 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botID}&scope=bot&permissions=0) | ` + ` | [8 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botID}&scope=bot&permissions=8)`,true)
-      .setTitle("<a:jke:754772326704218112> Bot Başvurusu ")
-      .addField(
-        "<a:jke:754772326704218112> Bot Sahibi",`<@${message.author.id}>`)
-      .addField("<a:jke:754772326704218112> Bot ID", botID)
-      .addField("<a:jke:754772326704218112> Bot Prefix", prefix);
-     //   client.channels.cache.get(basvuru).send(embed);
-    let bott = client.users.cache.get(botID)
+
     let embed2 = new Discord.MessageEmbed()
     .setColor('#fff76b')
     .setDescription(`
     <:tr:780484679227932704>**Bir bot başvurusu gönderildi** | <:en:780485586535448616>**A bot application has been submitted** 
 
-    <:en:780485586535448616>  » ${uye} 's bot [<@!${botID}>] has been added to queue.
-    <:tr:780484679227932704>  » ${uye} adlı kullanıcının botu [<@!${botID}>] sıraya eklendi.
+    <:en:780485586535448616>  » ${message.author} 's bot [<@!${botID}>] has been added to queue.
+    <:tr:780484679227932704>  » ${uye.id} adlı kullanıcının botu [<@!${botID}>] sıraya eklendi.
     
-    » <:tr:780484679227932704> **Sahip Bilgi |** <:en:780485586535448616> **Owner Info  ${uye} \`[ ${uye.id} ]\`**
+    » <:tr:780484679227932704> **Sahip Bilgi |** <:en:780485586535448616> **Owner Info  ${uye.id} \`[ ${uye.id} ]\`**
    ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
    ** » <:tr:780484679227932704> Bot Bilgi | <:en:780485586535448616> Bot Info <@!${botID}> \`[${botID}]\`**
    ** » <:tr:780484679227932704> Bot Öneki | <:en:780485586535448616> Bot Prefix \`[ ${prefix} ]\`**
