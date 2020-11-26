@@ -136,6 +136,15 @@ client.on("message", message => {
   }
 });
 
+client.on("message", message => {
+   if(message.author.id === client.user.id) return
+  if (message.channel.id == ayarlar.eklekanal) {
+
+    message.delete();
+    
+  }
+});
+
 
 const db = require('quick.db')
 client.on("guildMemberRemove", async member => {
