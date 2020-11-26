@@ -24,12 +24,12 @@ module.exports.run = async (bot, message, args) => {
   if (!muterol) {
     try {
       muterol = await message.guild.roles.create({
-        name: mutelirolu,
+        name: "Susturulmuş",
         color: "#313136",
         permissions: [],
         reason: 'Mute için!'
       });
-      message.guild.channels.forEach(async (channel, id) => {
+      message.guild.channels.cache.forEach(async (channel, id) => {
         await channel.createOverwrite(muterol, {
           SEND_MESSAGES: false,
           ADD_REACTIONS: false
