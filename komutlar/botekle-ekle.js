@@ -27,9 +27,9 @@ let botID = args[0];
     <:tr:780484679227932704>**Bir bot başvurusu gönderildi** | <:en:780485586535448616>**A bot application has been submitted** 
 
     <:en:780485586535448616>  » ${message.author} 's bot [<@!${botID}>] has been added to queue.
-    <:tr:780484679227932704>  » ${uye.id} adlı kullanıcının botu [<@!${botID}>] sıraya eklendi.
+    <:tr:780484679227932704>  » ${message.author} adlı kullanıcının botu [<@!${botID}>] sıraya eklendi.
     
-    » <:tr:780484679227932704> **Sahip Bilgi |** <:en:780485586535448616> **Owner Info  ${uye.id} \`[ ${uye.id} ]\`**
+    » <:tr:780484679227932704> **Sahip Bilgi |** <:en:780485586535448616> **Owner Info  ${message.author} \`[ ${message.author.id} ]\`**
    ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
    ** » <:tr:780484679227932704> Bot Bilgi | <:en:780485586535448616> Bot Info <@!${botID}> \`[${botID}]\`**
    ** » <:tr:780484679227932704> Bot Öneki | <:en:780485586535448616> Bot Prefix \`[ ${prefix} ]\`**

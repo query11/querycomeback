@@ -112,6 +112,7 @@ client.on("ready", () => {
 
 
 client.on("message", message => {
+  if(message.author.id === client.user.id) return
   if (message.channel.id == ayarlar.log) {
 
     message.delete();
@@ -119,6 +120,7 @@ client.on("message", message => {
   }
 });
 client.on("message", message => {
+  if(message.author.id === client.user.id) return
   if (message.channel.id == ayarlar.onayLOG) {
 
     message.delete();
@@ -126,6 +128,7 @@ client.on("message", message => {
   }
 });
 client.on("message", message => {
+   if(message.author.id === client.user.id) return
   if (message.channel.id == ayarlar.redLOG) {
 
     message.delete();
@@ -151,7 +154,7 @@ const embed = new Discord.MessageEmbed()
 **<:tr:780484679227932704> » Bot Bilgisi | <:en:780485586535448616> » Bot Information ↓ ↓ ↓**
 
 **<:tr:780484679227932704> » Sahip | <:en:780485586535448616> Owner ${member} \`[ ${member.id} ]\`**
-**<:tr:780484679227932704> »  Bot  | <:en:780485586535448616> Bot ${bot} \`[ ${bot.id} ]\`**
+**<:tr:780484679227932704> »  Bot  | <:en:780485586535448616> Bot ${bot} \`[ ${bot} ]\`**
 `)
 kanal.send(embed)
 bot.kick(sebeb)  
