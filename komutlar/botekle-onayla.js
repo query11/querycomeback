@@ -3,26 +3,41 @@ const ayarlar = require("../ayarlar.json");
 const db = require('quick.db')
 exports.run = function(client, message, args) {
   let yetkiliROL = ayarlar.yetkiliROL;
-  if (!message.member.roles.cache.has(yetkiliROL)) return;
+  if (!message.member.roles.cache.has(yetkiliROL)) return message.channel.send(hata1)
   let yetkili = message.author;
   let sahip = message.guild.members.cache.get(args[0]);
-   let sahip2 = args[0];
   let botisim = message.guild.members.cache.get(args[1]);
-  let botisim2 = args[1];
   let prefix = args[2];
   let onaylog = ayarlar.onayLOG
-//  let isim = client.users.cache.get(args[1]).username;
   let log = ayarlar.log;
   let rol = ayarlar.developerROL;
   let b = ayarlar.botROL;
-  if (!sahip)
-    return message.reply(
-      "Onaylanacak botun sahibinin ID'sini girmen gerekiyor."
-    );
-  if (!prefix) return message.reply("Onaylanacak botun prefixini yazmalısın.");
+   let hata1 = new Discord.MessageEmbed()
+  .setDescription(`
+   Hata 01
+   
+   \`Bu komutu sadece <@&${yetkiliROL}> rolüne sahip olanlar kullanabilir.\`
+`)
+    let hata2 = new Discord.MessageEmbed()
+  .setDescription(`
+   Hata 02
+   
+   \`Onaylanacak botun sahibini sunucuda bulamıyorum.\`
+`)
+       let hata3 = new Discord.MessageEmbed()
+  .setDescription(`
+   Hata 03
+   
+   \`Onaylanacak botu sunucuda bulamıyorum.\`
+`)
+            let hata4 = new Discord.MessageEmbed()
+  .setDescription(`
+   Hata 04
+   
+   \`Onaylayacağın botun prefixini belirt.\`
+`)
   message.delete();
   sahip.roles.add(rol)
-  //message.guild.members.cache.get(botisim2).setNickname(` [${prefix}] ` + `${isim}`);
   
     botisim.roles.add(b)
  
@@ -45,7 +60,7 @@ exports.run = function(client, message, args) {
       
        <:tr:780484679227932704> **» Sahip Bilgisi |** <:en:780485586535448616> **Owner Info  [${sahip}] \`[ ${args[0]} ]\`**
         ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
-      **  <:tr:780484679227932704> » Bot Bilgisi | <:en:780485586535448616> Bot's Info [${botisim}] \`[ ${botisim2} ]\`**
+      **  <:tr:780484679227932704> » Bot Bilgisi | <:en:780485586535448616> Bot's Info [${botisim}] \`[ ${args[1]} ]\`**
       **  <:tr:780484679227932704> » Bot Prefix | <:en:780485586535448616> Bot's Prefix \`[ ${prefix} ]\`**
 
     `)

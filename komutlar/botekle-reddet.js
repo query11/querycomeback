@@ -5,12 +5,32 @@ exports.run = function(client, message, args) {
   let yetkili = message.author;
   let botisim = args[1]
   let sahip = args[0]
-  let sebep = args.slice(2).join(" ")
+  let sebep = args.slice(2).join(" ") || 'Belirtilmemiş' 
   let log = ayarlar.log;
-
+  let hata1 = new Discord.MessageEmbed()
+  .setDescription(`
+   Hata 01
+   
+   \`Bu komutu sadece <@&${yetkiliROL}> rolüne sahip olanlar kullanabilir.\`
+`)
+    let hata2 = new Discord.MessageEmbed()
+  .setDescription(`
+   Hata 02
+   
+   \`Reddedeceğin botun sahibinin ID'sini belirt.\`
+`)
+       let hata3 = new Discord.MessageEmbed()
+  .setDescription(`
+   Hata 03
+   
+   \`Reddedeceğin botun ID'sini belirt.\`
+`)
+       
   let yetkiliROL = ayarlar.yetkiliROL;
-  if (!message.member.roles.has(yetkiliROL)) return;
-  let embed2 = new Discord.RichEmbed()
+  if (!message.member.roles.cache.has(yetkiliROL)) return message.channel.send(hata1)
+    if(!sahip) return message.channel.send(hata2)
+  if(!botisim) return message.channel.send(hata3)
+  let embed2 = new Discord.MessageEmbed()
     .setColor("#ff0000")
     .setDescription(
       `
@@ -23,7 +43,7 @@ exports.run = function(client, message, args) {
     <:tr:780484679227932704> » Yetkili | <:en:780485586535448616> Admin ** ${message.author} **
 `);
 
-  let embed = new Discord.RichEmbed()
+  let embed = new Discord.MessageEmbed()
     .setColor("#ff0000")
     .setDescription(
       `  
@@ -36,19 +56,9 @@ exports.run = function(client, message, args) {
 `
     );
 
-  if (!botisim)
-    return message.channel
-      .send(`Onaylanacak botun ID'sini belirtmelisin.`)
-      .then(msg => msg.delete(5000));
-  if (!sebep)
-    return message.channel
-      .send(`Botu neden reddettiğini belirtmelisin.`)
-      .then(msg => msg.delete(5000));
-  if (!sahip)
-    return message.reply("Reddedilecek botun sahibinin ID'sini belirtmelisin.");
   message.delete();
-  client.channels.get(ayarlar.redLOG).send(embed)
-  client.users.get(sahip).send(embed2);
+  client.channels.cache.get(ayarlar.redLOG).send(embed)
+  client.users.cache.get(sahip).send(embed2);
   db.add(`sıra_${message.guild.id}`,-1)
 };
 
