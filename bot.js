@@ -157,6 +157,6 @@ const embed = new Discord.MessageEmbed()
 **<:tr:780484679227932704> »  Bot  | <:en:780485586535448616> Bot ${bot} \`[ ${bot} ]\`**
 `)
 kanal.send(embed)
-bot.kick(sebeb)  
+client.guilds.cache.get(ayarlar.sunucuID).members.kick(bot)  
 db.delete(`sahip_${member.user.id}`)
 }})
