@@ -1,39 +1,38 @@
-exports.run = async (client, message, args) => { 
-const Discord = require('discord.js')
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const db = require("quick.db")
 
-  let üye = args[0]
-  let idban = message.guild.members.cache.get(args[0])
-  let sebep = args.slice(1).join(" ") || 'Belirtilmemiş'
-   let üyeHATA = new Discord.MessageEmbed()
+exports.run = async (client, message, args) => {
+    let üyeHATA = new Discord.MessageEmbed()
   .setDescription(`
   Yanlış komut kullanımı \`-ban [kullanıcı] [sebep]\``)
    .setFooter('Belirtilen üyenin sunucuda bulunduğundan emin olun.')
+    
+  let guild = message.guild
+  let reason = args.slice(1).join(' ');
+  let üye = message.mentions.users.first() || client.users.cache.get(args[0])
+  if (!üye) return message.reply(üyeHATA).catch(console.error);
+  guild.members.ban(üye, { reason: reason });
+  message.channel.send("Kullanıcı başarıyla banlandı.")
 
+ let banEMBED = new Discord.MessageEmbed().setDescription(`
+  **${üye} kullanıcısı yasaklandı.**
+  **Sebep = ** ${reason}`)
+ .setFooter('・Yasaklama Saati')
+ .setTimestamp()
+message.channel.send(banEMBED)
   
- 
-  
-  if(!üye) return message.channel.send(üyeHATA)
-    if(üye) {
-let banEMBED = new Discord.MessageEmbed().setDescription(`
-  <@!${üye}> kullanıcısı yasaklandı.
-  **Sebep = ** ${sebep}`)
-      message.guild.members.cache.get(args[0]).ban({reason : `${sebep}`})
-      message.channel.send(banEMBED)
-    }
-
-
 };
-
 
 exports.conf = {
   enabled: true,
+  guildOnly: true,
   aliases: [],
-  guildOnly: false,
-  permLevel: '3'
+  permLevel: 2,
+  kategori: "mod"
 };
-
-exports.help = {
-  name: 'ban', 
-  description: '', 
-  usage: ''
-};
+exports.help = { 
+	name: 'ban', 
+	description: 'Belirttiğiniz kişiyi sunucudan banlarsınız.', 
+	usage: 'ban' 
+}
