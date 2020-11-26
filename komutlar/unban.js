@@ -15,7 +15,7 @@ exports.run = async (client, message, args) => {
   guild.members.unban(üye)
 
  let unbanEMBED = new Discord.MessageEmbed()
- .setAuthor('Jau','https://cdn.discordapp.com/avatars/760535868834054154/2458cdf4da8ee270e23dcbb04ecd568a.webp?size=2048')
+ .setAuthor('Jau','https://cdn.discordapp.com/attachments/620989964104237077/781640684050186280/Screenshot_1-removebg-preview_1.png')
  .setDescription(`
   ・**${üye} kullanıcısının yasağı kaldırıldı.**`)
  .setFooter('・Kaldırılma Saati')
