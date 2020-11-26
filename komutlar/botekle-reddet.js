@@ -3,6 +3,7 @@ const ayarlar = require("../ayarlar.json");
 const db = require('quick.db')
 exports.run = function(client, message, args) {
   let yetkili = message.author;
+   let yetkiliROL = ayarlar.yetkiliROL;
   let botisim = args[1]
   let sahip = args[0]
   let sebep = args.slice(2).join(" ") || 'Belirtilmemiş' 
@@ -26,7 +27,7 @@ exports.run = function(client, message, args) {
    \`Reddedeceğin botun ID'sini belirt.\`
 `)
        
-  let yetkiliROL = ayarlar.yetkiliROL;
+
   if (!message.member.roles.cache.has(yetkiliROL)) return message.channel.send(hata1)
     if(!sahip) return message.channel.send(hata2)
   if(!botisim) return message.channel.send(hata3)

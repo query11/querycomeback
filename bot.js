@@ -105,7 +105,7 @@ client.login(ayarlar.token);
 
 client.on("ready", () => {
   client.user.setPresence({
-    game: { name: `+botekle`, type: "WATCHING" },
+    game: { name: `SPLASHEN V12 BOOSTER BOTLIST`, type: "WATCHING" },
     status: "online"
   });
 });
@@ -157,6 +157,6 @@ const embed = new Discord.MessageEmbed()
 **<:tr:780484679227932704> »  Bot  | <:en:780485586535448616> Bot ${bot} \`[ ${bot} ]\`**
 `)
 kanal.send(embed)
-client.guilds.cache.get(ayarlar.sunucuID).members.kick(bot)  
+bot.kick()  
 db.delete(`sahip_${member.user.id}`)
 }})
