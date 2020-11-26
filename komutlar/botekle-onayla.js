@@ -10,6 +10,7 @@ exports.run = function(client, message, args) {
   let botisim = message.guild.members.cache.get(args[1]);
   let botisim2 = args[1];
   let prefix = args[2];
+  let onaylog = ayarlar.onayLOG
 //  let isim = client.users.cache.get(args[1]).username;
   let log = ayarlar.log;
   let rol = ayarlar.developerROL;
@@ -49,7 +50,7 @@ exports.run = function(client, message, args) {
 
     `)
   
-  client.channels.cache.get('781244109235027989').send(embed2)
+  client.channels.cache.get(onaylog).send(embed2)
   db.add(`sıra_${message.guild.id}`,-1)
 };
 

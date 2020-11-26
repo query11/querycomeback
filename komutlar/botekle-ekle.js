@@ -3,20 +3,20 @@ const ayarlar = require("../ayarlar.json");
 const db = require('quick.db')
 exports.run = function(client, message, args) {
  const DBL = require('dblapi.js')
-const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NjUzMTE1MDg5NzkzODQ1MyIsImJvdCI6dHJ1ZSwiaWF0IjoxNjAzODc4MTMzfQ.AOswwrGSLXPGnSJrKCjIAKgbzyT6k4pmynS3LIvh04s', client) 
+//const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NjUzMTE1MDg5NzkzODQ1MyIsImJvdCI6dHJ1ZSwiaWF0IjoxNjAzODc4MTMzfQ.AOswwrGSLXPGnSJrKCjIAKgbzyT6k4pmynS3LIvh04s', client) 
 
 
 
 
 
 
-       let botID = args[0];
+let botID = args[0];
   let prefix = args[1];
   let basvuru = ayarlar.basvurulog;
   let eklekanal = ayarlar.eklekanal;
   let log = ayarlar.log;
   let sıra = db.fetch(`sıra_${message.guild.id}`)
-//if(db.has(`botsayi_${message.author.id}`)) return message.author.send('Daha önce bir bot ekledin.')
+if(db.has(`botsayi_${message.author.id}`)) return message.author.send('<:tr:780484679227932704> Sadece 1 bot ekleyebilirsin.<:en:780485586535448616> You can add only one bot.')
   if (message.channel.id !== eklekanal)
     return message.channel
       .send(`Bu komutu sadece <#${eklekanal}> kanalında kullanabilirsin.`)
@@ -55,7 +55,7 @@ const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NjUzMTE1MD
 
   **₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋ [0 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botID}&scope=bot&permissions=0) | ` + ` [8 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botID}&scope=bot&permissions=8) ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋**`)
     
-    client.channels.cache.get('781244773822496788').send(embed2);
+    client.channels.cache.get(log).send(embed2);
     let emba = new Discord.MessageEmbed()
      .setColor('#fff76b')
     .setDescription(`

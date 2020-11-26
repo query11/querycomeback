@@ -116,24 +116,11 @@ client.on("guildMemberAdd", member => {
 });
 
 client.on("message", message => {
-  let kanal2 = ayarlar.kanalengel2;
-  if (message.channel.id == '780513133369622568') {
+  if (message.channel.id == ayarlar.log) {
 
     message.delete();
   }
 });
-
-client.on("message", (message, member) => {
-  let kanal1 = ayarlar.kanalengel;
-  if (message.channel.id == kanal1) {
-
-
-    message.delete(1 * 500);
-  }
-});
-
-
-
 
 
 client.on("guildMemberAdd", (member) => {
