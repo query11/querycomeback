@@ -3,8 +3,7 @@ const client = new Discord.Client();
 const db = require("quick.db")
 
 exports.run = async (client, message, args) => {
-   if (message.channel.type == "dm") return;
-  if (message.channel.type !== "text") return;
+   
     let üyeHATA = new Discord.MessageEmbed()
   .setDescription(`
   Yanlış komut kullanımı \`-unban [kullanıcı ID]\``)
@@ -13,6 +12,7 @@ exports.run = async (client, message, args) => {
   let guild = message.guild
   let reason = args.slice(1).join(' ') || 'Belirtilmemiş'
   let üye = message.mentions.users.first() || client.users.cache.get(args[0])
+  if(!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send(new Discord.MessageEmbed().setDescription(`**Bu komutu sadece** \`"BAN_MEMBERS"\` **yetkisine sahip kişiler kullanabilir.**`))
   if (!üye) return message.reply(üyeHATA).catch(console.error);
   guild.members.unban(üye)
 
@@ -28,10 +28,9 @@ message.channel.send(unbanEMBED)
 
 exports.conf = {
   enabled: true,
-  guildOnly: true,
+  guildOnly: false,
   aliases: [],
-  permLevel: 2,
-  kategori: "mod"
+  permLevel: 0  
 };
 exports.help = { 
 	name: 'unban', 

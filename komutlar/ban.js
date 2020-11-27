@@ -3,8 +3,6 @@ const client = new Discord.Client();
 const db = require("quick.db")
 
 exports.run = async (client, message, args) => {
-if(!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send(new Discord.MessageEmbed().setDescription(`**Bu komutu sadece** \`"MANAGE_CHANNELS"\` **yetkisine sahip kişiler kullanabilir.**`))
-
     let üyeHATA = new Discord.MessageEmbed()
   .setDescription(`
   Yanlış komut kullanımı \`-ban [kullanıcı] [sebep]\``)
@@ -13,7 +11,8 @@ if(!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send(new
   let guild = message.guild
   let reason = args.slice(1).join(' ') || 'Belirtilmemiş'
   let üye = message.mentions.users.first() || client.users.cache.get(args[0])
-  if (!üye) return message.reply(üyeHATA).catch(console.error);
+  if(!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send(new Discord.MessageEmbed().setDescription(`**Bu komutu sadece** \`"BAN_MEMBERS"\` **yetkisine sahip kişiler kullanabilir.**`))
+   if (!üye) return message.reply(üyeHATA).catch(console.error);
   guild.members.ban(üye, { reason: reason });
   message.channel.send("Kullanıcı başarıyla banlandı.")
 
@@ -32,10 +31,9 @@ message.channel.send(banEMBED)
 
 exports.conf = {
   enabled: true,
-  guildOnly: true,
+  guildOnly: false,
   aliases: [],
-  permLevel: 2,
-  kategori: "mod"
+  permLevel: 0  
 };
 exports.help = { 
 	name: 'ban', 
