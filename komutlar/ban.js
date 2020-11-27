@@ -3,9 +3,7 @@ const client = new Discord.Client();
 const db = require("quick.db")
 
 exports.run = async (client, message, args) => {
-  let e = new Discord.MessageEmbed()
-  .setDescription(`**Bu komutu sadece** \`"BAN_MEMBERS"\` **yetkisine sahip kişiler kullanabilir.**`)
-if(!message.member.hasPermission('MANAGE_CHANNELS')) return message.channel.send(e)
+if(!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send(new Discord.MessageEmbed().setDescription(`**Bu komutu sadece** \`"MANAGE_CHANNELS"\` **yetkisine sahip kişiler kullanabilir.**`))
 
     let üyeHATA = new Discord.MessageEmbed()
   .setDescription(`
