@@ -10,17 +10,18 @@ exports.run = async (client, message, args) => {
     .setColor("RANDOM")
     .setTimestamp()
     .setAuthor("Jau", client.user.avatarURL())
+  .setImage('https://cdn.discordapp.com/attachments/620989964104237077/781817709653393458/ezgif-4-76d567677887.gif')
   .setDescription(`
-  » **Founder | ** <@!478466612803141645>
-  » **Mesaj Gecikmesi | ** \`${client.ws.ping}ms\`
-  » **RAM |** \`${(process.memoryUsage().heapUsed / 1024 / 512).toFixed(2)}MB\`
-  » **Çalışma süresi |** \`${çalışma}\`
-  » **Total Kullanıcı |** \`${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}\`
-  » **Total Sunucu |** \`${client.guilds.cache.size.toLocaleString()}\`
-  » **Discord.js Sürümü |** \`${Discord.version}\`
-  » **Discord.js Sürümü |** \`${process.version}\`
+  » **ꜰᴏᴜɴᴅᴇʀ ᴏꜰ ᴊᴀᴜ  | ** <@!478466612803141645>
+  » **ᴘɪɴɢ | ** \`${client.ws.ping}ms\`
+  » **ᴏɴʟɪɴᴇ ꜱɪɴᴄᴇ |** \`${çalışma}\`
+  » **ᴜꜱᴇʀꜱ |** \`${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}\`
+  » **ɢᴜɪʟᴅꜱ |** \`${client.guilds.cache.size.toLocaleString()}\`
   
-  **» Bot Davet** [Davet Et](https://discordapp.com/oauth2/authorize?client_id= + ${client.user.id} + &scope=bot&permissions=8)
+  » \`ᴅɪꜱᴄᴏʀᴅ.ᴊꜱ ᴠᴇʀꜱɪᴏɴ | ${Discord.version}\`
+  » \`ɴᴏᴅᴇ.ᴊꜱ ᴠᴇʀꜱɪᴏɴ | ${process.version}\`
+  
+  » [\`[ʙᴏᴛ ᴅᴀᴠᴇᴛ]\`](https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=0)
 `)
   return message.channel.send(istatistikler);
 };
