@@ -36,7 +36,7 @@ rozetler = false;
 rozetler = true;
 };
 
-let mentionFlags = mention.flags.toArray().join(' | ')
+let mentionFlags = mention.flags.toArray().join(' ')
 .replace('HOUSE_BRAVERY', '<:bravery_badge:781900356820795424>')  
 .replace('HOUSE_BRILLIANCE', '<:brilliance_badge:781900382620221501>')
 .replace('HOUSE_BALANCE', '<:balance_badge:781900368828825661>')
@@ -63,11 +63,12 @@ const embed = new Discord.MessageEmbed()
 **Durum** ${mention.presence.status.replace('online', '<:onlinee:781904209964171304> \`Çevrimiçi\`').replace('idle', '<:idlee:781904222073126982> \`Boşta\`').replace('dnd', '<:dndd:781905007301754931> \`Rahatsız Etmeyin\`').replace('offline', '<:offlinee:781904233506799617> \`Çevrimdışı\`')}
 **Katılma Tarihi** \`${moment(mentionMember.joinedAt).format('D MMMM YYYY')}\`
 **Kayıt Tarihi** \`${moment(mention.createdAt).format('D MMMM YYYY')}\`
+**Rozetler** ${rozetler ? mentionFlags : '\`Rozeti Bulunmuyor.\`'}
 
-**Roller mentionMember.roles.cache.filter(a => a.name !== '@everyone').map(a => a).join(' ') ? mentionMember.roles.cache.filter(a => a.name !== '@everyone').map(a => a).join(' ') : 'Hiç yok.')
 
+**__Kullanıcının Rolleri__** 
 
-Roller', ${mentionMember.roles.cache.filter(a => a.name !== '@everyone').map(a => a).join(' ')} ? ${mentionMember.roles.cache.filter(a => a.name !== '@everyone').map(a => a).join(' ')} : 'Hiç yok.')
+${mentionMember.roles.cache.filter(a => a.name !== '@everyone').map(a => a).join(' ')} ${mentionMember.roles.cache.filter(a => a.name !== '@everyone').map(a => a).join(' ')}
 `)
 .setFooter(mention.username, mention.avatarURL({dynamic: true}))
 .setTimestamp();
