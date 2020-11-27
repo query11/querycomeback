@@ -7,11 +7,18 @@ let channel = message.mentions.channels.first() || message.channel;
 message.channel.send(`Channel ${channel} has been unlocked.`).then(m => m.delete({timeout: 7000}));
 
 let everyone = message.guild.roles.cache.find(a => a.name === '@everyone');
-channel.updateOverwrite(everyone, { 'SEND_MESSAGES': null }, 'Unlocked by '+message.author.tag);
-channel.send(new Discord.MessageEmbed()
-.setColor('GREEN')
-.setTitle(channel.name+' has been unlocked.')
-.setDescription(`Mods had to unlock this channel.`));
+  let d = new Discord.MessageEmbed()
+ .setAuthor(`${message.author.tag}`,message.author.avatarURL())
+.setColor('RED')
+.setDescription(`
+
+・<#${channel.id}> kanalı ${message.author} tarafından kilitlenmiştir.
+`)
+.setThumbnail('https://cdn.discordapp.com/attachments/620989964104237077/781780517057200138/Screenshot_2-removebg-preview_2.png')
+  .setFooter('・Açılma Saati')
+  .setTimestamp()
+  channel.updateOverwrite(everyone, { 'SEND_MESSAGES': null }, 'Unlocked by '+message.author.tag);
+channel.send(d)
 
 };
 exports.conf = {
@@ -22,5 +29,5 @@ exports.conf = {
 };
  
 exports.help = {
-  name: 'unlock'
+  name: 'kilitaç'
 };//

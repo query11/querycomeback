@@ -19,10 +19,17 @@ message.channel.send(`Channel ${channel} has been locked.`).then(m => m.delete({
 
 let everyone = message.guild.roles.cache.find(a => a.name === '@everyone');
 channel.updateOverwrite(everyone, { 'SEND_MESSAGES': false }, 'Locked by '+message.author.tag);
-channel.send(new Discord.MessageEmbed()
+  let d = new Discord.MessageEmbed()
+ .setAuthor(`${message.author.tag}`,message.author.avatarURL())
 .setColor('RED')
-.setTitle(channel.name+' Kanalı kilitlenmiştir.')
-.setDescription(`Bu kanal ${message.author} tarafından kilitlenmiştir.`));
+.setDescription(`
+
+・<#${channel.id}> kanalı ${message.author} tarafından kilitlenmiştir.
+`)
+.setThumbnail('https://cdn.discordapp.com/attachments/620989964104237077/781780517057200138/Screenshot_2-removebg-preview_2.png')
+  .setFooter('・Kilitleme Saati')
+  .setTimestamp()
+channel.send(d)
 
 };
 exports.conf = {
