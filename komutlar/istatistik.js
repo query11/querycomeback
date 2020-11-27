@@ -9,14 +9,15 @@ exports.run = async (client, message, args) => {
   const istatistikler = new Discord.MessageEmbed()
     .setColor("RANDOM")
     .setTimestamp()
-    .setAuthor("Jau", client.user.avatarURL())
+    .setAuthor("ᴊᴀᴜ ", client.user.avatarURL())
+  .setThumbnail('  ')
   .setImage('https://cdn.discordapp.com/attachments/620989964104237077/781817709653393458/ezgif-4-76d567677887.gif')
   .setDescription(`
   » **ꜰᴏᴜɴᴅᴇʀ ᴏꜰ ᴊᴀᴜ  | ** <@!478466612803141645>
-  » **ᴘɪɴɢ | ** \`${client.ws.ping}ms\`
   » **ᴏɴʟɪɴᴇ ꜱɪɴᴄᴇ |** \`${çalışma}\`
-  » **ᴜꜱᴇʀꜱ |** \`${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}\`
-  » **ɢᴜɪʟᴅꜱ |** \`${client.guilds.cache.size.toLocaleString()}\`
+  » **ᴛᴏᴛᴀʟ ᴜꜱᴇʀꜱ ᴏꜰ ᴊᴀᴜ |** \`${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}\`
+  » **ᴛᴏᴛᴀʟ ɢᴜɪʟᴅꜱ ᴏꜰ ᴊᴀᴜ |** \`${client.guilds.cache.size.toLocaleString()}\`
+  » **ᴘɪɴɢ | ** \`${client.ws.ping}ms\`
   
   » \`ᴅɪꜱᴄᴏʀᴅ.ᴊꜱ ᴠᴇʀꜱɪᴏɴ | ${Discord.version}\`
   » \`ɴᴏᴅᴇ.ᴊꜱ ᴠᴇʀꜱɪᴏɴ | ${process.version}\`
