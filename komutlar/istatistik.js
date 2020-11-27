@@ -13,14 +13,14 @@ exports.run = async (client, message, args) => {
   .setThumbnail('  ')
   .setImage('https://cdn.discordapp.com/attachments/620989964104237077/781817709653393458/ezgif-4-76d567677887.gif')
   .setDescription(`
-  » **ꜰᴏᴜɴᴅᴇʀ ᴏꜰ ᴊᴀᴜ  | ** <@!478466612803141645>
-  » **ᴏɴʟɪɴᴇ ꜱɪɴᴄᴇ |** \`${çalışma}\`
-  » **ᴛᴏᴛᴀʟ ᴜꜱᴇʀꜱ ᴏꜰ ᴊᴀᴜ |** \`${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}\`
-  » **ᴛᴏᴛᴀʟ ɢᴜɪʟᴅꜱ ᴏꜰ ᴊᴀᴜ |** \`${client.guilds.cache.size.toLocaleString()}\`
-  » **ᴘɪɴɢ | ** \`${client.ws.ping}ms\`
+ ・ **ꜰᴏᴜɴᴅᴇʀ ᴏꜰ ᴊᴀᴜ  | ** <@!478466612803141645>
+ ・ **ᴏɴʟɪɴᴇ ꜱɪɴᴄᴇ |** \`${çalışma}\`
+ ・ **ᴛᴏᴛᴀʟ ᴜꜱᴇʀꜱ ᴏꜰ ᴊᴀᴜ |** \`${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}\`
+ ・ **ᴛᴏᴛᴀʟ ɢᴜɪʟᴅꜱ ᴏꜰ ᴊᴀᴜ |** \`${client.guilds.cache.size.toLocaleString()}\`
+ ・ **ᴘɪɴɢ | ** \`${client.ws.ping}ms\`
   
-  » \`ᴅɪꜱᴄᴏʀᴅ.ᴊꜱ ᴠᴇʀꜱɪᴏɴ | ${Discord.version}\`
-  » \`ɴᴏᴅᴇ.ᴊꜱ ᴠᴇʀꜱɪᴏɴ | ${process.version}\`
+ ・ \`ᴅɪꜱᴄᴏʀᴅ.ᴊꜱ ᴠᴇʀꜱɪᴏɴ | ${Discord.version}\`
+ ・ \`ɴᴏᴅᴇ.ᴊꜱ ᴠᴇʀꜱɪᴏɴ | ${process.version}\`
   
   » [\`[ʙᴏᴛ ᴅᴀᴠᴇᴛ]\`](https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=0)
 `)

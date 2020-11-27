@@ -109,3 +109,8 @@ client.on("ready", () => {
     status: "online"
   });
 });
+
+
+client.on('message', async msg => {
+  if (msg.content === "<@!760535868834054154>") msg.channel.send(new Discord.MessageEmbed().setDescription(`**Korkmuş görünüyorsun,prefixim sana yardımcı olabilir.**  \`${ayarlar.prefix}\``));
+});

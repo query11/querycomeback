@@ -25,7 +25,7 @@ if (limit > 100) {
     message.channel.send(new emran.MessageEmbed().setAuthor(`Slowmode Aktif Edildi`,message.author.avatarURL()).setFooter('・Saat') .setTimestamp()
                          .setDescription(`
                          
-                         ・ ${message.channel} **kanalına üyeler artık [ ${limit} ] saniyede bir mesaj gönderebilecek.**
+                         ・ ${message.channel} **kanalına üyeler artık  ${limit}  saniyede bir mesaj gönderebilecek.**
                          
                          \`・ Kapatmak için -slowmode 0\`
                          `)
