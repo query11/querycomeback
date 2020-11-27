@@ -14,10 +14,10 @@ exports.run = (client, message, args) => {
   ・\`-avatar\` |  \`-yardım\` |  \`-istatistik\` |  \`-hakkında\` | 
   
   __**Eğlence Komutları**__
-  ・\`-köpek\` |  \`-\` |  \`-\` |  \`-\` | 
+  ・\`-köpek\` |  \`-kedi\` |  \`-\` |  \`-\` | 
   
   `)
-  .setImage('https://cdn.discordapp.com/attachments/620989964104237077/781817709653393458/ezgif-4-76d567677887.gif')
+  .setImage('https://cdn.discordapp.com/attachments/620989964104237077/781891213779140618/New_Project_1.png')
   message.channel.send(yardım)
 };
 exports.conf = {
