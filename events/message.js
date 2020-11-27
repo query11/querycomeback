@@ -17,7 +17,7 @@ module.exports = message => {
      .setAuthor("・  " + `\`${message.author.username}\``, message.author.avatarURL())  
       .setDescription(`
       
-      **Sistemde** \`\`${command}\`\` **adında bir komut bulunmuyor! Komutlarıma göz atmak için** \`\`${ayarlar.prefix}yardım\`\`
+     <a:onayred:780481839147384912> **Sistemde** \`\`${command}\`\` **adında bir komut bulunmuyor! Komutlarıma göz atmak için** \`\`${ayarlar.prefix}yardım\`\`
       
       `)
       message.channel.send(em)
