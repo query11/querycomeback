@@ -24,7 +24,7 @@ exports.run = async (client, message, args) => {
  .setTimestamp()
 message.channel.send(banEMBED)
   let log = db.fetch(`log_${message.guild.id}`)
-  message.guild.channels.cache.find(log => log.id === log).send('BAŞARILI')
+ let lets = client.channels.cache.get(log).send(banEMBED)
   
 };
 
