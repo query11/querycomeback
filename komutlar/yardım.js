@@ -8,13 +8,13 @@ exports.run = (client, message, args) => {
     :white_small_square: **Jau Bot Yardım Komutları**
   
   __**Moderasyon Komutları**__
-  ・\`-ban\` | \`-unban\` | \`-kick\` |  \`-kilit\` |  \`-kilitaç\` | \`-uyar\` | 
+  ・\`-ban\` | \`-unban\` | \`-kick\` |  \`-kilit\` |  \`-kilitaç\`
   
   __**Kullanıcı Komutları**__
-  ・\`-avatar\` |  \`-yardım\` |  \`-istatistik\` |  \`-hakkında\` |  \`-ping\` | |  \`-profil\` | \`-sunucubilgi\` | 
+  ・\`-avatar\` | \`-istatistik\` |  \`-hakkında\` |  \`-ping\` | |  \`-profil\` 
   
   __**Eğlence Komutları**__
-  ・\`-köpek\` |  \`-kedi\` |  \`-\` |  \`-\` | 
+  ・\`-köpek\` |  \`-kedi\` 
   
   `)
   .setImage('https://cdn.discordapp.com/attachments/620989964104237077/781891213779140618/New_Project_1.png')
