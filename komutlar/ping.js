@@ -6,8 +6,7 @@ exports.run = function(client, message, embed, params) {
 
   .setColor('RED')
   .setImage('https://dummyimage.com/2000x500/33363c/ffffff&text='+client.ws.ping+'MS')
-  .setTitle('・ BOTUN PİNGİ AŞAĞIDA VERİLMİŞTİR ・')
-  .set
+  .setAuthor(`Jau botun pingi aşağıdaki fotoğrafta verilmiştir.`,client.user.avatarURL())
 
     message.channel.send(bymayfe);
 
