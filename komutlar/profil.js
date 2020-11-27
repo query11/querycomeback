@@ -47,7 +47,7 @@ let mentionFlags = mention.flags.toArray().join(' ')
 .replace('BUGHUNTER_LEVEL_1', '<:bug_hunter_badge:781900399203581974>')
 .replace('EARLY_SUPPORTER', '<:early_supporter_badge:781900418229075978>')
 .replace('SYSTEM', 'Sistem')
-.replace('VERIFIED_BOT', 'Onaylı Bot');
+.replace('VERIFIED_BOT', '<:verifiedbot:781913631138381835>');
 let sa;
 if(mention.bot) {
 sa = 'Bilinmiyor.'
@@ -62,7 +62,7 @@ const embed = new Discord.MessageEmbed()
 **Ad** \`[${mention.username}]\` - ${mention}
 **Durum** ${mention.presence.status.replace('online', '<:onlinee:781904209964171304> \`Çevrimiçi\`').replace('idle', '<:idlee:781904222073126982> \`Boşta\`').replace('dnd', '<:dndd:781905007301754931> \`Rahatsız Etmeyin\`').replace('offline', '<:offlinee:781904233506799617> \`Çevrimdışı\`')}
 **Katılma Tarihi** \`${moment(mentionMember.joinedAt).format('D MMMM YYYY')}\`
-**Kayıt Tarihi** \`${moment(mention.createdAt).format('D MMMM YYYY')}\`
+**Hesap Kurulma Tarihi** \`${moment(mention.createdAt).format('D MMMM YYYY')}\`
 **Rozetler** ${rozetler ? mentionFlags : '\`Rozeti Bulunmuyor.\`'}
 
 

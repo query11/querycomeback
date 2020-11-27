@@ -11,7 +11,7 @@ exports.run = (client, message, args) => {
   ・\`-ban\` | \`-unban\` | \`-kick\` |  \`-kilit\` |  \`-kilitaç\` | \`-uyar\` | 
   
   __**Kullanıcı Komutları**__
-  ・\`-avatar\` |  \`-yardım\` |  \`-istatistik\` |  \`-hakkında\` |  \`-ping\` | |  \`-kullanıcıbilgi\` | \`-sunucubilgi\` | 
+  ・\`-avatar\` |  \`-yardım\` |  \`-istatistik\` |  \`-hakkında\` |  \`-ping\` | |  \`-profil\` | \`-sunucubilgi\` | 
   
   __**Eğlence Komutları**__
   ・\`-köpek\` |  \`-kedi\` |  \`-\` |  \`-\` | 
