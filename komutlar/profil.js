@@ -37,18 +37,16 @@ rozetler = true;
 };
 
 let mentionFlags = mention.flags.toArray().join(' | ')
-.replace('HOUSE_BRAVERY', 'Bravery')  
-.replace('HOUSE_BRILLIANCE', 'Brilliance')
-.replace('HOUSE_BALANCE', 'Balance')
-.replace('VERIFIED_DEVELOPER', '1. Dönemde Doğrulanmış Bot Geliştiricisi')
-.replace('DISCORD_EMPLOYEE', 'Discord Çalışanı')
-.replace('PARTNERED_SERVER_OWNER', 'Discord Partner')
-.replace('HYPESQUAD_EVENTS', 'HypeSquad Events')
-.replace('BUGHUNTER_LEVEL_1', 'Bug Avcısı 1. Lvl')
-.replace('EARLY_SUPPORTER', 'Erken Destekçi')
-.replace('TEAM_USER', 'Takım Üyesi')
+.replace('HOUSE_BRAVERY', '<:bravery_badge:781900356820795424>')  
+.replace('HOUSE_BRILLIANCE', '<:brilliance_badge:781900382620221501>')
+.replace('HOUSE_BALANCE', '<:balance_badge:781900368828825661>')
+.replace('EARLY_VERIFIED_DEVELOPER', '<:verified_developer_badge:781900480539262997>')
+.replace('VERIFIED_DEVELOPER', '<:verified_developer_badge:781900480539262997>')
+.replace('PARTNERED_SERVER_OWNER', '<:new_partner_badge:781900500022853632>')
+.replace('HYPESQUAD_EVENTS', '<:hypesquad_badge:781900435509870632>')
+.replace('BUGHUNTER_LEVEL_1', '<:bug_hunter_badge:781900399203581974>')
+.replace('EARLY_SUPPORTER', '<:early_supporter_badge:781900418229075978>')
 .replace('SYSTEM', 'Sistem')
-.replace('BUGHUNTER_LEVEL_2', 'Bug Avcısı 2. Lvl')
 .replace('VERIFIED_BOT', 'Onaylı Bot');
 let sa;
 if(mention.bot) {
@@ -68,7 +66,7 @@ const embed = new Discord.MessageEmbed()
 .addField('Kayıt Tarihi', moment(mention.createdAt).format('D MMMM YYYY'), true)
 .addField('Aktivite', oyunlar.join('\n') ? oyunlar.join('\n') : 'Hiç yok.')
 .addField('Roller', mentionMember.roles.cache.filter(a => a.name !== '@everyone').map(a => a).join(' ') ? mentionMember.roles.cache.filter(a => a.name !== '@everyone').map(a => a).join(' ') : 'Hiç yok.')
-.addField('Rozetler', `\`${rozetler ? mentionFlags : 'Boş.'}\``)
+.addField('Rozetler', `${rozetler ? mentionFlags : 'Rozeti Bulunmuyor.'}`)
 .addField('Kullanıcı Kimliği', mention.id)
 .setFooter(mention.username, mention.avatarURL({dynamic: true}))
 .setTimestamp();
