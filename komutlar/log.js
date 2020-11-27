@@ -1,18 +1,22 @@
 const Discord = require('discord.js')
 const db = require('quick.db')
 exports.run = async(client,message,args) => {
-  let durum = args[0];
-  if(!durum) return message.channel.send('Bir durum belirt; `aç`/`kapat`')
-  if(durum =='aç') {
-   db.set(`log_${message.guild.id}`,`Açık`)
+  let kanal = message.mentions.channels.first || message.guild.channels.cache.get(args[0])
+  
+  if(!kanal) return message.channel.send('Bir kanal belirt')
+  
+   db.set(`log_${message.guild.id}`)
     message.channel.send(`Sistem Başarıyla Aktif Edildi!`)
 };
-if(durum == 'kapat') {
-   db.delete(`log_${message.guild.id}`);
-  await message.channel.send(`Sistem Başarıyla Deaktif Edildi!`);
- }
-}
 
-exports.help = {
-  name: "ayarla",
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: [],
+  permLevel: 0
 };
+ 
+exports.help = {
+  name: 'log'
+};//

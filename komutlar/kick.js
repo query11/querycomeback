@@ -23,6 +23,8 @@ exports.run = async (client, message, args) => {
  .setFooter('・Atılma Saati')
  .setTimestamp()
 message.channel.send(banEMBED)
+  let log = db.fetch(`log_${message.guild.id}`)
+  message.guild.channels.cache.get(log).send('BAŞARILI')
   
 };
 
