@@ -13,7 +13,6 @@ exports.run = async (client, message, args) => {
   let üye = message.mentions.users.first() || client.users.cache.get(args[0])
   if (!üye) return message.reply(üyeHATA).catch(console.error);
   guild.member(üye).kick({ reason: reason });
-  message.channel.send("Kullanıcı başarıyla atıldı.")
 
  let banEMBED = new Discord.MessageEmbed()
  .setAuthor('Jau','https://cdn.discordapp.com/attachments/620989964104237077/781640684050186280/Screenshot_1-removebg-preview_1.png')
@@ -23,8 +22,6 @@ exports.run = async (client, message, args) => {
  .setFooter('・Atılma Saati')
  .setTimestamp()
 message.channel.send(banEMBED)
-  let log = db.fetch(`log_${message.guild.id}`)
- let lets = client.channels.cache.get(log).send(banEMBED)
   
 };
 
