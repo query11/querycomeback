@@ -4,7 +4,7 @@ exports.run = (client, message, args) => {
   const yardım = new Discord.MessageEmbed()
   .setDescription(`
   **Moderasyon Komutları**
-  \`-ban\` | \`-unban\` | \`-kick\` |  \`-kilit\` |  \`-kilitaç\` 
+  \`-ban\` | \`-unban\` | \`-kick\` |  \`-kilit\` |  \`-kilitaç\` | \`-uyar\` | \`-kick\` |  \`-kilit\` |  \`-kilitaç\` 
   
   **Kullanıcı Komutları**
    \`-avatar\` |  \`-yardım\` |  \`-istatistik\` |  \`-ping\` |  \`-hakkında\` | 
