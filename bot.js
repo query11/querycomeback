@@ -103,14 +103,11 @@ client.elevation = message => {
 client.login(ayarlar.token);
 
 
-client.on("ready", () => {
-  client.user.setPresence({
-    game: { name: `SPLASHEN V12 BOOSTER BOTLIST`, type: "WATCHING" },
-    status: "online"
-  });
-});
+client.on('ready', () => {
+ client.user.setActivity(`${client.guilds.cache.size} Sunucu + ${client.users.cache.size+200000} Kullanıcı!`);
+})
 
 
 client.on('message', async msg => {
-  if (msg.content === "<@!760535868834054154>") msg.channel.send(new Discord.MessageEmbed().setDescription(`**Korkmuş görünüyorsun,prefixim sana yardımcı olabilir.**  \`${ayarlar.prefix}\``));
+  if (msg.content === "<@!760535868834054154>") msg.channel.send(new Discord.MessageEmbed().setDescription(`**Yolunu mu kaybettin? Bu sana yardımcı olabilir**  \`${ayarlar.prefix}yardım\``));
 });
