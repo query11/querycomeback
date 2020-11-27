@@ -4,7 +4,7 @@ moment.locale('tr');
 
 exports.run = (client, message, args) => {// can ♡ b#1010
 
-let mention = message.author;
+let mention = message.mentions.members.first() || message.author;
 if(message.mentions.members.first()) mention = message.mentions.members.first().user;
 let mentionMember = message.guild.members.cache.get(mention.id);
 
@@ -59,8 +59,15 @@ const embed = new Discord.MessageEmbed()
 .setAuthor(mention.tag, mention.avatarURL({dynamic: true}))
 .setThumbnail(mention.avatarURL({dynamic: true}))
 .setDescription(`
-Durum, ${mention.presence.status.replace('online', '<:onlinee:781904209964171304>').replace('idle', '<:idlee:781904222073126982>').replace('dnd', '<:dndd:781905007301754931>').replace('offline', '<:offlinee:781904233506799617>')}
+**Ad** \`[${mention.username}]\` - ${mention}
+**Durum** ${mention.presence.status.replace('online', '<:onlinee:781904209964171304> \`Çevrimiçi\`').replace('idle', '<:idlee:781904222073126982> \`Boşta\`').replace('dnd', '<:dndd:781905007301754931> \`Rahatsız Etmeyin\`').replace('offline', '<:offlinee:781904233506799617> \`Çevrimdışı\`')}
+**Katılma Tarihi** \`${moment(mentionMember.joinedAt).format('D MMMM YYYY')}\`
+**Kayıt Tarihi** \`${moment(mention.createdAt).format('D MMMM YYYY')}\`
 
+**Roller mentionMember.roles.cache.filter(a => a.name !== '@everyone').map(a => a).join(' ') ? mentionMember.roles.cache.filter(a => a.name !== '@everyone').map(a => a).join(' ') : 'Hiç yok.')
+
+
+Roller', ${mentionMember.roles.cache.filter(a => a.name !== '@everyone').map(a => a).join(' ')} ? ${mentionMember.roles.cache.filter(a => a.name !== '@everyone').map(a => a).join(' ')} : 'Hiç yok.')
 `)
 .setFooter(mention.username, mention.avatarURL({dynamic: true}))
 .setTimestamp();
