@@ -4,7 +4,7 @@ exports.run = (client, message, args) => {
    if (message.channel.type == "dm") return;
   if (message.channel.type !== "text") return;
   const yardım = new Discord.MessageEmbed()
-  .setImage
+  
   .setDescription(`
   :white_small_square: **Jau Bot Nedir?**
   
@@ -13,6 +13,7 @@ exports.run = (client, message, args) => {
  » [\`[ᴅᴇꜱᴛᴇᴋ ꜱᴜɴᴜᴄᴜꜱᴜ]\`](https://discord.gg/YYkYPSU)
  » [\`[ʙᴏᴛ ᴅᴀᴠᴇᴛ]\`](https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=0)
  `)
+  .setImage('https://cdn.discordapp.com/attachments/620989964104237077/781817709653393458/ezgif-4-76d567677887.gif')
   message.channel.send(yardım)
 };
 exports.conf = {
