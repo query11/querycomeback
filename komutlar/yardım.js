@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
   \`-ban\` | \`-unban\` | \`-kick\` |  \`-kilit\` |  \`-kilitaç\` | \`-uyar\` | 
   
   **Kullanıcı Komutları**
-   \`-avatar\` |  \`-yardım\` |  \`-istatistik\` |  \`-ping\` |  \`-hakkında\` | 
+   \`-avatar\` |  \`-yardım\` |  \`-istatistik\` |  \`-hakkında\` | 
   
   `)
   message.channel.send(yardım)
