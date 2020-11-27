@@ -3,6 +3,8 @@ const client = new Discord.Client();
 const db = require("quick.db")
 
 exports.run = async (client, message, args) => {
+  if(!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send(new Discord.MessageEmbed().setDescription(`**Bu komutu sadece** \`"BAN_MEMBERS"\` **yetkisine sahip kişiler kullanabilir.**`))
+
     let üyeHATA = new Discord.MessageEmbed()
   .setDescription(`
   Yanlış komut kullanımı \`-kick [kullanıcı] [sebep]\``)

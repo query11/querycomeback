@@ -1,7 +1,9 @@
 const Discord = require('discord.js');
  
 exports.run = (client, message, args) => {// can#0002
-if(!message.member.hasPermission('MANAGE_CHANNELS')) return;
+if(!message.member.hasPermission('MANAGE_CHANNELS')) return message.channel.send(new Discord.MessageEmbed().setDescription(`**Bu komutu sadece** \`"MANAGE_CHANNELS"\` **yetkisine sahip kişiler kullanabilir.**`))
+ if (message.channel.type == "dm") return;
+  if (message.channel.type !== "text") return;
 
 let channel = message.mentions.channels.first() || message.channel;
   

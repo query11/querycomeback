@@ -3,6 +3,8 @@ const moment = require("moment");
 const os = require("os");
 require("moment-duration-format");
 exports.run = async (client, message, args) => {
+   if (message.channel.type == "dm") return;
+  if (message.channel.type !== "text") return;
   const çalışma = moment
     .duration(client.uptime)
     .format(" D [gün], H [saat], m [dakika], s [saniye]");

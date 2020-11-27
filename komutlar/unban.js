@@ -3,6 +3,8 @@ const client = new Discord.Client();
 const db = require("quick.db")
 
 exports.run = async (client, message, args) => {
+   if (message.channel.type == "dm") return;
+  if (message.channel.type !== "text") return;
     let üyeHATA = new Discord.MessageEmbed()
   .setDescription(`
   Yanlış komut kullanımı \`-unban [kullanıcı ID]\``)
