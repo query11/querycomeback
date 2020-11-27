@@ -3,12 +3,9 @@ const client = new Discord.Client();
 const db = require("quick.db")
 
 exports.run = async (client, message, args) => {
-   if (message.channel.type == "dm") return
   let e = new Discord.MessageEmbed()
   .setDescription(`**Bu komutu sadece** \`"BAN_MEMBERS"\` **yetkisine sahip kişiler kullanabilir.**`)
-if(!message.member.hasPermission('MANAGE_CHANNELS')) return message.channel.send(
- e
-)
+if(!message.member.hasPermission('MANAGE_CHANNELS')) return message.channel.send(e)
 
     let üyeHATA = new Discord.MessageEmbed()
   .setDescription(`
