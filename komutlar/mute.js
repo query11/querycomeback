@@ -23,13 +23,14 @@ permissions : []
 }
 
 })
-}
+
   message.guild.channels.cache.filter(c => c.type === 'text').forEach(async (channel, id) => {
     await channel.createOverwrite(role, {
       SEND_MESSAGES : false,
       ADD_REACTIONS : false
     })
   })
+}
 var sayı = 0;
 let zaman;
 let gercek;
@@ -63,12 +64,11 @@ if(zamann.includes('week') && zamann.split(' ')[0] > 1) zamann = zamann.split(' 
 if(ms(zaman) >= 2147483647) return message.channel.send('You can mute a maximum of one for 24 days.');// ellemeyin arkadaslar.
 
 member.roles.add(mutedROL).then(() => {
-message.channel.send(new Discord.MessageEmbed().setDescription(`**${message.author.tag}** **${member.user.tag}** adlı kullanıcıyı ${zamann} boyunca susturdu.  Sebep : ${reason}`));
+message.channel.send(new Discord.MessageEmbed().setDescription(`**${member.user.tag}** adlı kullanıcıyı ${zamann} boyunca susturdu.  Sebep : ${reason}`))
 setTimeout(() => {
-if(member.roles.cache.has(mutedROL)) {
-member.roles.remove(mutedROL);
-};
-}, require('ms')(zaman))
+
+member.roles.remove(mutedROL)
+}, ms(zaman))
 return;
 });
 }
