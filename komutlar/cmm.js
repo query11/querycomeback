@@ -1,20 +1,16 @@
 const Discord = require("discord.js");
 const { get } = require("superagent");
 module.exports.run = async (bot, message, args) => {
-   if(args[0].includes['ğ']) return message.channel.send('OLMAZ')
-   let üyeHATA = new Discord.MessageEmbed()
+    try {
+        if(!args[0]){
+          let üyeHATA = new Discord.MessageEmbed()
   .setDescription(`
   Yanlış komut kullanımı \`-clyde [mesaj]\``)
    .setFooter('Mesajınızda türkçe karakter bulunmadığından emin olun.')
-    try {
-        if(!args[0]){
 message.channel.send(üyeHATA)
 return;
 }
-     
-
-        let url = `https://nekobot.xyz/api/imagegen?type=clyde&text=${args.join(" ")}`
-         
+        let url = `https://nekobot.xyz/api/imagegen?type=changemymind&text=${args.join(" ")}`
         get(url).then(res => {
             const embed = new Discord.MessageEmbed()
             .setColor("fad0dd")
@@ -31,13 +27,13 @@ return;
 module.exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
+  aliases: ["cmm"],
   permLevel: 0
 };
  
 module.exports.help = {
-  name: 'clyde',
+  name: 'cmm',
   category: 'Kullanıcı',
-  description: 'Anime Karakterlerinin Posterine Yazı Koyar',
+  description: 'Change My Mind ',
   usage: 'cmm <yazı>'
 };
