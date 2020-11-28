@@ -21,12 +21,13 @@ let kur = {
     }
 
    const embed = new Discord.MessageEmbed()
-   .setColor("#D2EE07")
+   .setColor('#f2f2f2')
    .setAuthor(message.guild.name, message.guild.userURL)
    .setThumbnail(message.guild.iconURL())
    .setDescription(`
-   **İsim & ID | \`[${message.guild.name}] + [${message.guild.id}] \` 
-   **Kanallar  | Toplam \`[${message.guild.channels.cache.size}] | [${message.guild.id}] \``)
+   ・ **İsim & ID** | \`[${message.guild.name}] + [${message.guild.id}] \` 
+   ・ **Kanallar**  | <:voicee:782319132091482123>**Sesli =** **\`[${message.guild.channels.cache.filter(c => c.type === "voice").size}]\`** | <:textt:782319115338776587>**Yazı =** **\`[${message.guild.channels.cache.filter(c => c.type === "text").size}]\`** | **Toplam =** **\`[${message.guild.channels.cache.size}]\`** 
+   ・ **Toplam Üye** | \`[${message.guild.memberCount}]\``)
    .setTimestamp()
    message.channel.send({embed});
    message.react('✓');
