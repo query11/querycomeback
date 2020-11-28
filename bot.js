@@ -108,3 +108,9 @@ client.login(ayarlar.token);
 client.on('message', async msg => {
   if (msg.content === "<@!760535868834054154>") msg.channel.send(new Discord.MessageEmbed().setDescription(`**Yolunu mu kaybettin? Bu sana yardımcı olabilir**  \`${ayarlar.prefix}yardım\``));
 });
+
+
+client.on('roleDelete', async role => {
+const data = await require('quick.db').fetch(`carl-mute-role.${role.guild.id}`);
+if(data && data === role.id) require('quick.db').delete(`carl-mute-role.${role.guild.id}`); 
+});
