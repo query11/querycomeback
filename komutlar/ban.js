@@ -9,12 +9,13 @@ exports.run = async (client, message, args) => {
    .setFooter('Belirtilen üyenin sunucuda bulunduğundan emin olun.')
     
      let üyes = new Discord.MessageEmbed()
+      .setAuthor('Jau','https://cdn.discordapp.com/avatars/656531150897938453/560c982e1dbebadfa7ede412a8bc21d5.webp?size=2048')
   .setDescription(`**Kendini yasaklamana izin veremem.**`)
      
      
   let guild = message.guild
   let reason = args.slice(1).join(' ') || 'Belirtilmemiş'
-  let üye = message.mentions.members.first() || client.members.cache.get(args[0])
+  let üye = message.mentions.members.first()
   if(!üye.bannable) return message.channel.send('Bunu banlayamıyorum')
   if(üye.id = message.author.id) return message.channel.send(üyes)
   if(!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send(new Discord.MessageEmbed().setDescription(`**Bu komutu sadece** \`"BAN_MEMBERS"\` **yetkisine sahip kişiler kullanabilir.**`))
@@ -22,7 +23,7 @@ exports.run = async (client, message, args) => {
   guild.members.ban(üye, { reason: reason });
   message.channel.send("Kullanıcı başarıyla banlandı.")
  let banEMBED = new Discord.MessageEmbed()
- .setAuthor('Jau','https://cdn.discordapp.com/attachments/620989964104237077/781640684050186280/Screenshot_1-removebg-preview_1.png')
+ .setAuthor('Jau','https://cdn.discordapp.com/avatars/656531150897938453/560c982e1dbebadfa7ede412a8bc21d5.webp?size=2048')
  .setDescription(`
   ・**${üye} kullanıcısı yasaklandı.**
   ・**Sebep = ** \`${reason}\`
