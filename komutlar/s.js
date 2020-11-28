@@ -22,12 +22,18 @@ let kur = {
 
    const embed = new Discord.MessageEmbed()
    .setColor('#f2f2f2')
-   .setAuthor(message.guild.name, message.guild.userURL)
+   .setAuthor(message.guild.name+'・ Sunucusunun Bilgileri')
    .setThumbnail(message.guild.iconURL())
    .setDescription(`
-   ・ **İsim & ID** | \`[${message.guild.name}] + [${message.guild.id}] \` 
-   ・ **Kanallar**  | <:voicee:782319132091482123>**Sesli =** **\`[${message.guild.channels.cache.filter(c => c.type === "voice").size}]\`** | <:textt:782319115338776587>**Yazı =** **\`[${message.guild.channels.cache.filter(c => c.type === "text").size}]\`** | **Toplam =** **\`[${message.guild.channels.cache.size}]\`** 
-   ・ **Toplam Üye** | \`[${message.guild.memberCount}]\``)
+   ・ **İsim & ID** » \`[ ${message.guild.name} ] + [ ${message.guild.id} ] \` 
+   ・ **Sunucu Sahibi** » \`${message.guild.owner.user.username}\` - [ ${message.guild.owner} ] 
+   ・ **Kanallar** <:voicee:782319132091482123> **\`[ ${message.guild.channels.cache.filter(c => c.type === "voice").size} ]\`** | <:textt:782319115338776587> **\`[${message.guild.channels.cache.filter(c => c.type === "text").size}]\`** | **Toplam =** **\`[${message.guild.channels.cache.size}]\`** 
+   ・ **Toplam Üye** » \`[ ${message.guild.memberCount} ]\`
+   ・ **Toplam Rol** » \`[ ${message.guild.roles.cache.size} ]\`
+   ・ **Toplam Emoji** » \`[ ${message.guild.emojis.cache.size} ]\`
+   ・ **Kuruluş Tarihi** » \`[ ${moment(message.guild.createdAt).format('DD')} ${kur[moment(message.guild.createdAt).format('MM')]} ${moment(message.guild.createdAt).format('YYYY h:mm:ss')}]\`
+   
+   `)
    .setTimestamp()
    message.channel.send({embed});
    message.react('✓');
