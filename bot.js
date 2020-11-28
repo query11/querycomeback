@@ -110,35 +110,3 @@ client.on('message', async msg => {
 });
 
 
-client.on("guildCreate", guild => {
-    let log = client.channels.cache.get("782307835643822121");
-  const embed = new Discord.MessageEmbed()
-    .setAuthor("Bir Sunucuya Eklendim!")
-    .setThumbnail(guild.iconURL() ||"https://cdn.discordapp.com/avatars/656531150897938453/560c982e1dbebadfa7ede412a8bc21d5.webp?size=2048")    
-  .setColor("GREEN")
-         .setDescription(`
-         \`${guild.name}\`,
-   ●▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬●
-    **SUNUCU SAHİBİ :** ${guild.owner}
-    **SUNUCU ID :**\`${guild.id}\`
-    **SUNUCU ÜYE :** \`${guild.members.cache.size}\`
-    ●▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬●`)
-  .setTimestamp()
-    .setFooter(client.user.username, client.user.avatarURL());
-  log.send(embed);
-});
-client.on("guildDelete", guild => {
-  let log = client.channels.cache.get("782307857278173225");
-  const embed = new Discord.MessageEmbed()
-    .setAuthor("Bir Sunucudan Çıkarıldım")
-    .setThumbnail(guild.iconURL() ||"https://cdn.discordapp.com/avatars/656531150897938453/560c982e1dbebadfa7ede412a8bc21d5.webp?size=2048")
-    .setColor("RED")
-    .setDescription(`
-    SUNUCU İSMİ : \`${guild.name}\`,
-    SUNUCU SAHİBİ : ${guild.owner} \`[${guild.owner.id}]\`
-    SUNUCU ID :\`${guild.id}\`
-    SUNUCU ÜYE : ${guild.members.cache.size}
-    SUNUCU KANAL : ${guild.channels.cache.size}`).setTimestamp()
-    .setFooter(client.user.username, client.user.avatarURL());
-  log.send(embed);
-});
