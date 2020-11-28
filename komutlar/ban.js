@@ -8,14 +8,18 @@ exports.run = async (client, message, args) => {
   Yanlış komut kullanımı \`-ban [kullanıcı] [sebep]\``)
    .setFooter('Belirtilen üyenin sunucuda bulunduğundan emin olun.')
     
+     let üyes = new Discord.MessageEmbed()
+  .setDescription(`**Kendini yasaklamana izin veremem.**`)
+     
+     
   let guild = message.guild
   let reason = args.slice(1).join(' ') || 'Belirtilmemiş'
-  let üye = message.mentions.users.first() || client.users.cache.get(args[0])
+  let üye = message.mentions.members.first() || client.members.cache.get(args[0])
+  if(üye.id = message.author.id) return message.channel.send(üyes)
   if(!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send(new Discord.MessageEmbed().setDescription(`**Bu komutu sadece** \`"BAN_MEMBERS"\` **yetkisine sahip kişiler kullanabilir.**`))
    if (!üye) return message.reply(üyeHATA).catch(console.error);
   guild.members.ban(üye, { reason: reason });
   message.channel.send("Kullanıcı başarıyla banlandı.")
-if
  let banEMBED = new Discord.MessageEmbed()
  .setAuthor('Jau','https://cdn.discordapp.com/attachments/620989964104237077/781640684050186280/Screenshot_1-removebg-preview_1.png')
  .setDescription(`

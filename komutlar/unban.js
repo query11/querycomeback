@@ -11,7 +11,7 @@ exports.run = async (client, message, args) => {
   
   let guild = message.guild
   let reason = args.slice(1).join(' ') || 'Belirtilmemiş'
-  let üye = message.mentions.users.first() || client.users.cache.get(args[0])
+  let üye = message.mentions.members.first() || client.users.members.get(args[0])
   if(!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send(new Discord.MessageEmbed().setDescription(`**Bu komutu sadece** \`"BAN_MEMBERS"\` **yetkisine sahip kişiler kullanabilir.**`))
   if (!üye) return message.reply(üyeHATA).catch(console.error);
   guild.members.unban(üye)
