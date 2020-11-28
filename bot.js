@@ -103,9 +103,6 @@ client.elevation = message => {
 client.login(ayarlar.token);
 
 
-client.on('ready', () => {
- client.user.setActivity(`${client.guilds.cache.size} Sunucu + ${client.users.cache.size+200000} Kullanıcı!`);
-})
 
 
 client.on('message', async msg => {
