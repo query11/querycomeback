@@ -1,30 +1,36 @@
-const Discord = require('discord.js');
-const database = require('quick.db');
+const Discord = require('discord.js')
+const ms = require('ms')
+exports.run = async(client, message, args) => {
+ let üyeHATA = new Discord.MessageEmbed()
+  .setDescription(`
+  Yanlış komut kullanımı \`-unmute [kullanıcı]\``)
+   .setFooter('Belirtilen üyenin sunucuda bulunduğundan emin olun.')
+let üye = message.mentions.members.first() || message.guild.members.cache.get(args[0])
+let time = args[1]
+  if (!message.member.hasPermission("MANAGE_ROLES"))
+    return message.channel.send(
+      new Discord.MessageEmbed().setDescription(
+        `**Bu komutu sadece** \`"MANAGE_ROLES"\` **yetkisine sahip kişiler kullanabilir.**`
+      )
+    ).then(m => m.delete({timeout : '5000'}))
+if(!üye) return message.channel.send(üyeHATA)
+  let role2 = message.guild.roles.cache.find(x => x.name === 'Susturulmuş')
+  if(!üye.roles.cache.has(role2.id)) return message.channel.send(new Discord.MessageEmbed().setDescription(`${üye} **adlı kullanıcı zaten sunucuda susturulmamış.**`))
+  await üye.roles.remove(role2) 
+  message.channel.send(new Discord.MessageEmbed().setDescription(`${üye} adlı kullanıcının başarıyla susturması açıldı.`))
+  
+}
 
-exports.run = async (client, message, args) => {// can#0002
 
-if(!message.member.hasPermission('MANAGE_MESSAGES')) return;
 
-const muteRoleFetch = await database.fetch(`carl-mute-role.${message.guild.id}`);
-if(!muteRoleFetch) return message.channel.send('This server does not have a mute role, use `!muterole ` to set one or `!muterole create [name]` to create one.');
 
-if(!args[0]) return message.channel.send(`\`\`\`${message.content.split('unmute')[0]}unmute  [reason]
-      ^^^^^^^^
-member is a required argument that is missing.\`\`\``);
-
-let member = message.guild.members.cache.get(args[0]) || message.mentions.members.first() || message.guild.members.cache.find(a => message.guild.members.cache.get(a.user.id).nickname && a.nickname.toLowerCase().includes(args[0].toLowerCase())) || message.guild.members.cache.find(a => a.user.username.toLowerCase().includes(args[0].toLowerCase()))
-if(!member) return message.channel.send(`Member "${args[0]}" not found`);
-member.roles.remove(muteRoleFetch).then(() => {
-return message.channel.send('Successfully unmuted **'+member.user.tag+'**');
-})
-}; 
 exports.conf = {
   enabled: true,
-  guildOnly: false,
-  aliases: [],
+  guildOnly: true,
+  aliases: ['susturaç'],
   permLevel: 0
 };
- 
-exports.help = {
-  name: 'unmute'
+
+exports.help = { 
+    name: 'unmute'
 };

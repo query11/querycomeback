@@ -3,7 +3,11 @@ const database = require('quick.db');
 const ms = require('ms');
 
 exports.run = async (client, message, args) => {// can#0002
-if(!message.member.hasPermission('MANAGE_MESSAGES')) return;
+if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send(new Discord.MessageEmbed().setDescription(`**Bu komutu sadece** \`"MANAGE_MESSAGES"\` **yetkisine sahip kişiler kullanabilir.**`))
+   let üyes = new Discord.MessageEmbed()
+  .setDescription(`**Belirttiğin kullanıcıyı susturamıyorum.**`)
+     .setFooter('Kişinin rolü bottan üstteyse veya ADMIN yetkisi var ise susturulmaz.')
+      .setAuthor('Jau','https://cdn.discordapp.com/avatars/656531150897938453/560c982e1dbebadfa7ede412a8bc21d5.webp?size=2048')
     let üyeHATA2 = new Discord.MessageEmbed()
   .setDescription(`
   Yanlış komut kullanımı \`-mute [@kullanıcı] [süre] [sebep]\``)
@@ -12,8 +16,7 @@ if(!args[0]) return message.channel.send(üyeHATA2);
 
 let member = message.guild.members.cache.get(args[0]) || message.mentions.members.first() || message.guild.members.cache.find(a => message.guild.members.cache.get(a.user.id).nickname && a.nickname.toLowerCase().includes(args[0].toLowerCase())) || message.guild.members.cache.find(a => a.user.username.toLowerCase().includes(args[0].toLowerCase()))
 if(!member) return message.channel.send(üyeHATA2)
-  if(!member.hasPermission('ADMINISTRATOR')) return message.channel.send()
-
+  if(member.hasPermission('ADMINISTRATOR')) return message.channel.send(üyes).then(m => m.delete({timeout : '5000'}))
 let infinity = false;
 if(args[1]) {
 infinity = args.find(a => a.endsWith('m') || a.endsWith('h') || a.endsWith('s') || a.endsWith('d') || a.endsWith('w') || a.endsWith('y'));
@@ -23,6 +26,7 @@ if(!mutedROL) {
 var role = await message.guild.roles.create({
 data : {
 name : 'Susturulmuş',
+color : '#aa3d3d',
 permissions : []
 }
 
