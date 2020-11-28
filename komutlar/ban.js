@@ -15,7 +15,7 @@ exports.run = async (client, message, args) => {
    if (!üye) return message.reply(üyeHATA).catch(console.error);
   guild.members.ban(üye, { reason: reason });
   message.channel.send("Kullanıcı başarıyla banlandı.")
-
+if
  let banEMBED = new Discord.MessageEmbed()
  .setAuthor('Jau','https://cdn.discordapp.com/attachments/620989964104237077/781640684050186280/Screenshot_1-removebg-preview_1.png')
  .setDescription(`
