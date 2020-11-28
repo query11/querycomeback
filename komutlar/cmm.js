@@ -3,7 +3,13 @@ const Discord = require('discord.js');
 exports.run = async(client, message) => {
   var espri = Math.floor(Math.random() * 100)
   let e = new Discord.MessageEmbed()
-  .setDescription(`**●▬▬▬▬▬▬▬▬▬▬▬▬▬ SUNUCU REKLAMI ÖRNEĞİ  ▬▬▬▬▬▬▬▬▬▬▬▬▬●** 
+  .setDescription(`
+  📢・Bu tarz reklamlar yaptırmak için sunucuyu boostlayıp <@!478466612803141645>e ulaşın.
+  🔔・Şu anda yapılan boostlar için geçerli değildir.Yeni boost yapmanız gerekir.
+  🔐・**BOOST BİTTİĞİNDE | ÇEKİLDİĞİNDE REKLAM SİLİNİR**
+  
+  
+  **●▬▬▬▬▬▬▬▬▬▬▬ SUNUCU REKLAMI ÖRNEĞİ ▬▬▬▬▬▬▬▬▬▬▬▬●** 
   \`\`\`
   ●▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ۵ Jau Bot List ۵ ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
     🎁・Sunucumuza gelerek botunu hızlıca büyütebilirsin.
@@ -13,17 +19,19 @@ exports.run = async(client, message) => {
   ●▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ۵ Jau Bot List ۵ ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
   \`\`\`
 
-Bot Reklam Örneği ;
+**●▬▬▬▬▬▬▬▬▬▬▬ BOT REKLAMI ÖRNEĞİ ▬▬▬▬▬▬▬▬▬▬▬▬●** 
 
-**Jau Bot **
-
-**- 7/24 Aktif **
-
-**-Moderasyon Guard Eğlence Müzik Otorol gibi komutların bulunduğu bir bottur.**
-
-**- Sunucunuzdaki tüm işlemleri tek bir bottan halledebilmek için Jau Bot'u ekleyin.**
-
-**-Davet Linki :  [LİNK]**`)
+\`\`\`
+  ●▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ۵ Jau Bot ۵ ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
+    🎁・7/24 Aktif.
+    🎁・Moderasyon Guard Eğlence Müzik gibi komutları bulunur
+    🎁・Tüm işlemlerinizi bir bottan yapmak için Jau'yu ekleyin.
+    🎁・Bir problem yaşarsanız destek sunucumuza gelebilirsiniz.
+    🎁・Komutları görmek için !yardım yazabilirsiniz.
+    🎁・Davet Linki : [BURAYA BOT DAVET LİNKİNİZ] 
+  ●▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ۵ Jau Bot ۵ ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
+  \`\`\`
+  `)
   message.channel.send(e)
     
  
