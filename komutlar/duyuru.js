@@ -10,8 +10,8 @@ exports.run = (client, message, args) => {
   let yazı = args.slice(0).join(" ")
   if(!yazı) return message.channel.send(üyeHATA)
   let embed = new Discord.MessageEmbed()
-  .setTitle(` 📢・ __ꜱᴜɴᴜᴄᴜ ᴅᴜʏᴜʀᴜꜱᴜʀᴜ__`)
-  .setDescription(`**__${yazı}__**`)
+  .setTitle(`__ꜱᴜɴᴜᴄᴜ ᴅᴜʏᴜʀᴜꜱᴜʀᴜ__・📢`)
+  .setDescription(`**${yazı}**`)
   .setTimestamp()
   .setFooter('・Duyuru Saati')
   
