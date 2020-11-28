@@ -55,7 +55,7 @@ if(ms(zaman) >= 2147483647) return message.channel.send('You can mute a maximum 
 member.roles.add(muteRoleFetch).then(() => {
 message.channel.send(`**${message.author.tag}** muted **${member.user.tag}** for ${zamann}. ${reason}`);
 setTimeout(() => {
-if(member.roles.has(muteRoleFetch)) {
+if(member.roles.cache.has(muteRoleFetch)) {
 member.roles.remove(muteRoleFetch);
 };
 }, require('ms')(zaman))
