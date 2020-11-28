@@ -15,6 +15,7 @@ exports.run = async (client, message, args) => {
   let guild = message.guild
   let reason = args.slice(1).join(' ') || 'Belirtilmemiş'
   let üye = message.mentions.members.first() || client.members.cache.get(args[0])
+  if(!üye.bannable) return message.channel.send('Bunu banlayamıyorum')
   if(üye.id = message.author.id) return message.channel.send(üyes)
   if(!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send(new Discord.MessageEmbed().setDescription(`**Bu komutu sadece** \`"BAN_MEMBERS"\` **yetkisine sahip kişiler kullanabilir.**`))
    if (!üye) return message.reply(üyeHATA).catch(console.error);
