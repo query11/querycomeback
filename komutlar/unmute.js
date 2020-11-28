@@ -17,7 +17,7 @@ if(!üye) return message.channel.send(üyeHATA)
   let role2 = message.guild.roles.cache.find(x => x.name === 'Susturulmuş')
   if(!üye.roles.cache.has(role2.id)) return message.channel.send(new Discord.MessageEmbed().setDescription(`${üye} **adlı kullanıcı zaten sunucuda susturulmamış.**`))
   await üye.roles.remove(role2) 
-  message.channel.send(new Discord.MessageEmbed().setDescription(`${üye} adlı kullanıcının başarıyla susturması açıldı.`))
+  message.channel.send(new Discord.MessageEmbed().setDescription(`${üye} adlı kullanıcının başarıyla susturması açıldı.`)).then()
   
 }
 
