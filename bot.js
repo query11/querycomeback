@@ -108,4 +108,3 @@ client.login(ayarlar.token);
 client.on('message', async msg => {
   if (msg.content === "<@!760535868834054154>") msg.channel.send(new Discord.MessageEmbed().setDescription(`**Yolunu mu kaybettin? Bu sana yardımcı olabilir**  \`${ayarlar.prefix}yardım\``));
 });
-

@@ -5,7 +5,7 @@ const db = require("quick.db")
 exports.run = async (client, message, args) => {
     let üyeHATA = new Discord.MessageEmbed()
   .setDescription(`
-  Yanlış komut kullanımı \`-kick [kullanıcı] [sebep]\``)
+  Yanlış komut kullanımı \`${prefix}kick [kullanıcı] [sebep]\``)
    .setFooter('Belirtilen üyenin sunucuda bulunduğundan emin olun.')
     
   let guild = message.guild
