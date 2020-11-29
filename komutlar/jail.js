@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const ayarlar = require('../ayarlar.json')
 exports.run = function(client, message, args) {//splashen
   let jailli = message.mentions.members.first()
-  let sebep = args.slice(1).join(' ')
+  let sebep = args.slice(1).join(' ') || 'Belirtilmemiş'
   let rol = ayarlar.jailROL
   if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('Bu işlemi sadece yetkililer yapabilir')
    if(!jailli) return message.channel.send('Jaile atacağın kişiyi etiketlemelisin.')
@@ -13,12 +13,15 @@ exports.run = function(client, message, args) {//splashen
   
   let embed2 = new Discord.MessageEmbed()
   .setThumbnail(jailli.user.avatarURL())
-  .setTitle(` <a:jke:751558669585612830> • __\`Bir Kullanıcı Jaile Atıldı \`__   `)
   .setDescription(`
-<a:sari3:751558669585612830> • __**\`Yetkili\`**__ ${message.author}
-<a:sari3:751558669585612830> • __**\`Kullanıcı\`**__ ${jailli} 
+  
+●▬▬▬▬▬▬ <a:tik4:756946179530424541> **Kullanıcı Jaile Atıldı** <a:tik4:756946179530424541> ▬▬▬▬▬▬▬●
 
-<a:sari3:751558669585612830> • __**\`Jaile Atılma Sebebi\`**__ \n• __\`${sebep}\`__
+ • Yetkili • ${message.author}
+ • Kullanıcı • ${jailli} 
+ • Jaile Atılma Sebebi •** ${sebep}**
+
+●▬▬▬▬▬▬ <a:tik4:756946179530424541> **Kullanıcı Jaile Atıldı** <a:tik4:756946179530424541> ▬▬▬▬▬▬▬●
 `)
   
   let embed = new Discord.MessageEmbed()

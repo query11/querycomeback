@@ -4,7 +4,6 @@ const ayarlar = require('../ayarlar.json')
 
 
 exports.run = async (client, message, args) => {//splashen
-
     let kadınROL = ayarlar.kadınROL 
     let kayıtsızROL = ayarlar.kayıtsızROL
     let kayıtlıROL = ayarlar.kayıtlıROL
@@ -29,7 +28,7 @@ if (kurulus > 1296000000) kontrol = '<a:budur:740278066248548422> Güvenli'
   
   
   
-let isim = args[1];
+let isim = args[1].charAt(0).replace("i", "İ").toUpperCase() + args[1].slice(1).toLowerCase();
 if(!isim) return message.channel.send(`Üyenin ismini belirtmelisin.`)
 if(isim.length > 16) return message.channel.send(`Daha kısa bir isim yaz.`)
 
@@ -57,7 +56,7 @@ message.guild.members.cache.get(kullanıcı.id).send(emb.setDescription(`• Kay
   db.add(`toplam_${message.guild.id}`, "1")
 let embed2 = new Discord.MessageEmbed()
 .setDescription(`
-●▬▬▬▬▬▬ <a:tik4:756946179530424541> **Kadın Kaydı Yapıldı** <a:tik4:756946179530424541> ▬▬▬▬▬●
+●▬▬▬▬▬▬ <a:tik4:756946179530424541> **Kadın Kaydı Yapıldı** <a:tik4:756946179530424541> ▬▬▬▬▬▬▬●
 
                 • Kayıt Olan Kullanıcı ${kullanıcı}
                 • İsim Yaş  **${isim} | ${yaş}**
@@ -65,7 +64,7 @@ let embed2 = new Discord.MessageEmbed()
                 • Kayıt eden yetkili | ${message.author}
                 • Toplam Kayıtlar | ${toplam2}
 
-●▬▬▬▬▬▬ <a:tik4:756946179530424541> **Kadın Kaydı Yapıldı** <a:tik4:756946179530424541> ▬▬▬▬▬●
+●▬▬▬▬▬▬ <a:tik4:756946179530424541> **Kadın Kaydı Yapıldı** <a:tik4:756946179530424541> ▬▬▬▬▬▬▬●
 `)
 .setImage('https://cdnb.artstation.com/p/assets/images/images/005/335/953/original/bach-do-rwby-2d-animation-test-finished-by-dishwasher1910-dav5waz.gif')
 
