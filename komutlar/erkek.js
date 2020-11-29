@@ -24,8 +24,8 @@ if(kullanıcı.bot) return;
   
   const kurulus = new Date().getTime() - kullanıcı.createdAt.getTime();  
    var kontrol;
-if (kurulus < 1296000000) kontrol = 'Şüpheli'
-if (kurulus > 1296000000) kontrol = 'Güvenli'
+if (kurulus < 1296000000) kontrol = '<a:no2:756946169883656193> Şüpheli'
+if (kurulus > 1296000000) kontrol = ' Güvenli'
   
   
   
@@ -46,7 +46,8 @@ const emb = new Discord.MessageEmbed()
 let kız = db.fetch(`kız_${message.author.id}_${message.guild.id}`) || 0
 let erkek = db.fetch(`erkek_${message.author.id}_${message.guild.id}`) || 0
 let toplam = erkek+kız
-message.guild.members.cache.get(kullanıcı.id).setNickname(`${isim} • ${yaş}`)
+let tag = ayarlar.tag
+message.guild.members.cache.get(kullanıcı.id).setNickname(`${tag} ${isim} • ${yaş}`)
 message.guild.members.cache.get(kullanıcı.id).roles.add(erkekROL)
   message.guild.members.cache.get(kullanıcı.id).roles.add(kayıtlıROL)
 message.guild.members.cache.get(kullanıcı.id).roles.remove(kayıtsızROL)
@@ -71,14 +72,17 @@ let embed2 = new Discord.MessageEmbed()
 
 client.channels.cache.get(ayarlar.kayıtLOG).send(embed2)
 let embed3 = new Discord.MessageEmbed()
-.setTitle(`• Kayıt Başarıyla Tamamlandı!.`)
 .setDescription(`
-• **Kayıt Olan Kullanıcı:** ${kullanıcı} \`  { ${kullanıcı.id} }  \` 
-• **İsim Yaş:** \` ${isim} | ${yaş} \`
-• **Verilen Rol:** <@&${erkekROL}> \`  { ${erkekROL} }  \` 
-• **Bu Hesap:** \`  { ${kontrol} }  \` 
-• **Sunucumuz şu an**  \` ${message.guild.members.cache.size} \`** kişi **
-• **Kayıt eden:** ${message.author} \`  { ${message.author.id} }  \` 
+●▬▬▬▬▬▬▬ <a:tik4:756946179530424541> **Kayıt Başarıyla Tamamlandı** <a:tik4:756946179530424541> ▬▬▬▬▬▬●
+
+   • **Kayıt Olan Kullanıcı** ${kullanıcı} \`[${kullanıcı.id}]\` 
+   • **İsim Yaş** \` ${isim} | ${yaş} \`
+   • **Verilen Rol** <@&${erkekROL}> \`[{erkekROL}]\` 
+   • **Bu Hesap** \`  { ${kontrol} }  \` 
+   • **Sunucumuz şu an**  \` ${message.guild.members.cache.size} \`** kişi **
+   • **Kayıt eden** ${message.author} \`  { ${message.author.id} }  \` 
+
+●▬▬▬▬▬▬▬ <a:tik4:756946179530424541> **Kayıt Başarıyla Tamamlandı** <a:tik4:756946179530424541> ▬▬▬▬▬▬●
 `)
 .setImage('https://i.pinimg.com/originals/af/80/39/af8039261a387be71514bb4c2e5e54b5.gif')
 message.channel.send(embed3)
