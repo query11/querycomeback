@@ -177,30 +177,30 @@ member.roles.add(botROL)
  member.roles.add(rol)//splashen
 
   var kontrol;
-if (tarih < 1296000000) kontrol = '<a:no1:756946138342621295> __**Bu Kullanıcı Şüpheli**__'
-if (tarih > 1296000000) kontrol = '<a:tik3:756946140825649214> __**Bu Kullanıcı Güvenli**__'
+if (tarih < 1296000000) kontrol = '<a:no1:756946138342621295> Bu Kullanıcı **Şüpheli**'
+if (tarih > 1296000000) kontrol = '<a:tik3:756946140825649214> Bu Kullanıcı **Güvenli**'
   moment.locale("tr");
   let kanal1 = client.channels.cache.find(x => x.id === kanal);
     let giris = new Discord.MessageEmbed()
-   .setTitle(`<a:kraltac:740610303628279808> | \`Sunucuya Bir Üye Katıldı!\` | <a:kraltac:740610303628279808>`)
     .setDescription(`
-• ** __Hoşgeldin! ${member}__ **
+●▬▬▬▬▬▬▬▬ <a:kraltac:740610303628279808> **Bir Üye Katıldı** <a:kraltac:740610303628279808> ▬▬▬▬▬▬▬▬●
 
-•  <a:pembeh:751553654561046619> **__Seninle Birlikte ${member.guild.memberCount} Kişiyiz.__ **
+• <:new_partner_badge:781900500022853632> Hoşgeldin ${member}
 
-• \`{ ${ayarlar.tag} }\`** __Tagımızı alarak ekibimize katılabilirsin.__ **
+• <a:pembeh:751553654561046619> Seninle birlikte **${member.guild.memberCount}** kişiyiz.
 
-• <a:alarm1:756946152938799225> ** <@&${ayarlar.yetkiliROL}> __seninle ilgilenicektir.__ **
+• [ **${ayarlar.tag}** ] Tagımızı alarak ekibimize katılabilirsin.
 
-• <a:sari3:751558669585612830> ** __Hesabın Oluşturulma Tarihi:__** \n • \` ${moment(member.user.createdAt).format("YYYY DD MMMM dddd (hh:mm:ss)")} \`
+• <a:alarm1:756946152938799225> <@&${ayarlar.yetkiliROL}> rolündekiler seninle ilgilenicektir.
+
+• <a:sari3:751558669585612830> Hesabın Oluşturulma Tarihi: \n • \` ${moment(member.user.createdAt).format("YYYY DD MMMM dddd (hh:mm:ss)")} \`
 
 •  ${kontrol} 
 
-• <a:duyur:766652129678721074> ** __ Ses teyit odasında kaydınızı yaptırabilirsiniz. __ ** 
+• <a:duyur:766652129678721074> Ses teyit odasında kaydınızı yaptırabilirsiniz. 
 
 `)//splashen
-    .setThumbnail(member.user.avatarURL() || 'https://cdn.discordapp.com/attachments/766342468576608318/766343451994226778/af8039261a387be71514bb4c2e5e54b5.gif')
-    .setImage('https://cdn.discordapp.com/attachments/766342468576608318/766343451994226778/af8039261a387be71514bb4c2e5e54b5.gif')
+    .setImage('https://cdnb.artstation.com/p/assets/images/images/005/335/953/original/bach-do-rwby-2d-animation-test-finished-by-dishwasher1910-dav5waz.gif')
     .setTimestamp()
 client.channels.cache.find(x => x.id === kanal).send(giris)
   });
