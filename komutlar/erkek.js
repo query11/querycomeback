@@ -25,7 +25,7 @@ if(kullanıcı.bot) return;
   const kurulus = new Date().getTime() - kullanıcı.createdAt.getTime();  
    var kontrol;
 if (kurulus < 1296000000) kontrol = '<a:no2:756946169883656193> Şüpheli'
-if (kurulus > 1296000000) kontrol = ' Güvenli'
+if (kurulus > 1296000000) kontrol = '<a:budur:740278066248548422> Güvenli'
   
   
   
@@ -46,6 +46,7 @@ const emb = new Discord.MessageEmbed()
 let kız = db.fetch(`kız_${message.author.id}_${message.guild.id}`) || 0
 let erkek = db.fetch(`erkek_${message.author.id}_${message.guild.id}`) || 0
 let toplam = erkek+kız
+let toplam2 = db.fetch(`toplam_${message.guild.id}`) || 0
 let tag = ayarlar.tag
 message.guild.members.cache.get(kullanıcı.id).setNickname(`${tag} ${isim} • ${yaş}`)
 message.guild.members.cache.get(kullanıcı.id).roles.add(erkekROL)
@@ -53,38 +54,38 @@ message.guild.members.cache.get(kullanıcı.id).roles.add(erkekROL)
 message.guild.members.cache.get(kullanıcı.id).roles.remove(kayıtsızROL)
 message.guild.members.cache.get(kullanıcı.id).send(emb.setDescription(`• Kaydın başarıyla ${message.author} tarafından yapıldı. \n • Sunucudaki İsmin : ${isim} • ${yaş} \n • Kurallar kanalımızı okumayı unutma!`))
   db.add(`erkek_${message.author.id}_${message.guild.id}`, "1")
+  db.add(`toplam_${message.guild.id}`, "1")
 let embed2 = new Discord.MessageEmbed()
-.setTitle(`• Bir Kullanıcı Kayıt Oldu.`)
 .setDescription(`
-• **Kayıt Olan Kullanıcı:** ${kullanıcı} \`  { ${kullanıcı.id} }  \` 
-• **İsim Yaş:** \` ${isim} | ${yaş} \`
-• **Verilen Rol:** <@&${erkekROL}> \`  { ${erkekROL} }  \` 
-• **Bu Hesap:** \`  { ${kontrol} }  \` 
-• **Sunucumuz şu an** \` ${message.guild.members.cache.size} \`** kişi **
-• **Kayıt eden:** ${message.author} \`  { ${message.author.id} }  \` 
-• **{ ${message.author} } Toplam kayıt sayısı =**  \` ${toplam} \` 
+●▬▬▬▬▬▬▬ <a:tik4:756946179530424541> **Erkek Kaydı Yapıldı** <a:tik4:756946179530424541> ▬▬▬▬▬▬●
 
-• **{    __Toplam Erkek Kaydı =  \` ${erkek} \` Toplam Kız Kaydı= \` ${kız} \`__  }**  
+                • Kayıt Olan Kullanıcı ${kullanıcı}
+                • İsim Yaş  **${isim} | ${yaş}**
+                • Bu Kullanıcı **${kontrol}**
+                • Kayıt eden yetkili | ${message.author}
+                • Toplam Kayıtlar | ${toplam2}
+
+●▬▬▬▬▬▬▬ <a:tik4:756946179530424541> **Erkek Kaydı Yapıldı** <a:tik4:756946179530424541> ▬▬▬▬▬▬●
 `)
-.setImage('https://i.pinimg.com/originals/af/80/39/af8039261a387be71514bb4c2e5e54b5.gif')
+.setImage('https://cdnb.artstation.com/p/assets/images/images/005/335/953/original/bach-do-rwby-2d-animation-test-finished-by-dishwasher1910-dav5waz.gif')
 
 
 
 client.channels.cache.get(ayarlar.kayıtLOG).send(embed2)
 let embed3 = new Discord.MessageEmbed()
+.setColor('WHITE')
 .setDescription(`
 ●▬▬▬▬▬▬▬ <a:tik4:756946179530424541> **Kayıt Başarıyla Tamamlandı** <a:tik4:756946179530424541> ▬▬▬▬▬▬●
 
-   • **Kayıt Olan Kullanıcı** ${kullanıcı} \`[${kullanıcı.id}]\` 
-   • **İsim Yaş** \` ${isim} | ${yaş} \`
-   • **Verilen Rol** <@&${erkekROL}> \`[{erkekROL}]\` 
-   • **Bu Hesap** \`  { ${kontrol} }  \` 
-   • **Sunucumuz şu an**  \` ${message.guild.members.cache.size} \`** kişi **
-   • **Kayıt eden** ${message.author} \`  { ${message.author.id} }  \` 
+                • Kayıt Olan Kullanıcı ${kullanıcı}
+                • İsim Yaş  **${isim} | ${yaş}**
+                • Bu Kullanıcı **${kontrol}**
+                • Sunucumuz şu an **${message.guild.members.cache.size}** kişi 
+                • Kayıt eden yetkili | ${message.author}
 
 ●▬▬▬▬▬▬▬ <a:tik4:756946179530424541> **Kayıt Başarıyla Tamamlandı** <a:tik4:756946179530424541> ▬▬▬▬▬▬●
 `)
-.setImage('https://i.pinimg.com/originals/af/80/39/af8039261a387be71514bb4c2e5e54b5.gif')
+.setImage('https://cdnb.artstation.com/p/assets/images/images/005/335/953/original/bach-do-rwby-2d-animation-test-finished-by-dishwasher1910-dav5waz.gif')
 message.channel.send(embed3)
 
 
