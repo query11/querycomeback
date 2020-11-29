@@ -12,7 +12,7 @@ const say = new Discord.MessageEmbed()
  • Sunucudaki Üye Sayısı • **${message.guild.memberCount}**
  • Çevrimiçi Üye Sayısı • **${message.guild.members.cache.filter(m => !m.user.bot && m.user.presence.status !== "offline").size}**
  • Sunucudaki Üye Sayısı • **${sesli}**
- • Taglı Üye Sayısı • **${message.guild.members.cache.filter(tag => tag.user.username.includes('ﾑ')).size}** 
+ • Taglı Üye Sayısı • **${message.guild.members.cache.filter(tag => tag.user.username.includes('BURAYA TAGINIZ GELECEK')).size}** 
 
 ●▬▬▬▬▬▬▬▬▬ <a:loading:780482519220748308> **Sunucu İstatistikleri** <a:loading:780482519220748308> ▬▬▬▬▬▬▬▬▬▬●
 `)

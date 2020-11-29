@@ -5,8 +5,6 @@ const ayarlar = require('../ayarlar.json')
 exports.run = async (client, message, args) => {//splashen
   let yetkiliROL = ayarlar.yetkiliROL
   let kişi = message.mentions.users.first() || message.member
-  
-  if(!kişi.roles.cache.has(yetkiliROL)) return message.channel.send('Bu işlem yetkililer içindir.')
 let erkek = db.fetch(`erkek_${kişi.id}_${message.guild.id}`) || 0
 let kız = db.fetch(`kız_${kişi.id}_${message.guild.id}`) || 0
 let toplam = erkek+kız
