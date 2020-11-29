@@ -200,7 +200,7 @@ if (tarih > 1296000000) kontrol = '<a:tik3:756946140825649214> Bu Kullanıcı **
 • <a:duyur:766652129678721074> Ses teyit odasında kaydınızı yaptırabilirsiniz. 
 
 `)//splashen
-    .setImage('https://cdnb.artstation.com/p/assets/images/images/005/335/953/original/bach-do-rwby-2d-animation-test-finished-by-dishwasher1910-dav5waz.gif')
+    .setImage('https://cdn.discordapp.com/attachments/620989964104237077/782631555478454312/d5c9cc6-74f694ce-a47c-4373-b9a5-714fef52ae38.gif')
     .setTimestamp()
 client.channels.cache.find(x => x.id === kanal).send(giris)
   });
