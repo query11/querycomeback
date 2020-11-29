@@ -15,19 +15,31 @@ exports.run = function(client, message, args) {//splashen
   .setThumbnail(jailli.user.avatarURL())
   .setDescription(`
   
-●▬▬▬▬▬▬ <a:tik4:756946179530424541> **Kullanıcı Jaile Atıldı** <a:tik4:756946179530424541> ▬▬▬▬▬▬▬●
+●▬▬▬▬▬▬ <a:alarm3:740278105884590200> **Kullanıcı Jaile Atıldı** <a:alarm3:740278105884590200> ▬▬▬▬▬▬▬●
 
  • Yetkili • ${message.author}
  • Kullanıcı • ${jailli} 
  • Jaile Atılma Sebebi •** ${sebep}**
 
-●▬▬▬▬▬▬ <a:tik4:756946179530424541> **Kullanıcı Jaile Atıldı** <a:tik4:756946179530424541> ▬▬▬▬▬▬▬●
+●▬▬▬▬▬▬ <a:alarm3:740278105884590200> **Kullanıcı Jaile Atıldı** <a:alarm3:740278105884590200> ▬▬▬▬▬▬▬●
 `)
-  
+ let jailEMBED = new Discord.MessageEmbed()
+  .setThumbnail(jailli.user.avatarURL())
+  .setDescription(`
+●▬▬▬▬▬▬▬▬▬ <a:alarm3:740278105884590200> **Jaile Atıldın** <a:alarm3:740278105884590200> ▬▬▬▬▬▬▬▬▬▬●
+
+ • Yetkili • ${message.author}
+ • Jaile Atılma Sebebin •** ${sebep}**
+ 
+ • Jailden çıkarıldığında lütfen daha dikkatli davran ve kurallara uy. 
+
+●▬▬▬▬▬▬▬▬▬ <a:alarm3:740278105884590200> **Jaile Atıldın** <a:alarm3:740278105884590200> ▬▬▬▬▬▬▬▬▬▬●
+`)
+ jailli.send(jailEMBED)
   let embed = new Discord.MessageEmbed()
   .setTitle(` <a:jke:751558669585612830> • __\`Kullanıcı Başarıyla Jaile Atıldı\`__   `)
   .setDescription(`<a:jke:751558669585612830> • __**\`Yetkili\`**__ ${message.author}`)
-  message.channel.send(embed).then(m => m.delete({timeout : '4000'}))
+  message.channel.send(`Kullanıcı başarıyla ${sebep} sebebiyle jaile atıldı.`).then(m => m.delete({timeout : '4000'}))
   client.channels.cache.get(ayarlar.jailLOG).send(embed2)
 };
 

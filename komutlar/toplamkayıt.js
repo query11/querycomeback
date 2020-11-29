@@ -3,29 +3,27 @@ const db = require('quick.db');
 
 
 exports.run = async (client, message, args) => {//splashen
-  let kişi = message.mentions.users.first()
-  let yetkili = message.author
+  let kişi = message.mentions.users.first() || message.author
 let erkek = db.fetch(`erkek_${kişi.id}_${message.guild.id}`)
 let kız = db.fetch(`kız_${kişi.id}_${message.guild.id}`) || 0
 let toplam = erkek+kız
 var embed = new Discord.MessageEmbed()
-.setTitle(`• \`Kayıt Bilgileri\``)
-
 .setDescription(`
+●▬▬▬▬▬ <a:pembeh:751553654561046619>**Kayıt Bilgileri** <a:pembeh:751553654561046619> ▬▬▬▬▬●
 
-• __ **Yetkili :** ${yetkili} __  \` { ${yetkili.id} } \`
+                • Yetkili ${kişi}
+                • Toplam Üye Kayıt Sayısı  **${toplam}**
+                • Toplam Erkek Kayıt Sayısı **${erkek}**
+                • Toplam Kadın Kayıt Sayısı **${kız}**
+               
 
-• **__Toplam üye kayıt sayısı :__** \` ${toplam} \`
+●▬▬▬▬▬ <a:pembeh:751553654561046619> **Kayıt Bilgileri** <a:pembeh:751553654561046619> ▬▬▬▬▬●
 
-• **__Toplam kız kayıt sayısı :__** \` ${kız} \`
-
-• **__Toplam erkek kayıt sayısı :__** \` ${erkek} \`
 
 
 
 `)
-.setThumbnail(yetkili.avatarURL())
-.setImage('https://cdn.discordapp.com/attachments/620989964104237077/766391664163029012/RDF_Barrinha-1-2-1-1-1-1-1-1.gif')
+.setThumbnail(kişi.avatarURL())
 message.reply(embed)
 
 }

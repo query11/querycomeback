@@ -56,7 +56,7 @@ message.guild.members.cache.get(kullanıcı.id).send(emb.setDescription(`• Kay
   db.add(`toplam_${message.guild.id}`, "1")
 let embed2 = new Discord.MessageEmbed()
 .setDescription(`
-●▬▬▬▬▬▬ <a:tik4:756946179530424541> **Kadın Kaydı Yapıldı** <a:tik4:756946179530424541> ▬▬▬▬▬▬▬●
+●▬▬▬▬▬▬▬ <a:tik4:756946179530424541> **Kadın Kaydı Yapıldı** <a:tik4:756946179530424541> ▬▬▬▬▬▬▬▬●
 
                 • Kayıt Olan Kullanıcı ${kullanıcı}
                 • İsim Yaş  **${isim} | ${yaş}**
@@ -64,7 +64,7 @@ let embed2 = new Discord.MessageEmbed()
                 • Kayıt eden yetkili | ${message.author}
                 • Toplam Kayıtlar | ${toplam2}
 
-●▬▬▬▬▬▬ <a:tik4:756946179530424541> **Kadın Kaydı Yapıldı** <a:tik4:756946179530424541> ▬▬▬▬▬▬▬●
+●▬▬▬▬▬▬▬ <a:tik4:756946179530424541> **Kadın Kaydı Yapıldı** <a:tik4:756946179530424541> ▬▬▬▬▬▬▬▬●
 `)
 .setImage('https://cdnb.artstation.com/p/assets/images/images/005/335/953/original/bach-do-rwby-2d-animation-test-finished-by-dishwasher1910-dav5waz.gif')
 
