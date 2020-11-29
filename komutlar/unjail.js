@@ -38,7 +38,7 @@ exports.run = function(client, message, args) {//splashen
 
   .setDescription(`<a:jke:751558669585612830> • __**\`Yetkili\`**__ ${message.author}`)
   .setThumbnail(jailli.user.avatarURL())
-  message.channel.send(`**${jailli.tag}** adlı kullanıcı başarıyla jailden çıkarıldı.`).then(m => m.delete(4000))
+  message.channel.send(`**${jailli.user.tag}** adlı kullanıcı başarıyla jailden çıkarıldı.`).then(m => m.delete(4000))
   client.channels.cache.get(ayarlar.jailLOG).send(embed2)
   jailli.send(jailEMBED)
 };
