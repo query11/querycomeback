@@ -9,21 +9,6 @@ module.exports = message => {
   let perms = client.elevation(message);
   let cmd;
   
-  if (!client.commands.has(command)) {
-    if (client.aliases.has(command)) {
-      cmd = client.commands.get(client.aliases.get(command));
-    } else {
-      let em = new Discord.MessageEmbed()
-     .setAuthor("・  " + `\`${message.author.username}\``, message.author.avatarURL())  
-      .setDescription(`
-      
-     <a:onayred:780481839147384912> **Sistemde** \`\`${command}\`\` **adında bir komut bulunmuyor! Komutlarıma göz atmak için** \`\`${ayarlar.prefix}yardım\`\`
-      
-      `)
-      message.channel.send(em)
-    }
-  }
-  
   if (client.commands.has(command)) {
     cmd = client.commands.get(command);
   } else if (client.aliases.has(command)) {

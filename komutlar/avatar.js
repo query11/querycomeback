@@ -3,8 +3,7 @@ const ms = require('ms');
 exports.run = async(client, message, args) => {
 
     let embed = new Discord.MessageEmbed()
-    .setAuthor("・  " + `\`${message.author.username}\``, message.author.avatarURL())  
-  
+    
     message.channel.send(embed);
 };
 
