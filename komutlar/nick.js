@@ -6,26 +6,18 @@ const prefix = ayarlar.prefix
 exports.run = async (client, message, args) => {//splashen
   let yetkili2 = ayarlar.yetkiliROL
   if(!message.member.roles.cache.has(yetkili2)) return message.channel.send('Bu işlemi sadece yetkililer yapabilir') 
-  let isim = args[1]
+let isim = args[1].charAt(0).replace("i", "İ").toUpperCase() + args[1].slice(1).toLowerCase();
   let uye = message.mentions.users.first();
   let yaş = args[2]
-  let isimlog = ayarlar.isimLOG
-  let yetkili = message.author;
-   let log = message.guild.channels.cache.find( channel => channel.id === ayarlar.isimLOG);
-  
-  
-  
+  let yetkili = message.author
+  let tag = ayarlar.tag
   if(!uye) return message.channel.send(`İsmi değiştirilecek üyeyi belirtin.`)
   if(!yaş) return message.channel.send(`Üyenin yaşını yazın.`)
   if(!isim) return message.channel.send(`Üyenin ismini yazınız.`)
   if(isim.length > 10) return message.channel.send(`Üyenin ismi 10 harfi geçmemeli.`)
   if(yaş.length > 100) return message.channel.send(`Üyenin yaşı 100'ü geçemez.`)
-  message.guild.members.cache.get(uye.id).setNickname(`${isim} • ${yaş}`)
+  message.guild.members.cache.get(uye.id).setNickname(`${tag} ${isim} • ${yaş}`)
   message.channel.send(`\`${uye.username}\`'in ismi başarıyla  \` ${isim} • ${yaş} \` olarak değiştirildi.`)
-  let embed2 = new Discord.MessageEmbed()
-  .setTitle(`• \`${uye.username}\`'in ismi \` { ${isim} • ${yaş} }\` olarak değiştirildi.`)
-  .setDescription(`• **\`Yetkili\`** ${yetkili} `)
-log.send(embed2)
 }
 exports.conf = {
     enabled: true,

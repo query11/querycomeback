@@ -154,40 +154,16 @@ member.roles.add(kayıtsızROL)
 //splashen
 
 
-// TAG LOG
-client.on("userUpdate", async (oldUser, newUser) => {//splashen
-  if (oldUser.username !== newUser.username) {
-    let tag = ayarlar.tag
-  
-    let rol = ayarlar.tagROL;
-    
-    
-    let embed1 = new Discord.MessageEmbed()
-    .setDescription(`${newUser} ${tag} tagını aldığı için <@&${rol}> rolünü kazandı!`)
-    .setImage('https://cdn.discordapp.com/attachments/620989964104237077/766391664163029012/RDF_Barrinha-1-2-1-1-1-1-1-1.gif')
-    
-    let embed2 = new Discord.MessageEmbed()
-    .setDescription(`${newUser} ${tag} tagını çıkardığı için <@&${rol}> rolünü kaybetti!`)
-    .setImage('https://cdn.discordapp.com/attachments/620989964104237077/766391664163029012/RDF_Barrinha-1-2-1-1-1-1-1-1.gif')
-    
-    if (newUser.username.includes(tag) && !client.guilds.cache.get(ayarlar.sunucuID).members.cache.get(newUser.id).roles.cache.has(rol)) {
-      client.channels.cache.get(ayarlar.tagLOG).send(embed1)
-      client.guilds.cache.get(ayarlar.sunucuID).members.cache.get(newUser.id).roles.add(rol)
-    } if (!newUser.username.includes(tag) && client.guilds.cache.get(ayarlar.sunucuID).members.cache.get(newUser.id).roles.cache.has(rol)) {
-      client.guilds.cache.get(ayarlar.sunucuID).members.cache.get(newUser.id).roles.remove(rol)
-      client.channels.cache.get(ayarlar.tagLOG).send(embed2)
-    }
 
-  }
-})
-// TAG LOG SON
 //splashen
 
 // BOT OTOROL
 
 client.on('guildMemberAdd', async member => {//splashen
-if(member.user.bot)
-member.roles.set(['766634491502395392'])
+if(member.user.bot) {
+  const botROL = ayarlar.botROL
+member.roles.add(botROL)
+}
 })
 // GİRİŞ 
   client.on("guildMemberAdd", member => { 
