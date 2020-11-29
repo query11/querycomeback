@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 const ayarlar = require('../ayarlar.json')
 
 exports.run = async (client, message, args) => {//splashen
-    let tag = ayarlar.tag
     const voiceChannels = message.guild.channels.cache.filter(c => c.type === 'voice');
     let sesli = 0
     for (const [id, voiceChannel] of voiceChannels) sesli += voiceChannel.members.cache.size;

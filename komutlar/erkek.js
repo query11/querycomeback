@@ -48,7 +48,7 @@ let kız = db.fetch(`kız_${message.author.id}_${message.guild.id}`) || 0
 let erkek = db.fetch(`erkek_${message.author.id}_${message.guild.id}`) || 0
 let toplam = erkek+kız
 let toplam2 = db.fetch(`toplam_${message.guild.id}`) || 0
-let tag = ayarlar.tag
+let tag = ayarlar.tag || ''
 message.guild.members.cache.get(kullanıcı.id).setNickname(`${tag} ${isim} • ${yaş}`)
 message.guild.members.cache.get(kullanıcı.id).roles.add(erkekROL)
   message.guild.members.cache.get(kullanıcı.id).roles.add(kayıtlıROL)

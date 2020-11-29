@@ -1,16 +1,13 @@
 const Discord = require('discord.js');
 const ayarlar = require('../ayarlar.json')
 exports.run = function(client, message, args) {//splashen
-  let abone = message.mentions.members.first()
+  let kişi = message.mentions.members.first()
   let rol = ayarlar.vipROL
   if(!message.member.hasPermission('ADMINISTRATOR')) return
-   if(!abone) return message.channel.send('Vip vereceğin kişiyi etiketlemelisin.')
+   if(!kişi) return message.channel.send('Vip vereceğin kişiyi etiketlemelisin.')
   var role = message.guild.roles.cache.find(role => role.id === rol); 
-  abone.roles.add(role);
-  let embed = new Discord.MessageEmbed()
-  .setTitle(` <a:jke:751558669585612830> • __\` Vip Rolü Başarıyla Verildi \`__   `)
-  .setDescription(`<a:jke:751558669585612830> • __**\` Yetkili \`**__ ${message.author}`)
-  message.channel.send(embed);
+  kişi.roles.add(role);
+  message.channel.send(`**${kişi.user.tag}** adlı kullanıcıya vip rolü verildi.`).then(m =>m.delete({timeout : '4000'}))
 };
 
 exports.conf = {

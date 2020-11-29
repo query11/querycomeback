@@ -10,7 +10,7 @@ let isim = args[1].charAt(0).replace("i", "İ").toUpperCase() + args[1].slice(1)
   let uye = message.mentions.users.first();
   let yaş = args[2]
   let yetkili = message.author
-  let tag = ayarlar.tag
+  let tag = ayarlar.tag || ' '
   if(!uye) return message.channel.send(`İsmi değiştirilecek üyeyi belirtin.`)
   if(!yaş) return message.channel.send(`Üyenin yaşını yazın.`)
   if(!isim) return message.channel.send(`Üyenin ismini yazınız.`)
