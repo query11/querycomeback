@@ -107,7 +107,7 @@ client.login(ayarlar.token);
 
 client.on("ready", () => {//splashen
   client.user.setPresence({
-    game: { name: `SPLASHEN PUBLİC BOT ALTYAPI`, type: "WATCHING" },
+    game: { name: `SPLASHEN V12 PUBLİC BOT ALTYAPI`, type: "WATCHING" },
     status: "online"
   });
 });
