@@ -105,6 +105,128 @@ client.login(ayarlar.token);
 
 
 
-client.on('message', async msg => {
-  if (msg.content === "<@!760535868834054154>") msg.channel.send(new Discord.MessageEmbed().setDescription(`**Yolunu mu kaybettin? Bu sana yardımcı olabilir**  \`${ayarlar.prefix}yardım\``));
+client.on("ready", () => {//splashen
+  client.user.setPresence({
+    game: { name: `SPLASHEN PUBLİC BOT ALTYAPI`, type: "WATCHING" },
+    status: "online"
+  });
 });
+
+
+
+// İSİM YAŞ İSİM DEĞİŞTİRME 
+
+client.on("guildMemberAdd", member => {
+  let tag = ayarlar.tag;
+  //splashen
+  member.setNickname(`${tag} İsim • Yaş`);
+});
+
+// İSİM YAŞ İSİM DEĞİŞTİRME SON
+
+
+
+
+
+
+//BOT ROLÜ
+
+client.on(`guildMemberAdd`, async member => {//splashen
+  let botrol = ayarlar.botROL;
+if(!member.bot) return;
+member.roles.add(botrol)
+})
+
+// BOT ROLÜ SON
+
+
+
+
+// kayıtsız rolü
+
+client.on(`guildMemberAdd`, async member => {
+  let kayıtsızROL = ayarlar.kayıtsızROL;
+if(member.bot) return;
+member.roles.add(kayıtsızROL)
+})
+
+/// kayıtsız rolü son
+//splashen
+
+
+// TAG LOG
+client.on("userUpdate", async (oldUser, newUser) => {//splashen
+  if (oldUser.username !== newUser.username) {
+    let tag = ayarlar.tag
+  
+    let rol = ayarlar.tagROL;
+    
+    
+    let embed1 = new Discord.MessageEmbed()
+    .setDescription(`${newUser} ${tag} tagını aldığı için <@&${rol}> rolünü kazandı!`)
+    .setImage('https://cdn.discordapp.com/attachments/620989964104237077/766391664163029012/RDF_Barrinha-1-2-1-1-1-1-1-1.gif')
+    
+    let embed2 = new Discord.MessageEmbed()
+    .setDescription(`${newUser} ${tag} tagını çıkardığı için <@&${rol}> rolünü kaybetti!`)
+    .setImage('https://cdn.discordapp.com/attachments/620989964104237077/766391664163029012/RDF_Barrinha-1-2-1-1-1-1-1-1.gif')
+    
+    if (newUser.username.includes(tag) && !client.guilds.cache.get(ayarlar.sunucuID).members.cache.get(newUser.id).roles.cache.has(rol)) {
+      client.channels.cache.get(ayarlar.tagLOG).send(embed1)
+      client.guilds.cache.get(ayarlar.sunucuID).members.cache.get(newUser.id).roles.add(rol)
+    } if (!newUser.username.includes(tag) && client.guilds.cache.get(ayarlar.sunucuID).members.cache.get(newUser.id).roles.cache.has(rol)) {
+      client.guilds.cache.get(ayarlar.sunucuID).members.cache.get(newUser.id).roles.remove(rol)
+      client.channels.cache.get(ayarlar.tagLOG).send(embed2)
+    }
+
+  }
+})
+// TAG LOG SON
+//splashen
+
+// BOT OTOROL
+
+client.on('guildMemberAdd', async member => {//splashen
+if(member.user.bot)
+member.roles.set(['766634491502395392'])
+})
+// GİRİŞ 
+  client.on("guildMemberAdd", member => { 
+    const moment = require('moment');
+  const kanal = ayarlar.giriskanal;
+  let user = client.users.cache.get(member.id);
+  require("moment-duration-format");
+    const tarih = new Date().getTime() - user.createdAt.getTime();  
+  const embed = new Discord.MessageEmbed()
+  let rol = ayarlar.kayıtsızROL
+ member.roles.add(rol)//splashen
+
+  var kontrol;
+if (tarih < 1296000000) kontrol = '<a:no1:756946138342621295> __**Bu Kullanıcı Şüpheli**__'
+if (tarih > 1296000000) kontrol = '<a:tik3:756946140825649214> __**Bu Kullanıcı Güvenli**__'
+  moment.locale("tr");
+  let kanal1 = client.channels.cache.find(x => x.id === kanal);
+    let giris = new Discord.MessageEmbed()
+   .setTitle(`<a:kraltac:740610303628279808> | \`Sunucuya Bir Üye Katıldı!\` | <a:kraltac:740610303628279808>`)
+    .setDescription(`
+• ** __Hoşgeldin! ${member}__ **
+
+•  <a:pembeh:751553654561046619> **__Seninle Birlikte ${member.guild.memberCount} Kişiyiz.__ **
+
+• \`{ ${ayarlar.tag} }\`** __Tagımızı alarak ekibimize katılabilirsin.__ **
+
+• <a:alarm1:756946152938799225> ** <@&${ayarlar.yetkiliROL}> __seninle ilgilenicektir.__ **
+
+• <a:sari3:751558669585612830> ** __Hesabın Oluşturulma Tarihi:__** \n • \` ${moment(member.user.createdAt).format("YYYY DD MMMM dddd (hh:mm:ss)")} \`
+
+•  ${kontrol} 
+
+• <a:duyur:766652129678721074> ** __ Ses teyit odasında kaydınızı yaptırabilirsiniz. __ ** 
+
+`)//splashen
+    .setThumbnail(member.user.avatarURL() || 'https://cdn.discordapp.com/attachments/766342468576608318/766343451994226778/af8039261a387be71514bb4c2e5e54b5.gif')
+    .setImage('https://cdn.discordapp.com/attachments/766342468576608318/766343451994226778/af8039261a387be71514bb4c2e5e54b5.gif')
+    .setTimestamp()
+client.channels.cache.find(x => x.id === kanal).send(giris)
+  });
+// GİRİŞ SON
+//splashen
