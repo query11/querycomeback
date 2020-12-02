@@ -200,6 +200,7 @@ if (tarih > 1296000000) kontrol = '<a:tik3:756946140825649214> Bu Kullanıcı **
 `)//splashen
     .setImage('https://i.pinimg.com/originals/8c/9a/07/8c9a079986a4ce112882fea6db3ffdee.gif')
     .setTimestamp()
+    
       client.channels.cache.find(x => x.id === kanal).send(`<@&${ayarlar.yetkiliROL}>`)
 client.channels.cache.find(x => x.id === kanal).send(giris)
     
