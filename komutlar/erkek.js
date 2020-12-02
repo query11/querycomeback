@@ -46,22 +46,21 @@ let tag = ayarlar.tag || ''
 message.guild.members.cache.get(kullanıcı.id).setNickname(`${tag} ${isim} • ${yaş}`)
 message.guild.members.cache.get(kullanıcı.id).roles.add(erkekROL)
   message.guild.members.cache.get(kullanıcı.id).roles.add(kayıtlıROL)
-  if(ayarlar.manICON) {
-    let manICON = ayarlar.manICON
-      message.guild.members.cache.get(kullanıcı.id).roles.add(manICON)
+  if(ayarlar.erkekICON) {
+    let erkekICON = ayarlar.erkekICON
+      message.guild.members.cache.get(kullanıcı.id).roles.add(erkekICON)
   }
 message.guild.members.cache.get(kullanıcı.id).roles.remove(kayıtsızROL)
-message.guild.members.cache.get(kullanıcı.id).send(emb.setDescription(`• Kaydın ${message.author} tarafından yapıldı. \n **Erkek** ve **Kayıtlı** rollerini aldın. \n • Kurallar kanalımızı okumayı unutma!`))
+message.guild.members.cache.get(kullanıcı.id).send(emb.setDescription(`• Kaydın ${message.author} tarafından yapıldı. \n • **Erkek** ve **Kayıtlı** rollerini aldın. \n • Kurallar kanalımızı okumayı unutma!`))
  
 let embed2 = new Discord.MessageEmbed()
 .setDescription(`
 <a:tik4:756946179530424541> »  __**Bir Erkek Kayıt Oldu**__
-» • Kayıt Olan Kullanıcı ${kullanıcı} - [${kullanıcı.id}]
-» • Cinsiyet **Erkek** [<@&${ayarlar.erkekROL}>]
-» • İsim Yaş  **${isim} | ${yaş}**
-» • Kayıt eden yetkili | ${message.author} [${message.author.id}]
+<a:kraltac:740610303628279808> • Kayıt Olan Kullanıcı ${kullanıcı} - \`[${kullanıcı.id}]\`
+<a:kraltac:740610303628279808> • Cinsiyet **Erkek** [<@&${ayarlar.erkekROL}>]
+<a:kraltac:740610303628279808> • İsim Yaş  **${isim} | ${yaş}**
+<a:kraltac:740610303628279808> • Kayıt eden yetkili | ${message.author} \`[${message.author.id}]\`
 `)
-.setImage('https://i.pinimg.com/originals/dc/cc/84/dccc846959dffafa30a836dfacf9bab9.gif')
 
 
 
@@ -71,13 +70,12 @@ let embed3 = new Discord.MessageEmbed()
 
 .setDescription(`
 <a:tik4:756946179530424541> » __**Kayıt Başarıyla Tamamlandı**__
-                » • Kayıt Olan Kullanıcı ${kullanıcı} 
-                » • İsim Yaş  **${isim} | ${yaş}**
-                » • Cinsiyet **Erkek** [<@&${ayarlar.erkekROL}>]
-                » • Kayıt eden yetkili | ${message.author}
+                <a:kraltac:740610303628279808> • Kayıt Olan Kullanıcı ${kullanıcı} 
+                 • İsim Yaş  **${isim} | ${yaş}**
+                 • Cinsiyet **Erkek** [<@&${ayarlar.erkekROL}>]
+                 • Kayıt eden yetkili | ${message.author}
 
 `)
-.setThumbnail('https://i.pinimg.com/originals/dc/cc/84/dccc846959dffafa30a836dfacf9bab9.gif')
 message.channel.send(embed3).then(m => m.delete({timeout : '5000'}))
 
 
