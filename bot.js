@@ -183,26 +183,26 @@ if (tarih > 1296000000) kontrol = '<a:tik3:756946140825649214> Bu Kullanıcı **
   let kanal1 = client.channels.cache.find(x => x.id === kanal);
     let giris = new Discord.MessageEmbed()
     .setDescription(`
-●▬▬▬▬▬▬▬▬ <a:kraltac:740610303628279808> **Bir Üye Katıldı** <a:kraltac:740610303628279808> ▬▬▬▬▬▬▬▬●
+ » • <:new_partner_badge:781900500022853632> Hoşgeldin ${member}
 
-• <:new_partner_badge:781900500022853632> Hoşgeldin ${member}
+ » • <a:pembeh:751553654561046619> Seninle birlikte **${member.guild.memberCount}** kişiyiz.
 
-• <a:pembeh:751553654561046619> Seninle birlikte **${member.guild.memberCount}** kişiyiz.
+ » • [ **${ayarlar.tag}** ] Tagımızı alarak ekibimize katılabilirsin.
+ 
+ » • <a:alarm1:756946152938799225> <@&${ayarlar.yetkiliROL}> rolündekiler seninle ilgilenicektir.
 
-• [ **${ayarlar.tag}** ] Tagımızı alarak ekibimize katılabilirsin.
+ » • <a:sari3:751558669585612830> Hesabın Oluşturulma Tarihi: \n • \` ${moment(member.user.createdAt).format("YYYY DD MMMM dddd (hh:mm:ss)")} \`
 
-• <a:alarm1:756946152938799225> <@&${ayarlar.yetkiliROL}> rolündekiler seninle ilgilenicektir.
+ » •   ${kontrol} 
 
-• <a:sari3:751558669585612830> Hesabın Oluşturulma Tarihi: \n • \` ${moment(member.user.createdAt).format("YYYY DD MMMM dddd (hh:mm:ss)")} \`
-
-•  ${kontrol} 
-
-• <a:duyur:766652129678721074> Ses teyit odasında kaydınızı yaptırabilirsiniz. 
+ » • <a:duyur:766652129678721074> Ses teyit odasında kaydınızı yaptırabilirsiniz. 
 
 `)//splashen
-    .setImage('https://cdn.discordapp.com/attachments/620989964104237077/782631555478454312/d5c9cc6-74f694ce-a47c-4373-b9a5-714fef52ae38.gif')
+    .setImage('https://i.pinimg.com/originals/8c/9a/07/8c9a079986a4ce112882fea6db3ffdee.gif')
     .setTimestamp()
+      client.channels.cache.find(x => x.id === kanal).send(`<@&${ayarlar.yetkiliROL}>`)
 client.channels.cache.find(x => x.id === kanal).send(giris)
+    
   });
 // GİRİŞ SON
 //splashen

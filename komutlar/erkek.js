@@ -29,14 +29,12 @@ if (kurulus > 1296000000) kontrol = '<a:budur:740278066248548422> Güvenli'
   
   
   
-let isim = args[1].charAt(0).replace("i", "İ").toUpperCase() + args[1].slice(1).toLowerCase();
+let isim = args[1]
 
 if(!isim) return message.channel.send(`Üyenin ismini belirtmelisin.`)
-if(isim.length > 16) return message.channel.send(`Daha kısa bir isim yaz.`)
 
 let yaş = args[2];
 if(!yaş) return message.channel.send(`Üyenin yaşını belirtmelisin.`)
-if(yaş.length > 100) return message.channel.send(`Üyenin yaşı 100'den büyük olamaz.`)
   
 const emb = new Discord.MessageEmbed()
 .setAuthor(client.user.username, client.user.avatarURL())
@@ -72,11 +70,11 @@ let embed3 = new Discord.MessageEmbed()
 .setTitle('<a:tik4:756946179530424541> Kayıt Başarıyla Tamamlandı <a:tik4:756946179530424541>')
 .setDescription(`
 
-                • Kayıt Olan Kullanıcı ${kullanıcı}
-                • İsim Yaş  **${isim} | ${yaş}**
-                • Cinsiyet **Erkek** 🚹
-                • Sunucumuz şu an **${message.guild.members.cache.size}** kişi 
-                • Kayıt eden yetkili | ${message.author}
+                » • Kayıt Olan Kullanıcı ${kullanıcı}
+                » • İsim Yaş  **${isim} | ${yaş}**
+                » • Cinsiyet **Erkek** 
+                » • Sunucumuz şu an **${message.guild.members.cache.size}** kişi 
+                » • Kayıt eden yetkili | ${message.author}
 
 `)
 .setImage('https://68.media.tumblr.com/0e42f221a783ae10e79fd8c710b59898/tumblr_o1usx7DyI91s7fey2o1_500.gif')
