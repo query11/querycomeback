@@ -51,35 +51,34 @@ message.guild.members.cache.get(kullanıcı.id).roles.add(erkekROL)
       message.guild.members.cache.get(kullanıcı.id).roles.add(manICON)
   }
 message.guild.members.cache.get(kullanıcı.id).roles.remove(kayıtsızROL)
-message.guild.members.cache.get(kullanıcı.id).send(emb.setDescription(`• Kaydın ${message.author} tarafından yapıldı. \n <@&${ayarlar.erkekROL}> ve <@&${ayarlar.kayıtlıROL}> rollerini aldın. \n • Kurallar kanalımızı okumayı unutma!`))
+message.guild.members.cache.get(kullanıcı.id).send(emb.setDescription(`• Kaydın ${message.author} tarafından yapıldı. \n **Erkek** ve **Kayıtlı** rollerini aldın. \n • Kurallar kanalımızı okumayı unutma!`))
  
 let embed2 = new Discord.MessageEmbed()
-.setTitle('<a:tik4:756946179530424541> __Bir Kullanıcı Kayıt Oldu__ <a:tik4:756946179530424541>')
 .setDescription(`
-                » • Kayıt Olan Kullanıcı ${kullanıcı}
-                » • Cinsiyet **Erkek**
-                » • İsim Yaş  **${isim} | ${yaş}**
-                » • Kayıt eden yetkili | ${message.author}
+<a:tik4:756946179530424541> »  __**Bir Erkek Kayıt Oldu**__
+» • Kayıt Olan Kullanıcı ${kullanıcı} - [${kullanıcı.id}]
+» • Cinsiyet **Erkek** [<@&${ayarlar.erkekROL}>]
+» • İsim Yaş  **${isim} | ${yaş}**
+» • Kayıt eden yetkili | ${message.author} [${message.author.id}]
 `)
-.setImage('https://68.media.tumblr.com/0e42f221a783ae10e79fd8c710b59898/tumblr_o1usx7DyI91s7fey2o1_500.gif')
+.setImage('https://i.pinimg.com/originals/dc/cc/84/dccc846959dffafa30a836dfacf9bab9.gif')
 
 
 
 client.channels.cache.get(ayarlar.kayıtLOG).send(embed2)
 let embed3 = new Discord.MessageEmbed()
 .setColor('WHITE')
-.setTitle('<a:tik4:756946179530424541> __Kayıt Başarıyla Tamamlandı__ <a:tik4:756946179530424541>')
-.setDescription(`
 
-                » • Kayıt Olan Kullanıcı ${kullanıcı}
+.setDescription(`
+<a:tik4:756946179530424541> » __**Kayıt Başarıyla Tamamlandı**__
+                » • Kayıt Olan Kullanıcı ${kullanıcı} 
                 » • İsim Yaş  **${isim} | ${yaş}**
-                » • Cinsiyet **Erkek** 
-                » • Sunucumuz şu an **${message.guild.members.cache.size}** kişi 
+                » • Cinsiyet **Erkek** [<@&${ayarlar.erkekROL}>]
                 » • Kayıt eden yetkili | ${message.author}
 
 `)
-.setImage('https://68.media.tumblr.com/0e42f221a783ae10e79fd8c710b59898/tumblr_o1usx7DyI91s7fey2o1_500.gif')
-message.channel.send(embed3)
+.setThumbnail('https://i.pinimg.com/originals/dc/cc/84/dccc846959dffafa30a836dfacf9bab9.gif')
+message.channel.send(embed3).then(m => m.delete({timeout : '5000'}))
 
 
 }
