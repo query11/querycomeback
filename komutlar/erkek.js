@@ -51,32 +51,31 @@ message.guild.members.cache.get(kullanıcı.id).roles.remove(kayıtsızROL)
 message.guild.members.cache.get(kullanıcı.id).send(emb.setDescription(`• Kaydın başarıyla ${message.author} tarafından yapıldı. \n • Sunucudaki İsmin : ${isim} • ${yaş} \n • Kurallar kanalımızı okumayı unutma!`))
  
 let embed2 = new Discord.MessageEmbed()
-.setTitle('<a:tik4:756946179530424541> Bir Kullanıcı Kayıt Oldu')
+.setTitle('<a:tik4:756946179530424541> Bir Kullanıcı Kayıt Oldu <a:tik4:756946179530424541>')
 .setDescription(`
                 • Kayıt Olan Kullanıcı ${kullanıcı}
                 • Cinsiyet **Erkek**
                 • İsim Yaş  **${isim} | ${yaş}**
                 • Kayıt eden yetkili | ${message.author}
 `)
-.setImage('https://cdn.discordapp.com/attachments/620989964104237077/782631555478454312/d5c9cc6-74f694ce-a47c-4373-b9a5-714fef52ae38.gif')
+.setImage('https://68.media.tumblr.com/0e42f221a783ae10e79fd8c710b59898/tumblr_o1usx7DyI91s7fey2o1_500.gif')
 
 
 
 client.channels.cache.get(ayarlar.kayıtLOG).send(embed2)
 let embed3 = new Discord.MessageEmbed()
 .setColor('WHITE')
+.setTitle('<a:tik4:756946179530424541> Kayıt Başarıyla Tamamlandı <a:tik4:756946179530424541>')
 .setDescription(`
-●▬▬▬▬▬▬ <a:tik4:756946179530424541> **Kayıt Başarıyla Tamamlandı** <a:tik4:756946179530424541> ▬▬▬▬▬●
 
                 • Kayıt Olan Kullanıcı ${kullanıcı}
                 • İsim Yaş  **${isim} | ${yaş}**
-                • Bu Kullanıcı **${kontrol}**
+                • Cinsiyet **Erkek** 🚹
                 • Sunucumuz şu an **${message.guild.members.cache.size}** kişi 
                 • Kayıt eden yetkili | ${message.author}
 
-●▬▬▬▬▬▬ <a:tik4:756946179530424541> **Kayıt Başarıyla Tamamlandı** <a:tik4:756946179530424541> ▬▬▬▬▬●
 `)
-.setImage('https://cdn.discordapp.com/attachments/620989964104237077/782631555478454312/d5c9cc6-74f694ce-a47c-4373-b9a5-714fef52ae38.gif')
+.setImage('https://68.media.tumblr.com/0e42f221a783ae10e79fd8c710b59898/tumblr_o1usx7DyI91s7fey2o1_500.gif')
 message.channel.send(embed3)
 
 
