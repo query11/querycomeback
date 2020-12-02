@@ -47,16 +47,20 @@ let tag = ayarlar.tag || ''
 message.guild.members.cache.get(kullanıcı.id).setNickname(`${tag} ${isim} • ${yaş}`)
 message.guild.members.cache.get(kullanıcı.id).roles.add(erkekROL)
   message.guild.members.cache.get(kullanıcı.id).roles.add(kayıtlıROL)
+  if(ayarlar.manICON) {
+    let manICON = ayarlar.manICON
+      message.guild.members.cache.get(kullanıcı.id).roles.add(manICON)
+  }
 message.guild.members.cache.get(kullanıcı.id).roles.remove(kayıtsızROL)
 message.guild.members.cache.get(kullanıcı.id).send(emb.setDescription(`• Kaydın başarıyla ${message.author} tarafından yapıldı. \n • Sunucudaki İsmin : ${isim} • ${yaş} \n • Kurallar kanalımızı okumayı unutma!`))
  
 let embed2 = new Discord.MessageEmbed()
 .setTitle('<a:tik4:756946179530424541> Bir Kullanıcı Kayıt Oldu <a:tik4:756946179530424541>')
 .setDescription(`
-                • Kayıt Olan Kullanıcı ${kullanıcı}
-                • Cinsiyet **Erkek**
-                • İsim Yaş  **${isim} | ${yaş}**
-                • Kayıt eden yetkili | ${message.author}
+                » • Kayıt Olan Kullanıcı ${kullanıcı}
+                » • Cinsiyet **Erkek**
+                » • İsim Yaş  **${isim} | ${yaş}**
+                » • Kayıt eden yetkili | ${message.author}
 `)
 .setImage('https://68.media.tumblr.com/0e42f221a783ae10e79fd8c710b59898/tumblr_o1usx7DyI91s7fey2o1_500.gif')
 
