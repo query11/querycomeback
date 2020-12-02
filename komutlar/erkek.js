@@ -43,30 +43,20 @@ const emb = new Discord.MessageEmbed()
 .setThumbnail(client.user.avatarURL())
 .setTimestamp()
 .setColor(`#fffff0`)
-.setFooter(`Kayıt Başarılı`)
-let kız = db.fetch(`kız_${message.author.id}_${message.guild.id}`) || 0
-let erkek = db.fetch(`erkek_${message.author.id}_${message.guild.id}`) || 0
-let toplam = erkek+kız
-let toplam2 = db.fetch(`toplam_${message.guild.id}`) || 0
 let tag = ayarlar.tag || ''
 message.guild.members.cache.get(kullanıcı.id).setNickname(`${tag} ${isim} • ${yaş}`)
 message.guild.members.cache.get(kullanıcı.id).roles.add(erkekROL)
   message.guild.members.cache.get(kullanıcı.id).roles.add(kayıtlıROL)
 message.guild.members.cache.get(kullanıcı.id).roles.remove(kayıtsızROL)
 message.guild.members.cache.get(kullanıcı.id).send(emb.setDescription(`• Kaydın başarıyla ${message.author} tarafından yapıldı. \n • Sunucudaki İsmin : ${isim} • ${yaş} \n • Kurallar kanalımızı okumayı unutma!`))
-  db.add(`erkek_${message.author.id}_${message.guild.id}`, "1")
-  db.add(`toplam_${message.guild.id}`, "1")
+ 
 let embed2 = new Discord.MessageEmbed()
+.setTitle('<a:tik4:756946179530424541> Bir Kullanıcı Kayıt Oldu')
 .setDescription(`
-●▬▬▬▬▬▬ <a:tik4:756946179530424541> **Erkek Kaydı Yapıldı** <a:tik4:756946179530424541> ▬▬▬▬▬▬▬●
-
                 • Kayıt Olan Kullanıcı ${kullanıcı}
+                • Cinsiyet **Erkek**
                 • İsim Yaş  **${isim} | ${yaş}**
-                • Bu Kullanıcı **${kontrol}**
                 • Kayıt eden yetkili | ${message.author}
-                • Toplam Kayıtlar | ${toplam2}
-
-●▬▬▬▬▬▬ <a:tik4:756946179530424541> **Erkek Kaydı Yapıldı** <a:tik4:756946179530424541> ▬▬▬▬▬▬▬●
 `)
 .setImage('https://cdn.discordapp.com/attachments/620989964104237077/782631555478454312/d5c9cc6-74f694ce-a47c-4373-b9a5-714fef52ae38.gif')
 
