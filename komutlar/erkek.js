@@ -40,6 +40,7 @@ const emb = new Discord.MessageEmbed()
 .setAuthor(client.user.username, client.user.avatarURL())
 .setThumbnail(client.user.avatarURL())
 .setTimestamp()
+.setFooter('Kayıt Saati')
 .setColor(`#fffff0`)
 let tag = ayarlar.tag || ''
 message.guild.members.cache.get(kullanıcı.id).setNickname(`${tag} ${isim} • ${yaş}`)
@@ -50,10 +51,10 @@ message.guild.members.cache.get(kullanıcı.id).roles.add(erkekROL)
       message.guild.members.cache.get(kullanıcı.id).roles.add(manICON)
   }
 message.guild.members.cache.get(kullanıcı.id).roles.remove(kayıtsızROL)
-message.guild.members.cache.get(kullanıcı.id).send(emb.setDescription(`• Kaydın başarıyla ${message.author} tarafından yapıldı. \n • Sunucudaki İsmin : ${isim} • ${yaş} \n • Kurallar kanalımızı okumayı unutma!`))
+message.guild.members.cache.get(kullanıcı.id).send(emb.setDescription(`• Kaydın ${message.author} tarafından yapıldı. \n <@&${ayarlar.erkekROL}> ve <@&${ayarlar.kayıtlıROL}> rollerini aldın. \n • Kurallar kanalımızı okumayı unutma!`))
  
 let embed2 = new Discord.MessageEmbed()
-.setTitle('<a:tik4:756946179530424541> Bir Kullanıcı Kayıt Oldu <a:tik4:756946179530424541>')
+.setTitle('<a:tik4:756946179530424541> __Bir Kullanıcı Kayıt Oldu__ <a:tik4:756946179530424541>')
 .setDescription(`
                 » • Kayıt Olan Kullanıcı ${kullanıcı}
                 » • Cinsiyet **Erkek**
@@ -67,7 +68,7 @@ let embed2 = new Discord.MessageEmbed()
 client.channels.cache.get(ayarlar.kayıtLOG).send(embed2)
 let embed3 = new Discord.MessageEmbed()
 .setColor('WHITE')
-.setTitle('<a:tik4:756946179530424541> Kayıt Başarıyla Tamamlandı <a:tik4:756946179530424541>')
+.setTitle('<a:tik4:756946179530424541> __Kayıt Başarıyla Tamamlandı__ <a:tik4:756946179530424541>')
 .setDescription(`
 
                 » • Kayıt Olan Kullanıcı ${kullanıcı}
