@@ -55,8 +55,7 @@ message.guild.members.cache.get(kullanıcı.id).send(emb.setDescription(`• Kay
  
 let embed2 = new Discord.MessageEmbed()
 .setDescription(`
-<a:tik4:756946179530424541> »  __**Bir Erkek Kayıt Oldu**__
-<a:kraltac:740610303628279808> • Kayıt Olan Kullanıcı ${kullanıcı} - \`[${kullanıcı.id}]\`
+<a:kraltac:740610303628279808> • Kayıt Olan Kullanıcı \`[${kullanıcı.username}]\` - ${kullanıcı} 
 <a:kraltac:740610303628279808> • Cinsiyet **Erkek** [<@&${ayarlar.erkekROL}>]
 <a:kraltac:740610303628279808> • İsim Yaş  **${isim} | ${yaş}**
 <a:kraltac:740610303628279808> • Kayıt eden yetkili | ${message.author} \`[${message.author.id}]\`
@@ -69,11 +68,10 @@ let embed3 = new Discord.MessageEmbed()
 .setColor('WHITE')
 
 .setDescription(`
-<a:tik4:756946179530424541> » __**Kayıt Başarıyla Tamamlandı**__
-                <a:kraltac:740610303628279808> • Kayıt Olan Kullanıcı ${kullanıcı} 
-                 • İsim Yaş  **${isim} | ${yaş}**
-                 • Cinsiyet **Erkek** [<@&${ayarlar.erkekROL}>]
-                 • Kayıt eden yetkili | ${message.author}
+• <a:kraltac:740610303628279808> ${kullanıcı} <a:kraltac:740610303628279808>  adlı kişinin kaydı başarıyla yapıldı.
+• İsim Yaş • **${isim} • ${yaş}**
+• Verilen Roller • <@&${ayarlar.erkekROL}> , <@&${ayarlar.erkekICON}>
+• Alınan Roller • <@&${ayarlar.kayıtsızROL}>
 
 `)
 message.channel.send(embed3).then(m => m.delete({timeout : '5000'}))

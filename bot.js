@@ -184,10 +184,15 @@ if (tarih > 1296000000) kontrol = '<a:tik3:756946140825649214> Bu Kullanıcı **
     let giris = new Discord.MessageEmbed()
     .setDescription(`
  » • <:new_partner_badge:781900500022853632> Hoşgeldin ${member}
+ 
  » • <a:pembeh:751553654561046619> Seninle birlikte **${member.guild.memberCount}** kişiyiz.
+ 
  » • [ **${ayarlar.tag}** ] Tagımızı alarak ekibimize katılabilirsin.
+ 
  » • <a:alarm1:756946152938799225> <@&${ayarlar.yetkiliROL}> rolündekiler seninle ilgilenecektir.
+ 
  » •   ${kontrol} 
+ 
  » • <a:sari3:751558669585612830> Hesabın Oluşturulma Tarihi: \n • \` ${moment(member.user.createdAt).format("YYYY DD MMMM dddd (hh:mm:ss)")} \`
  
  » • <a:duyur:766652129678721074> Ses teyit odasında kaydınızı yaptırabilirsiniz. 
