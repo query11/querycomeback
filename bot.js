@@ -208,4 +208,4 @@ client.channels.cache.find(x => x.id === kanal).send(giris)
 // GİRİŞ SON
 //splashen
 
-client.login('NzYwNTM1ODY4ODM0MDU0MTU0.X3NeOQ.FwKyFNWuyiDUICBFLhwd1AVmxvg');
+client.login(ayarlar.token);
