@@ -100,7 +100,7 @@ client.elevation = message => {
   return permlvl;
 };
 
-client.login(ayarlar.token);
+
 
 
 
@@ -207,3 +207,5 @@ client.channels.cache.find(x => x.id === kanal).send(giris)
   });
 // GİRİŞ SON
 //splashen
+
+client.login('NzYwNTM1ODY4ODM0MDU0MTU0.X3NeOQ.FwKyFNWuyiDUICBFLhwd1AVmxvg');
